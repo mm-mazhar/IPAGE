@@ -1,0 +1,619 @@
+Area,soil group,Land class,knit (surface),pH,SOC (%),Nitrogen N (%),Potassium K (meq/100),Phosphorus P (ug/g),Sulfur S (ug/g),Boron B (ug/g),Zinc Zn (ug/g)
+Mithpukur,belab,high ground,Clay loam ,5.0,1.27,0.08,0.15,19.6, 37.7,0.26,0.86
+Mithpukur,belab,high ground,Clay loam ,4.9,1.47,0.09,0.25,4.1,32.0,0.25,0.75
+Mithpukur,belab,high ground,Clay loam ,4.6,1.07,0.05,0.09,13.3,13.5,0.27,0.95
+Mithpukur,belab,high ground,Clay loam ,5.2,1.51,0.06,0.30,20.2,30.0,0.28,1.0
+Mithpukur,belab,high ground,Clay loam ,5.3,1.08,0.11,0.17,20.5,27.8,0.30,1.04
+Mithpukur,belab,high ground,Clay loam ,4.9,1.87,0.08,0.35,21.7,27.8,0.32,1.16
+Mithpukur,belab,high ground,Clay loam ,4.8,1.11,0.06,0.29,7.7,39.7,0.20,0.88
+Mithpukur,belab,high ground,Clay loam ,5.2,1.51,0.08,0.50,18.5,25.6,0.26,1.05
+Mithpukur,Noadda,high ground,Clay loam ,5.3,1.59,0.08,0.17,12.0,26.4,0.24,0.74
+Mithpukur,Noadda,high ground,Clay loam ,5.0,1.121,0.06,0.18,0.06,10.7,0.20,0.91
+Mithpukur,Noadda,high ground,Clay loam ,5.0,1.68,0.09,0.17,9.6,39.1,0.24,0.91
+Mithpukur,Noadda,Medium high land,Clay loam ,5.1,1.68,0.08,0.08,5.8,36.2,1.0,0.78
+Mithpukur,belab,high ground,Clay loam ,5.5,1.66,0.12,0.45,9.9,33.6,0.24,0.78
+Mithpukur,belab,high ground,loam,5.3,1.06,0.06,0.10,32.0,23.3,0.24,1.15
+Mithpukur,belab,high ground,Clay loam ,4.5,1.22,0.06,0.18,18.3,47.5,0.28,1.09
+Mithpukur,belab,high ground,Clay loam ,4.8,1.51,0.08,0.24,16.3,41.3,0.32,0.93
+Mithpukur,belab,high ground,Clay loam ,5.2,1.38,0.07,0.16,22.5,43.0,0.26,1.13
+Mithpukur,belab,high ground,Clay loam ,4.8,1.57,0.08,0.19,11.2,22.9,0.34,0.98
+Mithpukur,belab,high ground,Clay loam ,4.7,1.59,0.08,0.14,7.1,22.4,0.22,1.02
+Mithpukur,belab,high ground,Clay loam ,5.1,1.44,0.05,0.17,16.0,33.7,0.32,1.14
+Mithpukur,belab,high ground,Clay loam ,5.2,1.49,0.09,0.11,11.2,29.3,0.22,0.82
+Mithpukur,belab,high ground,Clay loam ,5.2,1.30,0.07,0.42,14.5,37.5,0.44,2.06
+Mithpukur,belab,high ground,Clay loam ,5.0,1.30,0.07,0.13,39.9,14.5,0.40,1.69
+Mithpukur,Noadda,high ground,Clay loam ,4.5,1.848,0.09,0.37,20.2,6.7,0.24,0.79
+Mithpukur,Noadda,high ground,Clay loam ,4.7,1.68,0.10,0.28,14.8,1.4,0.20,0.91
+Mithpukur,Noadda,high ground,Clay loam ,5.1,1.94,0.08,0.17,15.0,20.5,0.26,0.82
+Mithpukur,Noadda,high ground,Clay loam ,5.0,2.01,0.12,0.13,38.0,5.1,0.32,1.29
+Mithpukur,Noadda,high ground,Clay loam ,5.5,1.85,0.11,0.12,9.3,6.2,0.20,0.58
+Mithpukur,Noadda,high ground,Clay loam ,5.0,1.40,0.06,0.32,31.4,5.1,0.28,2.47
+Mithpukur,Noadda,Medium high land,Clay loam ,5.3,1.35,0.07,0.13,23.9,2.1,0.24,1.33
+Mithpukur,Sahapur,Medium high land,loam,5.0,1.51,0.09,0.24,19.1,2.8,0.26,0.66
+Mithpukur,Sahapur,Medium high land,loam,4.8,2.33,0.14,0.10,8.7,5.5,0.06,0.59
+Mithpukur,Noadda,Medium high land,Clay loam ,5.0,2.5,0.13,0.06,6.8,1.9,0.56,0.74
+Mithpukur,the moon,Medium high land,Clay loam ,5.2,1.81,0.09,0.06,11.5,1.8,0.30,0.57
+Mithpukur,the moon,Medium high land,Clay loam ,5.0,1.73,0.12,0.06,2.3,2.9,0.30,0.42
+Mithpukur,the moon,Medium high land,Clay loam ,5.3,1.66,0.09,0.12,8.1,1.6,0.22,0.48
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,1.93,0.11,0.26,6.0,1.7,0.26,1.85
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,1.95,0.11,0.11,2.4,1.60,0.20,0.59
+Mithpukur,the moon,Medium high land,Clay loam ,5.3,1.61,0.09,0.10,3.7,2.4,0.42,0.60
+Mithpukur,the moon,Medium high land,Clay loam ,5.5,01.37,0.08,0.05,7.7,1.8,0.14,0.52
+Mithpukur,the moon,Medium high land,Clay loam ,5.0,1.79,0.11,0.05,13.6,10.5,0.34,0.44
+Mithpukur,the moon,Medium high land,Clay loam ,5.2,1.72,0.09,0.11,5.7,13.0,0.36,0.57
+Mithpukur,the moon,Medium high land,Clay loam ,5.2,2.15,0.12,0.08,6.3,10.8,0.30,0.52
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,2.55,0.14,0.10,2.8,19.2,0.34,0.50
+Mithpukur,the moon,Medium high land,Clay loam ,4.8,1.91,0.11,0.11,18.3,16.1,0.44,0.93
+Mithpukur,the moon,Medium high land,Clay loam ,5.2,1.45,0.08,0.06,10.4,8.8,0.40,0.43
+Mithpukur,the moon,Medium high land,Clay loam ,4.8,1.55,0.09,0.05,16.1,6.6,0.38,0.51
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,1.82,0.11,0.07,14.0,4.3,0.41,0.95
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,1.73,0.11,0.05,39.2,2.0,0.41,0.83
+Mithpukur,the moon,Medium high land,Clay loam ,5.1,2.07,0.12,0.05,10.7,1.6,0.38,0.65
+Mithpukur,Sahapur,Medium high land,loam,5.9,2.29,0.11,0.07,9.6,1.0,0.30,0.88
+Mithpukur,Sahapur,Medium high land,loam,4.6,1.91,0.13,0.11,10.2,1.6,0.40,0.78
+Mithpukur,Sahapur,Medium high land,loam,5.2,1.51,0.08,0.08,5.0,1.8,0.28,0.68
+Mithpukur,Sahapur,Medium high land,loam,4.9,2.09,0.12,0.05,10.3,3.7,0.46,0.72
+Mithpukur,Sahapur,Medium high land,loam,4.9,1.99,0.10,0.06,3.8,1.9,0.44,0.52
+Mithpukur,Sahapur,Medium high land,loam,5.0,1.71,0.10,0.07,7.5,2.0,0.46,0.69
+Mithpukur,Sahapur,Medium high land,loam,5.3,2.09,0.12,0.07,4.6,1.7,0.36,0.37
+Mithpukur,Sahapur,Medium high land,loam,5.0,1.70,0.09,0.06,7.0,1.8,0.36,0.75
+Mithpukur,Sahapur,Medium high land,loam,4.9,1.87,0.11,0.06,8.4,10.0,0.40,0.67
+Mithpukur,Sahapur,Medium high land,loam,4.9,2.14,0.13,0.05,10.9,9.5,0.42,1.10
+Mithpukur,Sahapur,Medium high land,loam,5.3,1.88,0.11,0.06,12.2,16.7,0.44,0.83
+Mithpukur,Sahapur,Medium high land,loam,4.9,1.87,0.12,0.05,8.8,14.3,0.40,0.35
+Mithpukur,Sahapur,Medium high land,loam,4.7,2.29,0.13,0.08,3.0,22.0,0.50,1.04
+Mithpukur,Sahapur,Medium high land,loam,5.1,1.80,0.10,0.10,3.3,16.3,0.28,0.62
+Mithpukur,the pen ,Medium high land,Clay loam ,5.0,2.38,0.15,0.07,14.6,11.9,0.48,0.96
+Mithpukur,Khilgaon,Medium high land,brick,4.90,2.38,0.15,0.07,14.6,11.9,0.48,0.96
+Mithpukur,Khilgaon,Medium high land,brick,5.00,1.48,0.08,0.12,2.1,22.4,0.44,0.93
+Mithpukur,Khilgaon,Medium high land,brick,5.50,1.69,0.10,0.10,1.8,17.5,0.`44,1.16
+Mithpukur,Khilgaon,Medium high land,brick,4.80,3.75,0.18,0.14,1.5,39.0,0.41,0.93
+Mithpukur,Khilgaon,Medium low land,brick,4.80,2.98,0.16,0.16,2.2,35.8,0.46,1.03
+Mithpukur,Pirgacha,high ground,loam,5.20,1.18,0.06,0.18,120.2,5.9,0.40,1.14
+Mithpukur,Pirgacha,high ground,loam,4.80,1.26,0.06,0.15,176.6,19.4,0.34,1.34
+Mithpukur,Pirgacha,high ground,loam,4.70,1.28,0.09,0.19,66.9,25.5,0.28,1.11
+Mithpukur,Pirgacha,high ground,loam,5.50,1.48,0.08,0.50,128.1,44.2,0.52,0.97
+Mithpukur,Pirgacha,high ground,loam,5.30,1.32,0.07,0.30,122.3,17.2,0.54,0.83
+Mithpukur,Pirgacha,high ground,loam,5.30,2.18,0.10,0.28,162.8,14.8,0.44,2.06
+Mithpukur,Pirgacha,high ground,loam,5.00,1.57,0.08,0.15,38.1,12.6,0.30,0.81
+Mithpukur,Palashbari,high ground,loam,5.10,1.22,0.07,0.38,70.0,11.3,0.36,0.75
+Mithpukur,Palashbari,high ground,loam,6.20,1.47,0.09,0.08,40.7,15.3,0.46,0.67
+Mithpukur,Palashbari,high ground,loam,5.30,1.82,0.11,0.08,44.7,48.0,0.72,0.82
+Mithpukur,Palashbari,high ground,loam,5.80,1.71,0.09,0.08,39.4,20.0,0.41,0.78
+Mithpukur,Palashbari,high ground,loam,4.90,1.47,0.09,0.29,137.5,10.2,0.38,2.83
+Mithpukur,Palashbari,high ground,loam,5.10,2.05,0.11,0.37,189.3,36.1,0.57,2.09
+Mithpukur,Palashbari,high ground,loam,5.40,1.26,0.07,0.18,27.8,8.3,0.42,0.57
+Mithpukur,Palashbari,high ground,loam,5.00,1.51,0.08,0.15,37.2,7.0,0.46,0.48
+Mithpukur,Palashbari,high ground,loam,5.00,1.71,0.10,0.22,35.2,8.1,0.34,0.58
+Mithpukur,Berries,high ground,loam,6.10,1.62,0.09,0.06,19.2,12.6,0.31,0.55
+Mithpukur,Gangachara,high ground,loam,5.20,1.99,0.11,0.15,37.4,17.4,0.38,0.80
+Mithpukur,Gangachara,high ground,loam,5.10,1.70,0.10,0.29,47.1,15.7,0.31,1.14
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.50,0.10,0.12,42.0,1.2,0.32,0.38
+Mithpukur,Pirgacha,high ground,loam,4.60,1.42,0.11,0.13,34.2,1.9,0.30,0.74
+Mithpukur,Pirgacha,high ground,loam,4.80,1.82,0.08,0.80,189.7,49.2,0.38,2.94
+Mithpukur,Pirgacha,high ground,loam,4.70,1.53,0.08,0.23,116.5,70.8,0.53,0.70
+Mithpukur,Pirgacha,high ground,loam,4.90,1.02,0.05,0.17,41.8,8.9,0.20,0.40
+Mithpukur,Pirgacha,high ground,loam,5.40,1.60,0.07,0.38,128.9,15.6,0.44,1.13
+Mithpukur,Pirgacha,high ground,loam,5.20,1.24,0.07,0.37,154.4,11.1,0.34,1.10
+Mithpukur,Pirgacha,high ground,loam,5.10,1.07,0.06,0.17,67.4,12.3,0.23,0.56
+Mithpukur,Pirgacha,high ground,loam,5.00,0.98,0.06,0.12,12.9,6.3,0.31,0.62
+Mithpukur,Palashbari,high ground,loam,5.10,1.21,0.06,0.08,6.6,5.0,0.41,0.39
+Mithpukur,Palashbari,high ground,loam,4.60,1.61,0.10,0.44,52.8,28.3,0.46,0.62
+Mithpukur,Palashbari,high ground,loam,5.20,1.47,0.08,0.33,33.4,13.0,0.20,0.72
+Mithpukur,Palashbari,high ground,loam,5.40,1.77,0.09,0.13,51.8,11.50,0.30,0.54
+Mithpukur,Palashbari,high ground,loam,5.30,1.51,0.06,0.13,48.6,10.5,0.49,0.69
+Mithpukur,Palashbari,high ground,loam,5.20,1.68,0.08,0.14,65.0,6.4,0.36,0.83
+Mithpukur,Palashbari,high ground,loam,5.30,1.41,0.07,0.20,23.5,16.4,034,0.36
+Mithpukur,Palashbari,high ground,loam,5.20,1.35,0.07,0.29,16.8,5.0,0.30,0.61
+Mithpukur,Palashbari,high ground,loam,5.00,1.59,0.09,0.11,84.8,20.9,0.48,0.54
+Mithpukur,Palashbari,high ground,loam,5.30,1.66,0.07,0.50,13.6,9.4,0.36,0.27
+Mithpukur,Palashbari,high ground,loam,5.90,1.53,0.08,0.32,28.2,5.0,0.32,0.66
+Mithpukur,Palashbari,high ground,loam,6.40,1.40,0.07,0.17,75.0,6.4,0.40,1.77
+Mithpukur,Berries,high ground,loam,5.00,1.31,0.07,0.11,86.1,7.5,0.46,1.81
+Mithpukur,Berries,high ground,loam,5.20,1.23,0.06,0.22,81.9,18.2,0.70,0.61
+Mithpukur,Berries,high ground,loam,4.70,1.41,0.08,0.24,28.2,54.7,0.30,0.34
+Mithpukur,Berries,high ground,loam,5.30,1.28,0.06,0.25,39.5,6.5,0.53,0.40
+Mithpukur,Berries,high ground,loam,5.70,1.121,0.06,0.08,11.8,4.4,0.25,0.48
+Mithpukur,Berries,high ground,loam,5.20,1.29,0.06,0.04,15.3,6.9,0.23,0.43
+Mithpukur,Berries,high ground,loam,6.50,1.55,0.07,0.08,110.0,28.5,0.48,0.80
+Mithpukur,Berries,high ground,loam,5.20,1.27,0.06,068,18.6,10.9,0.26,0.44
+Mithpukur,Berries,high ground,loam,5.20,1.59,0.09,0.11,15.5,8.4,0.26,0.42
+Mithpukur,Berries,high ground,loam,4.70,2.08,0.11,0.11,41.5,31.7,0.24,0.55
+Mithpukur,Berries,high ground,loam,5.00,1.28,0.07,0.30,25.3,9.5,0.21,0.72
+Mithpukur,Berries,high ground,loam,5.80,1.25,0.06,0.13,16.0,7.7,0.21,1.01
+Mithpukur,Gangachara,high ground,loam,4.80,1.24,0.07,0.10,22.8,8.0,0.30,0.57
+Mithpukur,Gangachara,high ground,loam,5.00,2.21,0.13,0.09,47.1,38.2,0.48,1.23
+Mithpukur,Gangachara,high ground,loam,5.40,2.16,0.11,0.34,14.7,25.6,0.32,0.69
+Mithpukur,Gangachara,high ground,loam,5.30,2.28,0.10,0.09,8.6,14.9,0.24,0.41
+Mithpukur,Gangachara,high ground,loam,5.00,2.53,0.12,0.10,22.5,14.9,0.32,0.37
+Mithpukur,Gangachara,high ground,loam,5.10,1.40,0.37,0.26,8.9,7.2,0.21,0.28
+Mithpukur,Gangachara,high ground,loam,5.20,1.848,0.10,0.15,20.8,10.5,0.28,0.63
+Mithpukur,Gangachara,high ground,loam,4.90,1.70,0.09,0.11,29.0,11.3,0.28,0.42
+Mithpukur,Gangachara,high ground,loam,5.10,1.79,0.09,0.08,10.7,9.4,0.28,0.21
+Mithpukur,Gangachara,high ground,loam,5.00,1.38,0.10,0.15,7.1,2.1,0.24,0.20
+Mithpukur,Gangachara,high ground,loam,5.30,1.68,0.10,0.10,41.1,1.1,0.21,0.20
+Mithpukur,Gangachara,high ground,loam,5.50,1.35,0.09,0.14,14.8,1.8,0.24,0.20
+Mithpukur,Gangachara,high ground,loam,5.20,1.58,0.09,0.19,11.1,1.5,0.28,0.08
+Mithpukur,Gangachara,high ground,loam,5.00,2.18,0.12,0.11,25.0,7.2,0.63,0.23
+Mithpukur,Gangachara,high ground,loam,5.20,2.01,0.12,0.14,12.8,1.4,0.32,0.23
+Mithpukur,Gangachara,high ground,loam,5.00,1.54,0.07,0.07,31.5,5.7,0.40,0.11
+Mithpukur,Gangachara,high ground,loam,5.10,1.32,0.08,0.18,14.3,2.9,0.24,0.43
+Mithpukur,Gangachara,high ground,loam,5.00,2.21,0.13,0.11,13.1,7.6,0.46,0.32
+Mithpukur,Gangachara,high ground,loam,4.80,2.94,0.09,0.31,22.2,2.5,0.34,0.24
+Mithpukur,Gangachara,high ground,loam,4.60,1.35,0.08,0.26,15.3,6.8,0.50,0.36
+Mithpukur,Gangachara,high ground,loam,5.20,1.60,0.09,0.12,4.8,12.2,0.34,0.24
+Mithpukur,Gangachara,high ground,loam,6.00,1.86,0.11,0.09,4.8,12.6,0.34,0.30
+Mithpukur,Gangachara,high ground,loam,5.30,1.77,0.11,0.05,3.2,12.2,0.24,0.57
+Mithpukur,Gangachara,high ground,loam,5.50,1.85,0.11,0.07,8.5,9.6,0.16,0.31
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.68,0.10,0.06,6.2,17.3,0.23,0.56
+Mithpukur,Gangachara,Medium high land,loam,4.90,1.88,0.11,0.05,15.3,15.2,0.46,0.52
+Mithpukur,Gangachara,Medium high land,loam,5.10,1.45,0.08,0.07,24.0,13.5,0.32,0.58
+Mithpukur,Gangachara,Medium high land,loam,5.40,1.27,0.07,0.13,9.0,7.5,0.24,0.39
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.61,0.09,0.15,43.3,16.9,0.52,0.87
+Mithpukur,Gangachara,Medium high land,loam,4..80,2.61,0.15,0.39,77.5,23.8,0.40,0.23
+Mithpukur,Gangachara,Medium high land,loam,5.00,1.39,0.08,0.31,17.6,16.9,0.32,0.52
+Mithpukur,Gangachara,Medium high land,loam,5.70,0.96,0.05,0.15,6.3,13.5,0.38,0.68
+Mithpukur,Gangachara,Medium high land,loam,5.90,0.93,0.06,0.10,7.7,10.0,0.22,0.28
+Mithpukur,Gangachara,Medium high land,loam,5.50,1.66,0.10,0.10,2.9,20.8,0.24,0.43
+Mithpukur,Gangachara,Medium high land,loam,5.00,1.94,0.12,0.04,6.1,17.8,0.53,0.64
+Mithpukur,Gangachara,Medium high land,loam,5.00,3.09,0.16,0.08,42.0,28.1,0.38,0.83
+Mithpukur,Gangachara,Medium high land,loam,5.40,1.68,0.10,0.25,7.1,11.8,0.40,1.24
+Mithpukur,Gangachara,Medium high land,loam,5.10,2.58,0.13,0.09,11.9,21.9,0.34,0.56
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.28,0.13,0.23,18.3,15.0,0.51,0.76
+Mithpukur,Gangachara,Medium high land,loam,4.70,1.34,0.08,0.19,23.8,15.0,0.73,2.01
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.69,0.10,0.21,19.0,16.8,0.51,0.10
+Mithpukur,Gangachara,Medium high land,loam,5.30,1.75,0.10,0.10,8.8,21.1,0.40,0.48
+Mithpukur,Gangachara,Medium high land,loam,5.90,1.36,0.07,0.06,11.3,18.0,0.28,0.29
+Mithpukur,Gangachara,Medium high land,loam,5.30,2.56,0.13,0.22,6.3,19.3,0.36,0.37
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.99,0.15,0.10,5.7,19.3,0.32,0.60
+Mithpukur,Gangachara,Medium high land,loam,5.50,2.76,0.15,0.08,48.3,23.6,0.49,0.23
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.41,0.14,0.35,12.3,14.2,0.30,1.24
+Mithpukur,Gangachara,Medium high land,loam,5.10,2.32,0.13,0.09,7.3,12.9,0.30,0.52
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.64,0.13,0.09,7.2,25.4,0.43,0.35
+Mithpukur,Gangachara,Medium high land,loam,5.40,1.85,0.11,0.12,8.6,13.8,0.45,0.57
+Mithpukur,Gangachara,Medium high land,loam,5.90,1.30,0.07,0.26,21.7,27.5,0.32,0.21
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.56,0.15,0.07,6.9,18.5,0.51,0.33
+Mithpukur,Gangachara,Medium high land,loam,5.30,2.55,0.14,0.18,4.3,16.3,0.53,0.75
+Mithpukur,Gangachara,Medium high land,loam,5.50,1.77,0.10,0.06,5.0,10.7,0.40,0.39
+Mithpukur,Gangachara,Medium high land,loam,5.10,1.78,0.10,0.08,47.7,12.0,0.63,0.26
+Mithpukur,Gangachara,Medium high land,loam,5.70,1.79,0.11,0.09,4.4,9.8,0.22,0.17
+Mithpukur,Gangachara,Medium high land,loam,5.30,1.63,0.11,0.06,14.5,7.0,0.17,0.13
+Mithpukur,Gangachara,Medium high land,loam,4.90,1.74,0.11,0.10,13.2,10.5,0.28,0.63
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.26,0.13,0.10,8.9,16.5,0.30,0.56
+Mithpukur,Gangachara,Medium high land,loam,5.70,1.89,0.11,0.12,9.8,9.8,0.15,0.43
+Mithpukur,Gangachara,Medium high land,loam,5.30,2.70,0.16,0.07,7.8,28.7,0.36,0.77
+Mithpukur,Gangachara,Medium high land,loam,5.30,1.70,0.11,0.18,4.2,17.2,0.30,0.44
+Mithpukur,Gangachara,Medium high land,loam,5.40,2.01,0.11,0.07,4.6,10.9,0.42,0.45
+Mithpukur,Gangachara,Medium high land,loam,5.30,2.19,0.11,0.05,7.3,16.5,0.26,0.45
+Mithpukur,Gangachara,Medium high land,loam,5.30,2.73,0.16,0.06,4.0,20.3,0.32,0.65
+Mithpukur,Gangachara,Medium high land,loam,5.20,2.04,0.15,0.16,13.6,17.5,0.26,0.65
+Mithpukur,Gangachara,Medium high land,loam,5.20,1.76,0.11,0.12,33.6,10.5,0.32,0.44
+Mithpukur,Gangachara,Medium high land,loam,5.10,2.22,0.11,0.27,34.0,15.4,0.34,0.55
+Mithpukur,Gangachara,Medium high land,loam,5.40,1.73,0.11,0.16,8.2,10.9,0.28,0.38
+Mithpukur,Gangachara,Medium high land,loam,5.40,1.78,0.09,0.12,5.0,11.6,0.30,0.61
+Mithpukur,Gangachara,Medium high land,loam,5.60,1.66,0.09,0.06,9.0,12.3,0.28,0.52
+Mithpukur,Gangachara,Medium high land,loam,5.60,1.55,0.09,0.08,8.5,11.2,0.24,0.43
+Mithpukur,Kaunia,Medium high land,loam,5.40,2.50,0.14,0.07,17.0,35.7,0.49,0.67
+Mithpukur,Kaunia,Medium high land,loam,5.30,2.79,0.09,0.15,7.0,28.4,0.38,1.54
+Mithpukur,Kaunia,Medium high land,loam,5.10,2.42,0.16,0.10,6.6,16.1,0.41,0.85
+Mithpukur,Kaunia,Medium high land,loam,5.00,2.58,0.15,0.11,4.3,17.2,0.34,0.46
+Mithpukur,Kaunia,Medium high land,loam,5.20,2.27,0.12,0.10,37.8,18.9,0.36,0.94
+Mithpukur,Kaunia,Medium high land,loam,5.20,3.05,0.19,0.15,4.3,24.5,0.47,1.19
+Mithpukur,Kaunia,Medium high land,loam,5.50,1.77,0.11,0.20,6.1,13.0,0.26,0.35
+Mithpukur,Kaunia,Medium high land,loam,5.20,2.22,0.12,0.10,22.4,11.2,0.34,0.41
+Mithpukur,Kaunia,Medium high land,loam,5.10,3.95,0.22,0.12,18.7,17.5,0.49,0.88
+Mithpukur,Kaunia,Medium high land,loam,5.10,3.59,0.21,0.22,9.2,23.5,0.53,0.60
+Mithpukur,Kaunia,Medium high land,loam,5.20,2.20,0.14,0.30,8.0,24.5,0.43,0.41
+Mithpukur,Kaunia,Medium high land,loam,5.50,2.85,0.16,0.30,4.2,19.3,0.36,0.64
+Mithpukur,Imadpur ,Medium low land,loam,5.70,2.87,0.16,0.16,7.8,17.9,0.34,0.64
+Mithpukur,Alluvial soil of Teesta,Medium high land,loam,5.50,1.13,0.07,0.10,10.5,15.1,0.26,0.44
+Mithpukur,Teesta sandy soil,Medium high land,in the sand,5.00,0.96,0.07,0.13,15.9,9.5,0.22,0.60
+Mithpukur,Gangachara,Medium high land,in the sand,5.60,0.59,0.04,0.15,23.0,21.4,0.24,0.27
+Mithpukur,Kachna ,Medium high land,Clay loam ,6.10,2.37,0.14,0.17,6.2,14.7,0.32,0.18
+Mithpukur,Kachna ,Medium low land,Clay loam ,5.20,3.66,0.21,0.07,5.0,27.3,0.49,0.50
+Mithpukur,Kachna ,Medium low land,Clay loam ,5.40,2.34,0.14,0.23,7.0,14.0,0.43,0.57
+Pirgacha ,Pirgacha,high ground,loam,4.2,1.53,0.08,0.18,95.0,3.8,0.23,1.11
+Pirgacha ,Pirgacha,high ground,loam,4.6,1.65,0.10,0.28,39.5,11.7,0.21,2.20
+Pirgacha ,Pirgacha,high ground,loam,4.6,20.4,0.11,0.30,46.4,31.4,0.43,3.00
+Pirgacha ,Pirgacha,high ground,loam,4.8,1.39,0.06,0.44,62.9,4.0,0.31,1.76
+Pirgacha ,Palashbari,high ground,loam,4.7,1.38,0.11,0.52,18.3,6.4,0.32,0.73
+Pirgacha ,Palashbari,high ground,loam,5.2,1.66,0.09,0.30,85.2,2.5,0.31,1.14
+Pirgacha ,Palashbari,high ground,loam,4.6,1.76,0.11,0.23,168.4,6.3,0.20,1.13
+Pirgacha ,Palashbari,high ground,loam,5.4,1.22,0.08,0.31,50.3,7.2,0.23,0.88
+Pirgacha ,Palashbari,high ground,loam,4.7,1.50,0.09,0.22,40.8,11.6,0.27,0.79
+Pirgacha ,Palashbari,high ground,loam,5.1,2.02,0.09,0.33,58.8,7.7,0.25,2.95
+Pirgacha ,Palashbari,high ground,loam,5.2,1.58,0.09,0.28,77.6,11.9,0.30,1.66
+Pirgacha ,Palashbari,high ground,loam,5.4,1.74,0.11,0.61,47.2,13.2,0.34,1.05
+Pirgacha ,Berries,high ground,loam,5.3,1.61,0.11,0.16,72.8,14.4,0.23,0.91
+Pirgacha ,Berries,high ground,loam,5.5,1.82,0.11,0.21,22.6,41.2,0.36,1.23
+Pirgacha ,Berries,high ground,loam,5.6,1.30,0.11,0.21,47.3,24.5,0.20,1.11
+Pirgacha ,Gangachara,high ground,loam,5.1,2.34,0.09,0.20,27.7,8.3,0.30,1.76
+Pirgacha ,Gangachara,high ground,loam,5.4,2.66,0.10,0.27,21.9,7.6,0.32,0.96
+Pirgacha ,Gangachara,high ground,loam,4.9,2.0,0.09,0.11,12.9,6.1,0.22,0.73
+Pirgacha ,Gangachara,high ground,loam,4.7,2.18,0.10,0.09,14.3,15.3,0.28,0.80
+Pirgacha ,Gangachara,high ground,loam,4.7,1.81,0.14,0.11,46.2,13.8,0.40,1.31
+Pirgacha ,Gangachara,high ground,loam,5.1,2.28,0.10,0.25,22.4,14.8,0.30,0.68
+Pirgacha ,Gangachara,high ground,loam,4.8,1.59,0.05,0.21,36.5,8.1,0.30,1.06
+Pirgacha ,Gangachara,high ground,loam,4.8,2.71,0.09,0.40,10.4,35.7,0.30,0.97
+Pirgacha ,Gangachara,high ground,loam,5.2,1.42,0.09,0.10,6.8,9.1,0.32,0.85
+Pirgacha ,Gangachara,high ground,loam,5.0,1.74,0.11,0.34,25.8,46.1,0.26,0.76
+Pirgacha ,Gangachara,high ground,loam,4.7,1.73,0.12,0.15,21.2,3.2,0.32,1.36
+Pirgacha ,Gangachara,high ground,loam,4.8,1.27,0.112,0.14,18.7,3.7,0.34,1.40
+Pirgacha ,Gangachara,high ground,loam,5.0,2.06,0.10,0.12,6.5,17.6,0.31,1.51
+Pirgacha ,Gangachara,high ground,loam,5.3,2.47,0.10,0.07,6.3,12.6,0.30,0.78
+Pirgacha ,Gangachara,high ground,loam,4.8,1.59,0.10,0.67,32.1,13.6,0.32,1.03
+Pirgacha ,Gangachara,high ground,loam,5.4,2.31,0.09,0.13,32.5,16.3,0.23,2.24
+Pirgacha ,Gangachara,high ground,loam,5.0,1.35,0.10,0.10,8.9,11.7,0.26,1.60
+Pirgacha ,Gangachara,high ground,loam,5.1,2.10,0.09,0.09,3.8,10.3,0.20,0.77
+Pirgacha ,Gangachara,high ground,loam,5.4,2.50,0.17,0.39,17.5,15.0,0.32,1.06
+Pirgacha ,Gangachara,high ground,loam,4.7,2.71,0.10,0.15,14.0,7.1,0.25,1.01
+Pirgacha ,Gangachara,high ground,loam,4.7,1.85,0.09,0.19,11.2,9.4,0.30,0.94
+Pirgacha ,Palashbari,high ground,loam,4.8,1.87,0.10,1.01,77.9,39.2,0.32,3.07
+Pirgacha ,Palashbari,high ground,loam,4.8,1.69,0.10,0.12,10.1,4.3,0.21,0.85
+Pirgacha ,Palashbari,high ground,loam,4.7,1.80,0.10,0.11,14.1,17.2,0.35,1.03
+Pirgacha ,Palashbari,high ground,loam,4.8,1.62,0.09,0.99,32.2,12.9,0.34,2.18
+Pirgacha ,Palashbari,high ground,loam,4.5,2.16,0.10,0.22,22.4,1.8,0.30,1.13
+Pirgacha ,Palashbari,high ground,loam,4.6,1.59,0.09,0.12,16.0,7.1,0.30,1.68
+Pirgacha ,Palashbari,high ground,loam,5.7,2.56,0.09,0.75,59.8,40.4,0.44,2.25
+Pirgacha ,Palashbari,high ground,loam,5.5,1.60,0.09,0.18,59.4,23.1,0.30,1.55
+Pirgacha ,Palashbari,high ground,loam,4.8,2.11,0.10,0.38,93.3,9.4,0.24,1.89
+Pirgacha ,Palashbari,high ground,loam,4.8,1.48,0.10,0.14,26.5,7.6,0.31,1.24
+Pirgacha ,Berries,high ground,loam,4.5,1.46,0.13,0.14,17.1,12.7,0.20,0.72
+Pirgacha ,Berries,high ground,loam,5.0,2.31,0.17,0.09,4.4,17.2,0.35,1.03
+Pirgacha ,Berries,high ground,loam,4.9,2.06,0.10,0.12,27.4,1.8,0.28,1.36
+Pirgacha ,Berries,high ground,loam,4.3,1.36,0.07,0.33,11.0,5.2,0.20,0.78
+Pirgacha ,Berries,high ground,loam,4.5,1.49,0.11,0.20,26.8,13.1,0.55,0.94
+Pirgacha ,Gangachara,high ground,loam,5.2,2.0,0.12,0,9.6,14.7,0.25,0.98
+Pirgacha ,Gangachara,high ground,loam,4.5,1.84,0.12,0.17,6.1,5.0,0.24,1.03
+Pirgacha ,Gangachara,high ground,loam,4.8,2.66,0.12,0.15,20.0,10.1,0.21,0.86
+Pirgacha ,Gangachara,high ground,loam,4.9,2.25,0.09,0.11,97.8,8.4,0.30,1.53
+Pirgacha ,Gangachara,high ground,loam,5.1,1.89,0.09,0.12,4.6,6.8,0.28,0.79
+Pirgacha ,Gangachara,high ground,loam,5.0,2.0,0.13,0.15,15.8,23.2,0.43,1.70
+Pirgacha ,Gangachara,high ground,loam,4.7,1.06,0.09,0.15,7.9,3.8,0.30,1.05
+Pirgacha ,Gangachara,high ground,loam,4.8,1.46,0.11,0.16,13.6,4.2,0.31,1.01
+Pirgacha ,Gangachara,high ground,loam,4.7,1.56,0.08,0.19,8.8,1.8,0.26,1.41
+Pirgacha ,Gangachara,high ground,loam,4.5,2.20,0.10,0.07,88.7,4.4,0.21,1.36
+Pirgacha ,Gangachara,high ground,loam,4.8,1.02,0.07,0.12,18.3,2.9,0.20,0.51
+Pirgacha ,Gangachara,high ground,loam,4.5,1.46,0.13,0.16,34.5,11.2,0.20,0.63
+Pirgacha ,Gangachara,high ground,loam,5.1,2.25,0.10,0.12,7.0,2.9,0.27,0.93
+Pirgacha ,Gangachara,high ground,loam,5.8,1.69,0.10,0.08,4.5,3.1,0.20,0.78
+Pirgacha ,Gangachara,high ground,loam,6.0,1.73,0.09,0.60,5.6,0.65,0.22,0.51
+Pirgacha ,Gangachara,high ground,loam,4.5,2.21,0.13,0.36,74.5,27.4,0.30,0.98
+Pirgacha ,Gangachara,high ground,loam,5.2,2.19,0.11,0.08,8.4,1.2,0.21,0.64
+Pirgacha ,Gangachara,Medium high land,loam,5.2,1.78,0.10,0.15,44.9,10.9,0.30,1.15
+Pirgacha ,Palashbari,high ground,loam,5.2,1.94,0.07,0.26,84.3,2.4,0.28,1.72
+Pirgacha ,Palashbari,high ground,loam,5.0,1.38,0.06,0.22,84.2,3.6,0.20,1.93
+Pirgacha ,Gangachara,high ground,loam,4.8,1.00,0.06,0.27,21.9,5.8,0.24,0.66
+Pirgacha ,Gangachara,Medium high land,loam,4.7,0.98,0.07,0.34,37.4,8.4,0.21,0.62
+Pirgacha ,Gangachara,Medium high land,loam,5.0,1.32,0.09,0.24,14.3,11.4,0.30,0.61
+Pirgacha ,Gangachara,Medium high land,loam,6.0,0.82,0.10,0.22,18.1,18.6,0.26,0.43
+Pirgacha ,Gangachara,Medium high land,loam,5.1,1.62,0.11,0.23,7.7,8.3,0.30,0.63
+Pirgacha ,Gangachara,Medium high land,loam,4.3,1.83,0.09,0.17,23.8,4.17,0.20,1.41
+Pirgacha ,Gangachara,Medium high land,loam,4.9,2.93,0.09,0.09,3.9,16.3,0.28,2.61
+Pirgacha ,Gangachara,Medium high land,loam,5.0,1.92,0.10,0.11,9.9,12.8,0.22,1.19
+Pirgacha ,Gangachara,Medium high land,loam,4.7,2.55,0.09,0.12,5.7,7.1,0.20,1.13
+Pirgacha ,Gangachara,Medium high land,loam,5.4,2.12,0.09,0.13,6.9,30.6,0.31,3.20
+Pirgacha ,Gangachara,Medium high land,loam,5.0,2.33,0.08,0.13,3.0,11.00,0.27,0.75
+Pirgacha ,Gangachara,Medium high land,loam,4.9,2.48,0.08,0.11,6.6,13.4,0.30,0.80
+Pirgacha ,Gangachara,Medium high land,loam,4.7,2.29,0.09,0.12,7.6,19.4,0.20,1.34
+Pirgacha ,Gangachara,Medium high land,loam,5.0,2.37,0.10,0.13,32.4,15.3,0.25,0.91
+Pirgacha ,Gangachara,Medium high land,loam,5.1,2.28,0.08,0.60,42.1,28.8,0.35,1.26
+Pirgacha ,Gangachara,Medium high land,loam,5.0,2.50,0.09,0.27,15.6,15.9,0.32,1.71
+Pirgacha ,Gangachara,Medium high land,loam,4.6,2.59,0.08,0.21,30.2,10.2,0.20,0.92
+Pirgacha ,Gangachara,Medium high land,loam,4.7,2.23,0.09,0.27,30.3,15.2,0.23,1.68
+Pirgacha ,Gangachara,Medium high land,loam,4.9,1.94,0.10,0.09,6.6,30.7,0.26,1.01
+Pirgacha ,Gangachara,Medium high land,loam,5.9,2.66,0.10,0.14,9.7,23.3,0.31,0.80
+Pirgacha ,Gangachara,Medium high land,loam,4.5,1.70,0.10,0.13,6.4,5.7,0.25,1.02
+Pirgacha ,Gangachara,Medium high land,loam,4.8,2.41,0.09,0.09,4.0,12.6,0.27,0.95
+Pirgacha ,Gangachara,Medium high land,loam,5.4,2.83,0.10,0.29,8.1,24.6,0.43,1.02
+Pirgacha ,Gangachara,Medium high land,loam,5.2,1.64,0.09,0.20,7.2,16.6,0.35,1.12
+Pirgacha ,Gangachara,Medium high land,loam,4.6,4.37,0.08,0.12,21.8,6.5,0.20,0.89
+Pirgacha ,Gangachara,Medium high land,loam,4.8,2.04,0.09,0.24,37.2,4.8,0.20,1.00
+Pirgacha ,Gangachara,Medium high land,loam,4.9,1.40,0.08,0.20,5.0,11.3,0.20,0.96
+Pirgacha ,Gangachara,Medium high land,loam,5.3,1.96,0.09,0.19,6.9,16.4,0.30,0.73
+Pirgacha ,Gangachara,Medium high land,loam,5.0,1.94,0.09,0.54,36.0,45.1,0.31,1.43
+Pirgacha ,Gangachara,Medium high land,loam,5.1,2.25,0.10,0.27,10.9,9.6,0.22,0.94
+Pirgacha ,Gangachara,Medium high land,loam,5.4,2.37,0.09,0.13,12.3,20.5,0.30,0.67
+Pirgacha ,Gangachara,Medium high land,loam,4.9,2.09,0.09,0.25,15.1,9.6,0.20,1.02
+Pirgacha ,Gangachara,Medium high land,loam,4.9,2.18,0.09,0.14,7.2,11.4,0.26,1.05
+Pirgacha ,Gangachara,Medium high land,loam,4.9,1.92,0.10,0.10,5.7,16.1,0.25,0.65
+Pirgacha ,Gangachara,Medium high land,loam,5.2,2.14,0.09,0.07,5.9,11.5,0.28,0.85
+Pirgacha ,Gangachara,Medium high land,loam,5.1,1.96,0.10,0.25,6.1,14.8,0.29,0.93
+Pirgacha ,Gangachara,Medium high land,loam,5.0,1.70,0.17,0.27,11.9,10.4,0.35,0.56
+Pirgacha ,Gangachara,Medium high land,loam,5.1,1.94,0.9,0.33,19.2,9.2,0.30,0.44
+Pirgacha ,Kaunia,Medium low land,Clay loam ,4.9,2.75,0.07,0.12,2.6,21.2,0.30,1.86
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.1,2.59,0.06,0.32,5.1,22.3,0.32,1.11
+Pirgacha ,Kaunia,Medium low land,Clay loam ,4.9,3.19,0.07,0.12,5.0,22.7,0.41,1.17
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.9,2.56,0.07,0.30,13.3,33.1,0.29,1.14
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.0,1.84,0.08,0.11,7.5,11.1,0.30,0.97
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.7,2.81,0.07,0.16,17.9,5.9,0.30,1.68
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.8,2.82,0.06,0.14,8.0,12.4,0.20,1.35
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.3,4.48,0.10,0.28,35.9,13.6,0.20,1.79
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.2,2.16,0.06,0.22,12.3,17.8,0.23,0.92
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.5,3.30,0.08,0.22,6.6,25.2,0.46,0.90
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.9,3.01,0.08,0.13,4.7,23.3,0.29,0.95
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.1,2.99,0.08,0.13,2.7,29.5,0.30,0.52
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.3,2.89,0.06,0.56,10.9,20.5,0.30,1.35
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.4,2.84,0.07,0.22,6.7,19.4,0.23,0.89
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.7,2.19,0.07,0.16,8.1,25.8,0.34,0.58
+Pirgacha ,Kaunia,Medium high land,Clay loam ,5.3,2.45,0.06,0.19,6.3,13..8,0.20,0.79
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.9,3.58,0.08,0.10,4.3,21.9,0.23,1.11
+Pirgacha ,Kaunia,Medium high land,Clay loam ,4.7,1.89,0.12,0.28,24.0,10.4,0.32,0.70
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.2,2.75,0.25,0.29,5.6,40.8,0.31,1.06
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.2,3.42,0.21,0.15,12.4,35.5,0.34,1.04
+Pirgacha ,Kaunia,Medium low land,Clay loam ,4.8,2.34,0.22,0.35,12.4,16.0,0.30,1.09
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.3,3.49,0.20,0.37,7.0,30.5,0.30,1.08
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.1,3.47,0.17,0.16,7.4,22.4,0.29,0.51
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.1,1.98,0.22,0.16,9.8,14.9,0.31,0.61
+Pirgacha ,Kaunia,Medium low land,Clay loam ,5.4,3.15,0.25,0.12,2.6,21.5,0.35,1.13
+Pirgacha ,The militants,Medium high land,brick,5.4,3.85,0.25,0.28,3.1,12.4,0.63,1.08
+Pirgacha ,The militants,Medium high land,brick,5.0,5.25,0.18,0.25,12.4,36.8,0.61,1.45
+Pirgacha ,The militants,Medium high land,brick,5.1,5.06,0.20,0.28,12.8,32.7,0.56,1.15
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,6.0,1.26,12.6,14.2,0.26,0.40,0.35,0.35
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,5.9,0.69,0.04,0.18,12.8,54.5,0.26,1.25
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,5.9,0.61,0.06,0.25,12.7,60.3,0.20,0.41
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,6.0,0.51,0.04,0.17,13.2,54.4,0.27,0.41
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,6.1,0.74,0.05,0.13,8.6,4.8,0.21,0.39
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,5.3,0.92,0.05,0.26,7.6,15.5,0.26,0.44
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,6.5,1.58,0.06,0.13,10.10,16.8,0.31,0.5
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,5.5,0.98,0.06,0.18,7.6,5.4,0.25,0.61
+Pirgacha ,Alluvial soil of Teesta,Medium high land,loam,5.3,1.14,0.07,0.22,7.9,16.3,0.30,0.55
+Pirgacha ,Alluvial soil of Teesta,Medium low land,loam,5.8,0.58,0.04,0.18,13.3,7.8,0.20,0.40
+Pirgacha ,Alluvial soil of Teesta,Medium low land,loam,6.1,0.23,0.01,0.05,7.6,7.7,0.23,0.18
+Pirgacha ,Alluvial soil of Teesta,Medium low land,loam,6.0,0.14,0.04,0.04,7.5,8.3,0.24,0.21
+Gangachara,Pirgacha,high ground,,5.1,0.95,0.0016,0.46,101,18,0.5,1
+Gangachara,Pirgacha,high ground,,5.1,0.70,0.0010,034,77,12,0.2,1
+Gangachara,Palashbari,high ground,,5.5,0.95,0.0032,0.51,60,17,Very Low,4
+Gangachara,Gangachara,high ground,,5.6,1.4,0.0033,0.53,15,20,0.2,4
+Gangachara,Pirgacha,high ground,,5.4,1.7,0.0032,0.53,23,25,0.2,3
+Gangachara,Palashbari,high ground,,5.2,0.80,0.0012,0.53,150,12,0.2,1
+Gangachara,Palashbari,high ground,,5.1,0.90,0.0015,0.33,80,15,Very Low,1
+Gangachara,Palashbari,high ground,,5.0,0.57,0.0018,0.44,26,9,Very Low,1
+Gangachara,Palashbari,high ground,,5.8,0.80,0.0019,0.52,170,10,Very Low,1
+Gangachara,Palashbari,high ground,,4.9,0.20,0.0015,0.53,103,35,0.8,1
+Gangachara,Palashbari,high ground,,5.2,1.3,0.0010,0.35,185,13,Very Low,1
+Gangachara,Gangachara,high ground,,5.0,1.2,0.0020,0.21,11,15,0.2,1
+Gangachara,Gangachara,high ground,,5.5,0.90,0.0017,0.28,10,12,Very Low,1
+Gangachara,Gangachara,high ground,,5.0,0.40,0.0017,0.37,15,16,0.2,1
+Gangachara,Gangachara,Medium high land,,5.6,1.5,0.0035,0.51,60,8,Very Low,4
+Gangachara,Palashbari,high ground,,5.8,0.16,0.0032,0.57,32,24,0.2,4
+Gangachara,Gangachara,high ground,,4.9,0.40,0.0011,0.46,10,12,Very Low,1
+Gangachara,Gangachara,high ground,,4.7,1.5,0.0009,0.42,80,18,0.2,1
+Gangachara,Gangachara,high ground,,4.6,1.7,0.0004,0.17,87,4,Very Low,1
+Gangachara,Gangachara,high ground,,5.1,1.9,0.0004,0.40,39,5,Very Low,1
+Gangachara,Gangachara,high ground,,5.7,1.4,Very Low,0.34,40,60,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.9,3.4,0.0029,0.52,15,28,0.2,4
+Gangachara,Palashbari,high ground,,5.6,2.2,0.0030,0.72,25,21,0.1,4
+Gangachara,Gangachara,high ground,,5.2,1.0,0.0036,0.42,40,28,0.2,4
+Gangachara,Gangachara,Medium high land,,6.0,1.0,0.0036,0.52,10,25,0.2,3
+Gangachara,Gangachara,Medium high land,,5.2,0.57,0.0014,0.28,80,12,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.6,0.10,0.0012,0.28,10,16,0.3,1
+Gangachara,Gangachara,Medium high land,,5.4,2.4,Very Low,0.34,24,2,Very Low,1
+Gangachara,Gangachara,Medium high land,,4.8,2.9,Very Low,0.47,27,2,Very Low,1
+Gangachara,Gangachara,Medium high land,,6.1,0.95,0.0035,0.52,15,18,0.2,4
+Gangachara,Gangachara,Medium high land,,5.1,1.3,0.0015,0.62,25,11,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.4,1.0,0.0018,034,45,14,0.3,1
+Gangachara,Gangachara,Medium high land,,5.6,1.5,0.0019,0.35,23,17,0.4,1
+Gangachara,Gangachara,Medium high land,,5.1,0.70,0.0013,0.30,15,9,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.0,1.0,0.0009,0.43,20,8,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.8,1.5,0.0012,0.30,15,10,Very Low,1
+Gangachara,Gangachara,Medium high land,,5.2,1.4,0.0018,0.29,15,16,0.2,1
+Gangachara,Gangachara,Medium high land,,5.2,0.40,0.0013,0.35,14,14,0.1,1
+Gangachara,Gangachara,Medium high land,,6.0,1.6,0.0008,0.47,10,20,0.4,1
+Gangachara,Kaunia,Medium high land,,6.4,1.2,0.0014,0.27,16,21,0.5,1
+Gangachara,Kaunia,Medium high land,,5.9,0.95,Very Low,0.67,58,5,Very Low,1
+Gangachara,Gangachara,Medium high land,,6.1,1.0,0.0035,0.57,15,18,0.1,3
+Gangachara,Kaunia,Medium high land,,5.8,0.95,0.0034,0.48,8,17,Very Low,3
+Gangachara,Alluvial soil of Teesta,Medium high land,,6.8,1.8,0.0028,0.60,12,85,1.5,3
+Gangachara,Alluvial soil of Teesta,Medium high land,,6.2,0.80,0.0037,0.48,30,43,0.4,4
+Gangachara,Teesta sandy soil,Medium high land,,6.6,0.57,0.0002,0.23,20,5,Very Low,1
+Gangachara,Teesta sandy soil,Medium high land,,6.4,0.20,0.0033,0.50,15,16,Very Low,3
+Gangachara,Teesta sandy soil,Medium high land,,6.8,0.20,0.0030,0.51,10,25,0.2,3
+Gangachara,Teesta sandy soil,Medium high land,,6.5,0.10,0.0039,0.50,16,15,Very Low,3
+Gangachara,Teesta sandy soil,Medium high land,,6.4,0.47,0.0037,0.32,16,19,0.1,3
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.9,0.27,Very Low,0.47,25,12,Very Low,1
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.7,0.40,Very Low,0.43,185,25,1.9,1
+Gangachara,Alluvial soil of Teesta,Medium high land,,7.0,0.27,0.0034,0.51,16,75,1.2,5
+Gangachara,Teesta sandy soil,Medium high land,,6.6,0.20,Very Low,0.25,15,2,Very Low,1
+Gangachara,Teesta sandy soil,Medium high land,,6.4,0.16,0.0038,0.32,10,16,Very Low,3
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.8,0.40,0.0033,0.69,10,34,0.3,3
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.8,0.10,0.0033,0.49,13,49,0.5,4
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.9,0.80,0.0038,0.57,185,42,0.5,4
+Gangachara,Alluvial soil of Teesta,Medium high land,,5.8,0.20,0.0032,0.52,10,33,0.3,4
+Gangachara,Kaunia,Medium low land,,5.6,1.2,0.0028,0.56,10,30,0.2,4
+Kaunia upazila,Pirgacha,high ground,loam,4.70,0.76 ,0.04 ,0.07,84.74,21.33,0.51,2.10
+Kaunia upazila,Pirgacha,high ground,loam,4.80, 1.03,0.05,0.37,254.7,38.85,1.27,10.58
+Kaunia upazila,Pirgacha,high ground,loam,5.30,1.00,0.06,0.40,202.2,12.32,0.88,3.58
+Kaunia upazila,Palashbari,high ground,loam,5.40,1.44,0.07,0.78,218.9,23.93,1.48,5.10
+Kaunia upazila,Palashbari,high ground,loam,4.70,1.65,0.08,0.12,12.5,11.09,0.17,0.22
+Kaunia upazila,Berries ,high ground,loam,4.70,0.96,0.05,0.12,60.21,8.21,0.88,0.91
+Kaunia upazila,Berries ,high ground,loam,5.10,1.72,0.09,0.30,105.4,18.72,0.69,2.21
+Kaunia upazila,Pirgacha,high ground,loam,6.0,0.76 ,0.04 ,0.21,94.41,9.74,0.20 ,1.07
+Kaunia upazila,Pirgacha,high ground,loam,6.20,1.03,0.05,0.32,102.8,16.93,0.51,1.71
+Kaunia upazila,Pirgacha,high ground,loam,4.50,1.85,0.09,0.31,148.3,9.36,0.18,1.72
+Kaunia upazila,Palashbari,high ground,loam,5.50,1.23,0.06,0.60,179.4,22.80,0.33,3.50
+Kaunia upazila,Palashbari,high ground,loam,4.50,0.96,0.05,0.48,70.86,19.48,0.13,1.64
+Kaunia upazila,Berries ,high ground,loam,5.10,1.72,0.09,0.51,90.15,24.01,2.66 ,7.39
+Kaunia upazila,Berries ,high ground,loam,5.80,1.92,0.10,0.16,7.63,12.74,0.16,0.76
+Kaunia upazila,Gangachara,high ground,loam,6.00,1.51,0.08,0.23,40.00,11.32,0.18,0.83
+Kaunia upazila,Gangachara,Medium high land,loam,5.60, 1.24,0.06,0.13,22.33,6.01, 0.12,5.42
+Kaunia upazila,Palashbari,high ground,loam,5.20,1.72,0.09,0.39,175.00,19.21,0.15,8.14
+Kaunia upazila,Palashbari,high ground,loam,5.60,1.38,0.07,0.25,0.65.87,20.99,0.13,1.45
+Kaunia upazila,Palashbari,high ground,loam,4.80,1.17,0.06,0.30,91.89,20.23,0.17,1.91
+Kaunia upazila,Berries ,high ground,loam,5.30,1.72,0.09,0.12,13.36,13.43,0.10,1.80
+Kaunia upazila,Berries ,high ground,loam,5.30,1.92,0.10,0.15,19.42,12.59,0.16,3.60
+Kaunia upazila,Berries ,high ground,loam,5.50,1.51,0.08,0.10,79.41,14.57,0.11,1.24
+Kaunia upazila,Gangachara,high ground,loam,5.10,1.72,0.09,0.20,112.0,26.67,0.14,2.23
+Kaunia upazila,Gangachara,high ground,loam,5.10,2.85,0.14,0.13,18.84,12.89,0.17,1.24
+Kaunia upazila,Berries ,Medium high land,loam,7.20,1.99,0.10,0.29,81.52,20.23,0.12,1.44
+Kaunia upazila,Berries ,Medium high land,loam,5.10,1.92,0.10,0.11,9.13,9.17,0.38,1.11
+Kaunia upazila,Gangachara,Medium high land,loam,5.60,2.23,0.11,0.15,64.51,20.01,0.16,1.56
+Kaunia upazila,Berries ,high ground,loam,5.10,0.76 ,0.04 ,0.13,62.85,16.21,0.11,1.62
+Kaunia upazila,Gangachara,high ground,loam,5.70,2.20,0.11,0.23,20.93,17.28,0.10,1.06
+Kaunia upazila,Gangachara,high ground,loam,5.30,2.87,0.14,0.17,24.86,10.48,0.18,0.91
+Kaunia upazila,Gangachara,high ground,loam,5.30,2.13,0.11,0.14,86.06,10.55,0.12,2.14
+Kaunia upazila,Gangachara,high ground,loam,5.30,2.87,0.14,0.11,4.59,15.94,0.10,0.87
+Kaunia upazila,Gangachara,high ground,loam, 5.50,1.71,0.09,0.14,29.37,3.22,0.12,1.13
+Kaunia upazila,Gangachara,Medium high land,loam,5.00,2.75,0.14,0.24,26.75,4.81,0.17,2.08
+Kaunia upazila,Gangachara,Medium high land,loam,5.30,1.79,0.09,0.18,44.23,11.02,0.15,1.05
+Kaunia upazila,Gangachara,Medium high land,loam,5.20,1.65,0.08,0.14,26.46,5.23,0.23,1.11
+Kaunia upazila,Gangachara,Medium high land,loam,5.50,2.88,0.14,0.10,8.78,7.05,0.10,0.70
+Kaunia upazila,Gangachara,Medium high land,loam,5.50,2.87,0.14,0.12,44.44,13.27,0.32,1.08
+Kaunia upazila,Gangachara,Medium high land,loam,5.50,2.06,0.10,0.14,5.40,8.63,0.10,0.75
+Kaunia upazila,Gangachara,Medium high land,loam,5.30,1.58,0.08,0.15,6.24,24.08,0.37,0.53
+Kaunia upazila,Gangachara,Medium high land,loam,5.70,2.20,0.11,0.11,16.38,11.09,0.11,1.10
+Kaunia upazila,Gangachara,Medium high land,loam,5.00,1.99,0.10,0.13,14.51,8.94,0.45,1.54
+Kaunia upazila,Gangachara,Medium high land,loam,5.70,1.79,0.09,0.18,25.71,2.10,0.33,0.98
+Kaunia upazila,Kaunia,Medium high land,loam clay,5.40,2.82,0.14,0.13,9.70,8.67,0.10,0.94
+Kaunia upazila,Gangachara,Medium high land,loam,5.80,0.89,0.05,0.24,68.39,8.86,0.96,1.04
+Kaunia upazila,Gangachara,Medium high land,loam,6.00,2.80,0.14,0.28,49.37,7.55,1.39,5.17
+Kaunia upazila,Gangachara,Medium high land,loam,5.30,1.99,0.10,0.21,22.52,8.48,0.62,1.26
+Kaunia upazila,Gangachara,Medium high land,loam,5.10,0.75,0.04 ,0.21,8.60,6.20,0.20 ,0.83
+Kaunia upazila,Kaunia,Medium high land,loam,5.20,1.99,0.10,0.15,16.24,1.75,0.08,0.64
+Kaunia upazila,Gangachara,Medium high land,loam,4.70, 1.99,0.14,.0.15,6.19,9.28,0.40, 0.90
+Kaunia upazila,Gangachara,Medium high land,loam,5.00,2.82,0.14,0.13,......,11.78,0.23,0.63
+Kaunia upazila,Gangachara,Medium high land,loam,5.10,2.68,0.13,0.13,4.37,9.63,0.88,0.91
+Kaunia upazila,Gangachara,Medium high land,loam,5.00,2.61,0.13,0.14,8.96,10.36,0.23,0.95
+Kaunia upazila,Gangachara,Medium high land,loam,4.70,1.51,0.08,0.17,6.19,5.39,0.25,0.66
+Kaunia upazila,Gangachara,Medium high land,loam,4.80,2.75,0.14,0.16,20.60,8.94,0.23,1.45
+Kaunia upazila,Gangachara,Medium high land,loam,4.90,2.61,0.13,0.21,46.46,4.58,0.44,0.91
+Kaunia upazila,Imadpur,Medium high land,loam clay,5.80,1.79, 0.09,0.16,15.57,9.51,1.32,0.83
+Kaunia upazila,Imadpur,Medium high land,loam clay,6.60,1.58,0.08,0.14,24.16,16.33,0.93,0.70
+Kaunia upazila,Imadpur,Medium high land,loam clay,5.70,1.02,0.05,0.20,10.50,10.36,0.36,0.54
+Kaunia upazila,Imadpur,Medium high land,brick,5.10,2.87,0.14,0.16,4.85,12.13,0.10,0.92
+Kaunia upazila,Imadpur,Medium high land,loam clay,5.00,2.75,0.14,0.14,4.71,4.11,0.16,1.16
+Kaunia upazila,Imadpur,Medium high land,loam clay,4.90,2.82,0.14,0.15,4.65,5.78,0.13,0.76
+Kaunia upazila,Imadpur,Medium high land,loam clay,4.90,1.85,0.09,0.20,4.24,4.58,0.14,0.82
+Kaunia upazila,Kaunia,Medium high land,loam clay,4.80,1.72,0.09,0.15,9.15,14.95,0.17,1.09
+Kaunia upazila,Kaunia,Medium high land,loam clay,4.70,2.81,0.14,0.20,7.02,10.36,0.48,1.27
+Kaunia upazila,Kaunia,Medium high land,loam clay,5.00,2.83,0.14,0.21,6.54,10.90,1.25,0.83
+Kaunia upazila,Kaunia,Medium high land,loam,5.30,2.82, 0.14, 0.34, 9.84,12.55,1.24,1.10
+Kaunia upazila,Kaunia,Medium high land,loam,5.00,2.68,0.13,0.22,3.44,8.28,0.14,0.70
+Kaunia upazila,Kaunia,Medium high land,loam,4.80,2.84,0.14,0.28,9.27,7.36,0.48,1.24
+Kaunia upazila,Kaunia,Medium high land,loam,4.60,1.92,0.10,0.23,7.17,7.40,0.11,0.67
+Kaunia upazila,Kaunia,Medium high land,loam clay,4.90,2.82,0.14,0.16,9.01,7.09,0.26,1.04
+Kaunia upazila,Kaunia,Medium high land,loam clay,5.10,1.78,0.09,0.21,15.49,1.77,0.26,0.64
+Kaunia upazila,Kaunia,Medium high land,loam clay,5.03,2.75,0.14,0.35,8.97,6.90,1.10,0.65
+Kaunia upazila,The militants ,Medium high land,loam clay,4.90,3.08,0.15,0.47,5.18,10.29,1.68,0.97
+Kaunia upazila,Kachna,Medium high land,loam clay,5.10,2.85,0.14,0.51,5.79,16.40,0.58,1.88
+Kaunia upazila,Chilmari,high ground,loam,4.90,1.86,0.09,0.22,16.46,13.77,0.39,0.75
+Kaunia upazila,Saghata ,high ground,loam,5.40,1.58,0.08,0.26,5.70,9.82,0.41,0.91
+Kaunia upazila,Saghata ,high ground,loam,5.90,1.16,0.06,0.26,21.56,11.878,1.47,0.40
+Kaunia upazila,Saghata ,high ground,loam,5.20,1.51,0.08,0.29,13.27,23.56,0.75,0.54
+Kaunia upazila,Saghata ,high ground,loam,5.20,0.90,0.05,0.28,120.8,9.44,0.44,1.30
+Kaunia upazila,Saghata ,high ground,loam,4.60,0.78,0.04 ,0.17,30.40,6.39,0.75,0.58
+Kaunia upazila,Saghata ,high ground,loam,5.00,1.03,0.05,0.16,44.00,4.50,0.41,0.74
+Kaunia upazila,Saghata ,high ground,loam,5.60,1.44,0.07,0.32,36.00,37.56,1.29,1.76
+Kaunia upazila,Saghata ,high ground,loam, 5.70,1.16,0.06,0.48,39.12,23.52,0.24,0.96
+Kaunia upazila,Alluvial soil of Teesta,high ground,loam,5.70,0.78,0.04 ,0.33,40.45,2.99,0.13,0.88
+Kaunia upazila,Alluvial soil of Teesta,high ground,loam,5.80,0.78,0.04 ,0.30,62.85,3.88,0.26,0.97
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,6.30,1.72,0.09,0.77,21.20,37.36,1.78,1.01
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.70,1.03,0.05,0.28,10.60,11.05,0.17,0.50
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.50,2.06,0.10,0.25,11.61,10.67,0.45,1.91
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.40,2.68,0.13,0.31,6.08,10.17,0.62,0.60
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.90,1.16,0.06,..0.30,14.48,19.14,0.97,0.48
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.90,1.38,0.07,0.37,86.05,5.81,1.16,1.00
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.60,1.65,0.08,0.40,25.24,40.91,1.54,1.05
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.80,0.78,0.04 ,0.41,14.54,27.95,0.97,0.57
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,in the sand,6.40,1.24,0.06,0.25,9.44,32.38,0.99,0.70
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.10,1.03,0.05,0.19,37.22,2.17,0.63,0.79
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,6.20,0.78,0.04 ,0.27,22.77,15.45,0.30,2.92
+Kaunia upazila,Alluvial soil of Teesta,Medium high land,loam,5.80,2.20,0.11,0.27,21.76,11.59,1.40,0.33
+Kaunia upazila,Alluvial soil of Teesta,Medium low land,loam,6.00,2.89,0.14,0.49,40.59,10.71,0.99,0.48
+Taraganj Thana,belab,high ground,,5.3,2.15,0.12,0.22,12,28,0.42,0.98
+Taraganj Thana,Noadda,high ground,,4.9,1.79,0.09,0.19,16,14,0.14,0.56
+Taraganj Thana,Noadda,high ground,,4.9,1.91,0.11,0.13,4,11,0.52,0.58
+Taraganj Thana,Noadda,Medium high land,,5.2,1.44,0.08,0.16,18,9,0.25,0.70
+Taraganj Thana,the moon,Medium high land,,5.2,2.39,0.12,0.18,11,27,0.31,0.40
+Taraganj Thana,Pirgacha,high ground,,4.9,0.72,0.04,0.18,94,21,0.23,0.28
+Taraganj Thana,Pirgacha,high ground,,4.5,1.44,0.07,0.34,234,11,0.37,0.20
+Taraganj Thana,Pirgacha,high ground,,4.8,1.44,0.08,0.22,56,17,0.47,0.90
+Taraganj Thana,Pirgacha,high ground,,                5.0,               1.32,0.05,0.31,99,14,0.37,0.46
+Taraganj Thana,Pirgacha,high ground,,                5.2,               1.08,0.06,0.36,41,11,0.41,0.50
+Taraganj Thana,Palashbari,high ground,,4.4,1.69,0.08,0.33,185,12,0.29,0.40
+Taraganj Thana,Palashbari,high ground,,5.1,2.03,0.10,0.32,34,13,0.34,0.56
+Taraganj Thana,Palashbari,high ground,,5.`3,1.20,0.06,0.17,77,9,0.42,0.44
+Taraganj Thana,Berries,high ground,,4.7,1.44,0.08,0.14,56,13,0.41,0.70
+Taraganj Thana,Berries,high ground,,4.8,2.03,0.09,0.28,51,14,0.17,0.40
+Taraganj Thana,Gangachara,Medium high land,,5.1,1.69,0.08,0.13,19,8,0.14,0.48
+Taraganj Thana,Gangachara,Medium high land,,5.3,1.79,0.10,0.40,122,28,0.17,0.40
+Taraganj Thana,Pirgacha,high ground,,5.5,0.67,0.05,0.25,37,11,0.23,0.40
+Taraganj Thana,Pirgacha,high ground,,5.1,1.20,0.06,0.30,117,32,0.29,0.40
+Taraganj Thana,Pirgacha,high ground,,4.8,1.20,0.07,0.22,14,12,0.31,0.42
+Taraganj Thana,Palashbari,high ground,,4.8,1.69,0.90,0.31,77,11,0.34,1.1
+Taraganj Thana,Palashbari,high ground,,5.4,1.08,0.07,0.29,31,9,0.29,0.28
+Taraganj Thana,Berries,high ground,,5.7,1.20,0.06,0.14,22,8,0.22,0.4
+Taraganj Thana,Berries,high ground,,5.4,1.44,0.08,0.26,39,14,0.26,0.3
+Taraganj Thana,Berries,Medium high land,,5.0,1.44,0.10,0.22,26,16,0.38,0.26
+Taraganj Thana,Berries,Medium high land,,5.3,1.44,0.07,0.18,99,16,0.64,0.44
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.69,0.09,0.09,77,11,0.43,0.34
+Taraganj Thana,Gangachara,Medium high land,,5.6,2.27,0.12,0.20,49,19,0.62,0.36
+Taraganj Thana,Palashbari,high ground,,4.6,1.44,0.07,0.16,36,9,0.58,0.50
+Taraganj Thana,Palashbari,high ground,,4.9,1.20,0.06,0.20,54,8,0.53,0.28
+Taraganj Thana,Palashbari,high ground,,4.9,1.69,0.08,0.27,64,28,0.68,0.30
+Taraganj Thana,Palashbari,high ground,,4.2,1.91,0.10,0.31,55,11,0.31,0.50
+Taraganj Thana,Berries,high ground,,4.8,1.44,0.09,0.19,33,8,0.25,0.80
+Taraganj Thana,Berries,high ground,,4.5,1.44,0.08,0.10,17,9,0.28,0.60
+Taraganj Thana,Berries,high ground,,4.8,1.57,0.06,0.10,17,9,0.30,0.52
+Taraganj Thana,Gangachara,high ground,,4.9,1.32,0.07,0.07,28,10,0.46,0.24
+Taraganj Thana,Gangachara,high ground,,5.3,2.27,0.12,0.16,22,11,0.40,0.26
+Taraganj Thana,recession,Medium high land,,4.5,1.79,0.10,0.24,80,13,0.29,0.22
+Taraganj Thana,recession,Medium high land,,5.1,1.57,0.08,0.09,18,11,0.21,0.46
+Taraganj Thana,Gangachara,Medium high land,,4.9,1.57,0.09,0.11,41,12,0.17,0.34
+Taraganj Thana,Gangachara,Medium high land,,5.8,1.44,0.09,0.11,27,9,0.08,0.10
+Taraganj Thana,Berries,high ground,,5.3,1.32,0.08,0.11,37,9,0.34,0.30
+Taraganj Thana,Berries,high ground,,4.9,1.79,0.08,0.17,45,14,0.25,0.30
+Taraganj Thana,Gangachara,high ground,,5.0,1.44,0.07,0.17,64,11,0.28,0..36
+Taraganj Thana,recession,Medium high land,,5.0,1.79,0.10,0.18,55,13,0.28,0.36
+Taraganj Thana,recession,Medium high land,,5.1,1.69,0.10,0.22,77,11,0.37,0.22
+Taraganj Thana,Gangachara,Medium high land,,5.7,1.80,0.12,0.08,64,14,0.48,0.52
+Taraganj Thana,Gangachara,Medium high land,,5.4,2.18,0.11,0.13,36,11,0.24,0.22
+Taraganj Thana,Menanagar,Medium high land,,5.2,1.44,0.09,0.08,31,11,0.30,0.20
+Taraganj Thana,Menanagar,Medium high land,,5.0,1.57,0.10,0.07,35,13,0.31,0.34
+Taraganj Thana,recession,Medium high land,,5.4,1.32,0.10,0.07,12,11,0.30,0.10
+Taraganj Thana,recession,Medium high land,,5.6,1.32,0.09,0.08,21,13,0.37,0.26
+Taraganj Thana,Gangachara,Medium high land,,4.7,1.80,0.10,0.16,67,19,0.33,0.18
+Taraganj Thana,Gangachara,Medium high land,,5.2,2.18,0.11,0.10,10,12,0.31,0.12
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.80,0.11,0.09,27,18,0.40,0.26
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.08,0.07,0.16,39,19,0.32,0.24
+Taraganj Thana,recession,Medium high land,,5.6,1.57,0.09,0.30,75,21,0.41,0.26
+Taraganj Thana,recession,Medium high land,,5.2,1.57,0.09,0.32,30,13,0.32,0.46
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.93,0.11,0.17,40,14,0.34,0.42
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.57,0.11,0.13,15,19,0.41,0.46
+Taraganj Thana,Gangachara,Deep medium high land,,5.4,1.93,0.11,0.11,17,9,0.29,0.42
+Taraganj Thana,Gangachara,Deep medium high land,,5.3,1.69,0.13,0.51,88,18,0.39,0.34
+Taraganj Thana,Gangachara,Deep medium high land,,5.4,3.38,0.20,0.26,16,19,0.33,0.40
+Taraganj Thana,Gangachara,Shallow to medium high land,,5.4,1.69,0.09,0.11,15,11,0.36,0.40
+Taraganj Thana,Gangachara,Shallow to medium high land,,5.8,1.57,0.09,0.05,8,9,0.41,0.78
+Taraganj Thana,Gangachara,Shallow to medium high land,,5.7,2.16,0.12,0.09,11,14,0.46,0.40
+Taraganj Thana,Kaunia,Medium high land,,5.5,1.69,0.11,0.07,14,9,0.36,0.78
+Taraganj Thana,Kaunia,Medium high land,,5.4,2.05,0.11,0.06,31,8,0.34,1.20
+Taraganj Thana,Kaunia,Medium high land,,5.0,2.05,0.11,0.11,85,12,0.44,1.00
+Taraganj Thana,Gangachara,Medium high land,,5.3,2.05,0.09,0.09,7,9,0.28,0.72
+Taraganj Thana,Gangachara,Medium high land,,4.9,1.44,0.09,0.14,10,11,0.44,0.64
+Taraganj Thana,Gangachara,Medium high land,,5.2,1.81,0.10,0.12,38,14,0.43,0.72
+Taraganj Thana,Imadpur,Medium high land,,5.6,2.16,0.14,0.14,11,20,0.21,0.84
+Taraganj Thana,Imadpur,Medium high land,,5.6,1.57,0.09,0.08,13,11,0.24,0.90
+Taraganj Thana,Imadpur,Medium high land,,5.1,1.44,0.10,0.13,17,13,0.34,0.84
+Taraganj Thana,Kaunia,Medium high land,,5.4,1.57,0.12,0.13,14,13,0.49,0.80
+Taraganj Thana,Kaunia,Medium high land,,5.2,2.16,0.12,0.11,20,10,0.25,0.82
+Taraganj Thana,Kaunia,Medium high land,,5.2,2.67,0.14,0.15,9,26,0.60,0.62
+Taraganj Thana,Kaunia,Medium high land,,5.4,2.05,0.13,0.15,11,17,0.29,0.52
+Taraganj Thana,Kaunia,Medium high land,,5.4,1.44,0.09,0.09,9,13,0.29,0.88
+Taraganj Thana,Bhimpur,Medium high land,,5.3,2.67,0.15,0.12,22,25,0.49,0.66
+Taraganj Thana,Bhimpur,Medium high land,,5.4,1.93,0.12,0.12,8,15,0.46,0.62
+Taraganj Thana,Bhimpur,Medium high land,,6.0,2.29,0.11,0.09,5,12,0.24,0.56
+Taraganj Thana,Bhimpur,Medium high land,,6.1,1.57,0.10,0.23,6,13,0.17,0.66
+Taraganj Thana,Bhimpur,Medium high land,,5.6,2.67,0.15,0.16,13,15,0.30,0.78
+Taraganj Thana,Indrail,Medium high land,,5.7,2.79,0.16,0.25,0.26,16,0.57,0.82
+Taraganj Thana,Imadpur,Medium high land,,5.7,2.16,0.14,0.33,16,16,0.35,0.72
+Taraganj Thana,Kaunia,Medium low land,,5.5,1.08,0.16,0.19,14,29,0.50,0.82
+Taraganj Thana,Kaunia,Medium low land,,5.7,1.57,0.20,0.27,16,37,0.53,0.76
+Taraganj Thana,Kachna,Medium low land,,5.4,2.55,0.17,0.21,24,18,0.63,0.66
+Taraganj Thana,Kachna,Medium low land,,4.9,1.81,0.10,0.24,81,17,0.58,0.72
+Taraganj Thana,chilmari,Medium high land,,5.4,1.93,0.11,0.17,30,11,0.30,0.46
+Taraganj Thana,Teesta sandy soil,Medium high land,,5.6,0.48,0.04,0.21,31,12,0.20,1.04
+Taraganj Thana,Teesta sandy soil,Medium high land,,6.7,0.36,0.05,0.04,9,7,0.20,0.36
+Taraganj Thana,Alluvial soil of Teesta,Medium high land,,5.9,0.73,0.04,0.17,24,9,0.37,0.44
+Taraganj Thana,Teesta sandy soil,Medium low land,,7.8,0.36,0.01,0.09,5,9,0.24,1.02
+Taraganj Thana,Alluvial soil of Teesta,Medium low land,,7.8,0.24,Very Low,0.09,6,11,0.36,1.16
