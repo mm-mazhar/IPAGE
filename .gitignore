@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# data
+2410_iPAGE_SoilData_cleaned.csv
