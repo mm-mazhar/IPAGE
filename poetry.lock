@@ -3088,27 +3088,6 @@ watchdog = {version = ">=2.1.5,<6", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python[modin] (>=1.17.0)"]
 
 [[package]]
-name = "summarytools"
-version = "0.3.0"
-description = "summarytools in jupyter notebook"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "summarytools-0.3.0-py3-none-any.whl", hash = "sha256:c05e9f143f8ec7fdba1fa03a20fee807543b846ae715a13f5d63a5e957349516"},
-    {file = "summarytools-0.3.0.tar.gz", hash = "sha256:9b6f6e83e2590b81e0308568a68bc0fddc91e3467521c0033a20d62a0f66cdd7"},
-]
-
-[package.dependencies]
-ipython = ">=7.20.0"
-matplotlib = ">=3.3.0"
-numpy = ">=1.18.5"
-pandas = ">=1.4.0"
-
-[package.extras]
-dev = ["check-manifest"]
-test = ["coverage"]
-
-[[package]]
 name = "sweetviz"
 version = "2.3.1"
 description = "A pandas-based library to visualize and compare datasets."
@@ -3506,4 +3485,4 @@ scikit-learn = ["scikit-learn"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "4bd1e17effaa82cae8c46dada79cde6bb3879313c543371450842cb153582693"
+content-hash = "47610c02ff20f34942e195ec294b29ef4bf4988daf766f8c4eec4c2e1003962d"
