@@ -23,7 +23,6 @@ from httpx import get
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from summarytools import dfSummary
 from utils.correlation import *
 from utils.feature_analysis import *
 from utils.sweetviz import generate_sweetviz_report, st_display_sweetviz
