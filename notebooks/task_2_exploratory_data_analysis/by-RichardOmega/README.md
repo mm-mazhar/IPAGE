@@ -69,3 +69,34 @@ Some findings from these studies are not yet observable in the current IPAGE dat
 Given the correlation observed between certain soil nutrients and target variables, consider combining features during the feature engineering phase. This may enhance the predictive power of models by leveraging the relationships identified in the analysis.
 
 ![alt text](images/Untitled-1-9.png)
+
+## Open Source Data
+
+### ISDA
+
+|nutrient | IPAGE UNITS | ISDA UNITS |
+| --- | --- | --- |
+|SOC | % (g/100g) | g/kg |
+|ph |  | |
+|Nitrogen | % (g/100g) | g/kg |
+|Potassium | meq/100 (cmol/kg) | mg/kg |
+|Phosphorus | µg/g | mg/kg |
+|Sulfur | µg/g | mg/kg |
+|Boron | µg/g | mg/kg |
+|Zinc | µg/g | mg/kg |
+
+$$\frac{meq}{100} = \frac{cmol}{kg}$$
+
+Multiply mol/kg by the atomic weight of potassium to convert to mg/kg.
+
+$$\frac{cmol}{kg} \cdot \frac{1mol}{100cmol} \cdot 39.1 \frac{g}{mol} => 1 \frac{g}{mol} = \frac{39.1}{100} \frac{g}{kg}$$
+
+Converting Potassium mg/kg to $\frac{meq}{100}$ 
+$$
+\large
+\frac{mg}{kg} \cdot 
+\frac{g}{1000mg} \cdot
+\frac{\frac{meq}{100}}{\frac{39.1}{100} \frac{g}{kg}}
+$$
+
+![alt text](images/isda_1.png)
