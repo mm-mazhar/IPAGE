@@ -14,7 +14,7 @@ import sweetviz as sv
 from streamlit.delta_generator import DeltaGenerator
 
 
-def st_display_sweetviz(report_path, width=1100, height=500) -> None:
+def st_display_sweetviz(report_path, width=1325, height=600) -> None:
     # Read HTML file content
     with open(report_path, "r", encoding="utf-8") as file:
         report_html = file.read()

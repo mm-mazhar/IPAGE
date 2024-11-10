@@ -17,67 +17,78 @@ def visualize_bar_plot(
     df: pd.DataFrame,
     numeric_cols: list[str],
     categorical_cols: list[str],
-    flag: str = "mean",
+    key="visualize_bar_plot",
     background_color: str = "white",
     text_color: str = "black",
     # width: int = 1000,
     # height: int = 600,
 ) -> None:
     """Visualize the aggregation of a numeric feature across different categories using a bar plot."""
-    display_centered_title("Bar Plot", color="red")
+    # display_centered_title("Bar Plot", color="red")
     st.markdown("""---""")
     # # Ensure width and height are integers
     # width = int(width)
     # height = int(height)
 
+    methods: list[str] = ["mean", "sum", "count"]
+
     # Create two columns for feature selection
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     # Use the first column for numeric feature selection
     with col1:
         # st.write("Select Numeric Feature")
         selected_numeric_feature: str = st.selectbox(
-            "Select Numeric Feature", numeric_cols, index=1
+            "Select Numeric Feature", numeric_cols, index=1, key=f"{key}_numeric"
+        )
+
+    with col2:
+        # st.write("Select Method")
+        selected_method: str = st.selectbox(
+            "Select Method", methods, index=0, key=f"{key}_method"
         )
 
     # Use the second column for categorical feature selection
-    with col2:
+    with col3:
         # st.write("Select Categorical Feature")
         selected_categorical_feature: str = st.selectbox(
-            "Select Categorical Feature", categorical_cols, index=1
+            "Select Categorical Feature",
+            categorical_cols,
+            index=1,
+            key=f"{key}_categorical",
         )
 
-    # Determine the aggregation based on the flag
+    # Determine the aggregation based on the selected method
     if selected_numeric_feature and selected_categorical_feature:
-        if flag == "mean":
-            st.subheader(
-                f"Mean of {selected_numeric_feature} by {selected_categorical_feature}"
-            )
+        if selected_method == "mean":
+            # st.subheader(
+            #     f"Mean of {selected_numeric_feature} by {selected_categorical_feature}"
+            # )
             aggregated_values: pd.DataFrame = (
                 df.groupby(selected_categorical_feature)[selected_numeric_feature]
                 .mean()
                 .reset_index()
             )
-        elif flag == "sum":
-            st.subheader(
-                f"Sum of {selected_numeric_feature} by {selected_categorical_feature}"
-            )
+        elif selected_method == "sum":
+            # st.subheader(
+            #     f"Sum of {selected_numeric_feature} by {selected_categorical_feature}"
+            # )
             aggregated_values = (
                 df.groupby(selected_categorical_feature)[selected_numeric_feature]
                 .sum()
                 .reset_index()
             )
-        elif flag == "count":
-            st.subheader(
-                f"Count of {selected_numeric_feature} by {selected_categorical_feature}"
-            )
+        elif selected_method == "count":
+            # st.subheader(
+            #     f"Count of {selected_numeric_feature} by {selected_categorical_feature}"
+            # )
             aggregated_values = (
                 df.groupby(selected_categorical_feature)[selected_numeric_feature]
                 .count()
                 .reset_index()
             )
         else:
-            st.error("Invalid flag. Please use 'mean', 'sum', or 'count'.")
+            st.error("Invalid method. Please use 'mean', 'sum', or 'count'.")
             return
 
         # Plot the bar plot
@@ -85,7 +96,7 @@ def visualize_bar_plot(
             aggregated_values,
             x=selected_categorical_feature,
             y=selected_numeric_feature,
-            title=f"Bar Plot of {flag.capitalize()} {selected_numeric_feature} by {selected_categorical_feature}",
+            title=f"Bar Plot of {selected_method.capitalize()} {selected_numeric_feature} by {selected_categorical_feature}",
             color=selected_categorical_feature,
             color_discrete_sequence=px.colors.qualitative.Set2,
         )
@@ -110,13 +121,14 @@ def visualize_comparison_box(
     df: pd.DataFrame,
     numeric_cols: list[str],
     categorical_cols: list[str],
+    key="visualize_comparison_box",
     background_color: str = "white",
     text_color: str = "black",
     # width: int = 1000,
     # height: int = 600,
 ) -> None:
     """Visualize the comparison between selected numeric and categorical columns using Plotly."""
-    display_centered_title("Box Plot", color="red")
+    # display_centered_title("Box Plot", color="red")
     st.markdown("""---""")
     # # Ensure width and height are integers
     # width = int(width)
@@ -129,21 +141,24 @@ def visualize_comparison_box(
     with col1:
         # st.write("Select Numeric Feature")
         selected_numeric_feature: str = st.selectbox(
-            "Select Numeric Feature", numeric_cols, index=1
+            "Select Numeric Feature", numeric_cols, index=1, key=f"{key}_numeric"
         )
 
     # Use the second column for categorical feature selection
     with col2:
         # st.write("Select Categorical Feature")
         selected_categorical_feature: str = st.selectbox(
-            "Select Categorical Feature", categorical_cols, index=1
+            "Select Categorical Feature",
+            categorical_cols,
+            index=1,
+            key=f"{key}_categorical",
         )
 
     # Plot the comparison
     if selected_numeric_feature and selected_categorical_feature:
-        st.subheader(
-            f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
-        )
+        # st.subheader(
+        #     f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
+        # )
         fig: Figure = px.box(
             df,
             x=selected_categorical_feature,
@@ -177,13 +192,14 @@ def visualize_comparison_violin(
     df: pd.DataFrame,
     numeric_cols: list[str],
     categorical_cols: list[str],
+    key="visualize_comparison_violin",
     background_color: str = "white",
     text_color: str = "black",
     # width: int = 1000,
     # height: int = 600,
 ) -> None:
     """Visualize the comparison between selected numeric and categorical columns using Plotly."""
-    display_centered_title("Violin Plot", color="red")
+    # display_centered_title("Violin Plot", color="red")
     st.markdown("""---""")
     # # Ensure width and height are integers
     # width = int(width)
@@ -196,21 +212,24 @@ def visualize_comparison_violin(
     with col1:
         # st.write("Select Numeric Feature")
         selected_numeric_feature: str = st.selectbox(
-            "Select Numeric Feature", numeric_cols, index=1
+            "Select Numeric Feature", numeric_cols, index=1, key=f"{key}_numeric"
         )
 
     # Use the second column for categorical feature selection
     with col2:
         # st.write("Select Categorical Feature")
         selected_categorical_feature: str = st.selectbox(
-            "Select Categorical Feature", categorical_cols, index=1
+            "Select Categorical Feature",
+            categorical_cols,
+            index=1,
+            key=f"{key}_categorical",
         )
 
     # Plot the comparison
     if selected_numeric_feature and selected_categorical_feature:
-        st.subheader(
-            f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
-        )
+        # st.subheader(
+        #     f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
+        # )
         fig: Figure = px.violin(
             df,
             x=selected_categorical_feature,
@@ -241,13 +260,14 @@ def visualize_comparison_strip(
     df: pd.DataFrame,
     numeric_cols: list[str],
     categorical_cols: list[str],
+    key="visualize_comparison_strip",
     background_color: str = "white",
     text_color: str = "black",
     # width: int = 1000,
     # height: int = 600,
 ) -> None:
     """Visualize the comparison between selected numeric and categorical columns using Plotly."""
-    display_centered_title("Strip Plot", color="red")
+    # display_centered_title("Strip Plot", color="red")
     st.markdown("""---""")
     # # Ensure width and height are integers
     # width = int(width)
@@ -260,21 +280,24 @@ def visualize_comparison_strip(
     with col1:
         # st.write("Select Numeric Feature")
         selected_numeric_feature: str = st.selectbox(
-            "Select Numeric Feature", numeric_cols, index=1
+            "Select Numeric Feature", numeric_cols, index=1, key=f"{key}_numeric"
         )
 
     # Use the second column for categorical feature selection
     with col2:
         # st.write("Select Categorical Feature")
         selected_categorical_feature: str = st.selectbox(
-            "Select Categorical Feature", categorical_cols, index=1
+            "Select Categorical Feature",
+            categorical_cols,
+            index=1,
+            key=f"{key}_categorical",
         )
 
     # Plot the comparison
     if selected_numeric_feature and selected_categorical_feature:
-        st.subheader(
-            f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
-        )
+        # st.subheader(
+        #     f"Comparison of {selected_numeric_feature} by {selected_categorical_feature}"
+        # )
         fig: Figure = px.strip(
             df,
             x=selected_categorical_feature,
@@ -303,13 +326,14 @@ def visualize_comparison_strip(
 def plot_stacked_bar_chart(
     df: pd.DataFrame,
     categorical_cols: list[str],
+    key="plot_stacked_bar_chart",
     background_color: str = "white",
     text_color: str = "black",
     # width: int = 1000,
     # height: int = 600,
 ) -> None:
     """Plot a stacked bar chart for selected categorical features with customizable colors."""
-    display_centered_title("Stacked Bar Chart", color="red")
+    # display_centered_title("Stacked Bar Chart", color="red")
     st.markdown("""---""")
     # # Ensure width and height are integers
     # width = int(width)
@@ -317,7 +341,10 @@ def plot_stacked_bar_chart(
 
     # Allow users to select which categorical features to include
     selected_features: list[str] = st.multiselect(
-        "Select Categorical Features", categorical_cols, default=categorical_cols[:2]
+        "Select Categorical Features",
+        categorical_cols,
+        default=categorical_cols[:2],
+        key=f"{key}_categorical",
     )
 
     if len(selected_features) < 2:
@@ -358,6 +385,7 @@ def plot_stacked_bar_chart(
         plot_bgcolor=background_color,
         paper_bgcolor=background_color,
         font=dict(color=text_color),
+        title_font=dict(color=text_color),
         # width=width,
         # height=height,
     )

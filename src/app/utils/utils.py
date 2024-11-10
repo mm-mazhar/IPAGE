@@ -21,13 +21,30 @@ def load_data(file_path: str) -> pd.DataFrame:
     return pd.read_csv(file_path)
 
 
-# Display centered title
+# Display centered title H1
 def display_centered_title(title: str, color: str = "black") -> None:
     """Display a centered title in Streamlit with an optional color."""
     st.markdown(
         f"<h1 style='text-align: center; color: {color};'>{title}</h1>",
         unsafe_allow_html=True,
     )
+
+# Display centered title H3
+def title_h3(title: str, color: str = "black") -> None:
+    """Display a centered title in Streamlit with an optional color."""
+    st.markdown(
+        f"<h3 style='text-align: center; color: {color};'>{title}</h3>",
+        unsafe_allow_html=True,
+    )
+
+
+def color_ideal_values(val, min_val, max_val, color) -> str:
+    return f"color: {color};" if min_val <= val <= max_val else ""
+
+
+def highlight_ideal_values(val, min_val, max_val, color) -> str:
+    color = f"background-color: {color}" if min_val <= val <= max_val else ""
+    return color
 
 
 def get_categorical_columns(df: pd.DataFrame) -> list[str]:
