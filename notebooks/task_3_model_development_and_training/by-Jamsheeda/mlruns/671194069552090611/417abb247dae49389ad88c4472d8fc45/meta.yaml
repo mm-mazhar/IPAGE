@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/417abb247dae49389ad88c4472d8fc45/artifacts
+end_time: 1731059774721
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: active
+run_id: 417abb247dae49389ad88c4472d8fc45
+run_name: wise-steed-635
+run_uuid: 417abb247dae49389ad88c4472d8fc45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731059774702
+status: 3
+tags: []
+user_id: jamsheedakadengal

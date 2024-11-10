@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/eb6efe57e069436382408d512ac00a6f/artifacts
+deleted_time: 1731058752816
+end_time: 1731013849789
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: eb6efe57e069436382408d512ac00a6f
+run_name: gifted-smelt-653
+run_uuid: eb6efe57e069436382408d512ac00a6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731013849645
+status: 3
+tags: []
+user_id: jamsheedakadengal
