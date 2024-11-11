@@ -58,5 +58,6 @@ dvc remote add gdrive_model gdrive://<model_folder_id>
 You can get the `folder_id` using the Google Drive URL link to the shared project folder
 
 - `https://drive.google.com/drive/folders/<folder_id>`
+
 [1]: https://dvc.org/ "DVC"
 [2]: https://dvc.org/doc/install/linux "Linux"
