@@ -261,3 +261,6 @@ dmypy.json
 
 # data
 2410_iPAGE_SoilData_cleaned.xlsx
+
+# google service credential
+dvc-drive-440606-5c30764e4152.json
