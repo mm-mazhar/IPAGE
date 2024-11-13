@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/7fb7efa39d07488286b8a6720efeb7da/artifacts
+end_time: 1731059774255
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: active
+run_id: 7fb7efa39d07488286b8a6720efeb7da
+run_name: masked-robin-90
+run_uuid: 7fb7efa39d07488286b8a6720efeb7da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731059774114
+status: 3
+tags: []
+user_id: jamsheedakadengal

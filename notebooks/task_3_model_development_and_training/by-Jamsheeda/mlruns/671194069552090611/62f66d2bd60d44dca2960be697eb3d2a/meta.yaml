@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/62f66d2bd60d44dca2960be697eb3d2a/artifacts
+deleted_time: 1731058752819
+end_time: 1731058649511
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: 62f66d2bd60d44dca2960be697eb3d2a
+run_name: receptive-dolphin-8
+run_uuid: 62f66d2bd60d44dca2960be697eb3d2a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731058649372
+status: 3
+tags: []
+user_id: jamsheedakadengal

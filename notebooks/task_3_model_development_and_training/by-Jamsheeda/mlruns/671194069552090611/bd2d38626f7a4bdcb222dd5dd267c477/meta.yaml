@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/bd2d38626f7a4bdcb222dd5dd267c477/artifacts
+deleted_time: 1731058752814
+end_time: 1730984898722
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: bd2d38626f7a4bdcb222dd5dd267c477
+run_name: adaptable-zebra-558
+run_uuid: bd2d38626f7a4bdcb222dd5dd267c477
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730984898583
+status: 3
+tags: []
+user_id: jamsheedakadengal
