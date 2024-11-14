@@ -35,9 +35,9 @@ def verify_file(filename: str, data_dir: str | None = None):
         data_dir = absolute_path.joinpath(data_dir)
     filepath = data_dir.joinpath(filename)
 
-    if not data_dir.is_dir():
-        raise FileNotFoundError(f'Directory not found: "{str(data_dir)}"')
-
+    if not filepath.exists():
+        raise FileNotFoundError(f'File not found: "{str(filepath)}"')
+    
     if not filepath.is_file():
         raise FileNotFoundError(f'File not found: "{str(filepath)}"')
 
