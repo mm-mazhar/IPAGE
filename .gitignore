@@ -261,3 +261,12 @@ dmypy.json
 
 # data
 2410_iPAGE_SoilData_cleaned.xlsx
+
+# google service credential
+dvc-drive-440606-5c30764e4152.json
+
+#Nix shell files
+shell.nix
+flake.nix
+flake.lock
+default.nix
