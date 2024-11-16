@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/3962ad0ab23f44cf9afef0950b87cc9c/artifacts
+deleted_time: 1731058752825
+end_time: 1730984905845
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: 3962ad0ab23f44cf9afef0950b87cc9c
+run_name: skittish-sheep-227
+run_uuid: 3962ad0ab23f44cf9afef0950b87cc9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730984905705
+status: 3
+tags: []
+user_id: jamsheedakadengal

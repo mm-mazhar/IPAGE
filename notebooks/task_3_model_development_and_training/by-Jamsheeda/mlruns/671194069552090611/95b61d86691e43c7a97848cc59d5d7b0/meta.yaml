@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/95b61d86691e43c7a97848cc59d5d7b0/artifacts
+deleted_time: 1730984776973
+end_time: 1730984588127
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: 95b61d86691e43c7a97848cc59d5d7b0
+run_name: rumbling-toad-742
+run_uuid: 95b61d86691e43c7a97848cc59d5d7b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730984588106
+status: 3
+tags: []
+user_id: jamsheedakadengal

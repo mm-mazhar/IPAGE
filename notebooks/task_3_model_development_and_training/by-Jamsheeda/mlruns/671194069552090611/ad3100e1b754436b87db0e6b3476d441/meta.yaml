@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/ad3100e1b754436b87db0e6b3476d441/artifacts
+deleted_time: 1731058752817
+end_time: 1731058306397
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: ad3100e1b754436b87db0e6b3476d441
+run_name: likeable-shark-581
+run_uuid: ad3100e1b754436b87db0e6b3476d441
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731058306253
+status: 3
+tags: []
+user_id: jamsheedakadengal

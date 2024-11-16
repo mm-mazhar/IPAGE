@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/6a06865112504e21b817e37a9741ff0f/artifacts
+end_time: 1731059774695
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: active
+run_id: 6a06865112504e21b817e37a9741ff0f
+run_name: spiffy-colt-747
+run_uuid: 6a06865112504e21b817e37a9741ff0f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731059774534
+status: 3
+tags: []
+user_id: jamsheedakadengal

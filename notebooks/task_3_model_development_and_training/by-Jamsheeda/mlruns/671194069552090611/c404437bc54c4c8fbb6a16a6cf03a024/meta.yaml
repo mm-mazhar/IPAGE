@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/jamsheedakadengal/Desktop/Omdena/IPAGE/notebooks/task_3_model_development_and_training/by-Jamsheeda/mlruns/671194069552090611/c404437bc54c4c8fbb6a16a6cf03a024/artifacts
+deleted_time: 1731058752824
+end_time: 1731058306042
+entry_point_name: ''
+experiment_id: '671194069552090611'
+lifecycle_stage: deleted
+run_id: c404437bc54c4c8fbb6a16a6cf03a024
+run_name: silent-loon-665
+run_uuid: c404437bc54c4c8fbb6a16a6cf03a024
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731058306023
+status: 3
+tags: []
+user_id: jamsheedakadengal
