@@ -40,4 +40,4 @@ with open(requirements_path, "a") as req_file:
             if formatted_dependency not in existing_requirements:
                 req_file.write(f"{formatted_dependency}\n")
 
-print(f"Dependencies have been appended to {requirements_path}.")
+# print(f"Dependencies have been appended to {requirements_path}.")
