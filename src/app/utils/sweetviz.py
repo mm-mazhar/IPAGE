@@ -14,13 +14,13 @@ import sweetviz as sv
 from streamlit.delta_generator import DeltaGenerator
 
 
-def st_display_sweetviz(report_path, width=1325, height=600) -> None:
+def st_display_sweetviz(report_path, width=1000, height=600) -> None:
     # Read HTML file content
     with open(report_path, "r", encoding="utf-8") as file:
-        report_html = file.read()
+        report_html: str = file.read()
 
     # Adjust outer div to align with the sidebar
-    left_aligned_report_html = f"""
+    left_aligned_report_html: str = f"""
     <div style="display: flex; justify-content: flex-start; padding: 0; margin: 0;">
         <div style="width: 100%; max-width: {width}px; height: {height}px; overflow: auto; border: 1px solid #ddd; padding: 0px; text-align: left;">
             {report_html}
@@ -61,7 +61,7 @@ def generate_sweetviz_report(data: pd.DataFrame, report_path: str) -> None:
     # Save the report as HTML
     progress_text.text("Saving Sweetviz report...")
     report.show_html(
-        filepath=report_path, open_browser=False, layout="widescreen", scale=0.7
+        filepath=report_path, open_browser=False, layout="widescreen", scale=0.6
     )
 
     # Simulate finalization progress

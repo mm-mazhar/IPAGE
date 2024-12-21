@@ -9,6 +9,7 @@
 import numpy as np
 import pandas as pd
 import plotly.express as px
+from plotly.graph_objs._figure import Figure
 import streamlit as st
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
@@ -42,7 +43,7 @@ def plot_elbow_curve(
         inertia.append(kmeans.inertia_)
 
     # Create the elbow curve using Plotly Express
-    fig = px.line(
+    fig: Figure = px.line(
         x=list(K),
         y=inertia,
         markers=True,

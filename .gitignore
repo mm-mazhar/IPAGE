@@ -259,8 +259,31 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# File History
+.history/*
+filetreecontext.config.json
+.cursorrules
+
 # data
 2410_iPAGE_SoilData_cleaned.xlsx
+data/merged_2.csv
+data/merged_3.csv
+data/merged_v1.csv
+data/merged_v2.csv
+data/merge_data.py
+
+# App Data Folder
+src/data/2410_iPAGE_SoilData_cleaned.csv
+src/data/2410_iPAGE_SoilData_cleaned.xlsx
+src/data/merged_v1.csv
+
+# Notebooks Folder
+notebooks/task_3_model_development_and_training/by-Maz/test.py
+notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
+
+# App Folder
+src/app/utils/scatter_plot_1.py
+src/app/app - Copy.py
 
 # google service credential
 dvc-drive-440606-5c30764e4152.json
@@ -270,3 +293,4 @@ shell.nix
 flake.nix
 flake.lock
 default.nix
+.aider*
