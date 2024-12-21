@@ -280,6 +280,11 @@ src/data/merged_v1.csv
 # Notebooks Folder
 notebooks/task_3_model_development_and_training/by-Maz/test.py
 notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
+# notebooks/task_3_model_development_and_training/by-Maz/lasso_Boron.ipynb
+mlruns/*
+notebooks/task_3_model_development_and_training/by-Maz/mlruns/*
+notebooks/task_3_model_development_and_training/by-Maz/mlruns/0/meta.yaml
+notebooks/task_3_model_development_and_training/by-Maz/lasso_boron_pipeline.pkl
 
 # App Folder
 src/app/utils/scatter_plot_1.py
