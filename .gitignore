@@ -284,7 +284,9 @@ notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
 mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/0/meta.yaml
-notebooks/task_3_model_development_and_training/by-Maz/lasso_boron_pipeline.pkl
+notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
+catboost_info/*
 
 # App Folder
 src/app/utils/scatter_plot_1.py
