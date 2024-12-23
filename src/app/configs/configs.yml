@@ -1,13 +1,18 @@
 PATHS:
-  DATASET: "./src/data/2410_iPAGE_SoilData_cleaned.csv"
+  DATASET: "./src/data/merged_v2.csv"
   REPORT: "./src/visualizations/SWEETVIZ_REPORT.html"
   MODEL_DIR: "./app/src/models/checkpoints"
   SAVED_MODEL: "9_79.08538.pth"
 
 STAPP:
+  CONFIGS:
+    PAGE_TITLE: "IPAGE DASHBOARD"
+    PAGE_ICON: ":bar_chart:"
+    LAYOUT: "wide"
+    SIDEBAR_TITLE: "IPAGE"
   PAGES:
     DATA_OVERVIEW: "Data Overview"
-    EDA: "Exploratory Data Analysis"
+    DASHBOARD: "Dashboard"
     # CORR: "Correlation Matrix"
     # FEATURE_ANALYSIS: "Feature Analysis"
     K_MEANS_PCA: "K-Means and PCA"
@@ -27,6 +32,13 @@ STAPP:
     SUB_TITLE_COLOR: "red"
     # COL_BACKGROUND_COLOR: "#006400"
     COL_BACKGROUND_COLOR: "lightgreen"
+    FOLIUM:
+      WIDTH: "1200"
+      HEIGHT: "300"
+      ZOOM_START: 4
+      LOCATION: [7.49508, 9.0820]
+      TILES: "Stamen Terrain"
+      ATTRIBUTION: "Map data © OpenStreetMap contributors"
   IDEAL_RANGES:
     pH: [6.0, 7.5]
     SOC_PERCENT: [1.0, 3.0]
@@ -36,6 +48,13 @@ STAPP:
     FIG_SIZE: [4, 2]
     DIST_PLOT_BACKGROUND_COLOR: "gray"
     DIST_PLOT_COLOR: "red"
+    COL_1: "pH"
+    COL_2: "SOC"
+    COL_3: "Boron"
+    COL_4: "Zinc"
+  EXCLUDE_COLS:
+    COL_1: "longitude"
+    COL_2: "latitude"
 
 MODEL:
   BATCH_SIZE: 32

@@ -38,7 +38,7 @@ def plot_correlation_heatmap(
 
 
 def generate_correlation_story(correlation_matrix: pd.DataFrame) -> str:
-    story = []
+    story: list[str] = []
     for col in correlation_matrix.columns:
         for row in correlation_matrix.index:
             if col != row:

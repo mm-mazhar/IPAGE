@@ -43,7 +43,7 @@ def color_ideal_values(val, min_val, max_val, color) -> str:
 
 
 def highlight_ideal_values(val, min_val, max_val, color) -> str:
-    color = f"background-color: {color}" if min_val <= val <= max_val else ""
+    color: str = f"background-color: {color}" if min_val <= val <= max_val else ""
     return color
 
 
@@ -52,9 +52,21 @@ def get_categorical_columns(df: pd.DataFrame) -> list[str]:
     return df.select_dtypes(include=["object", "category"]).columns.tolist()
 
 
-def get_numeric_columns(df: pd.DataFrame) -> list[str]:
-    """Return a list of numeric column names from the DataFrame."""
-    return df.select_dtypes(include=[np.number]).columns.tolist()
+def get_numeric_columns(df: pd.DataFrame, exclude_columns: list[str] = None) -> list[str]:
+    """
+    Return a list of numeric column names from the DataFrame, excluding specific columns.
+    
+    Args:
+        df (pd.DataFrame): Input DataFrame.
+        exclude_columns (list[str]): List of column names to exclude from the result.
+
+    Returns:
+        list[str]: List of numeric column names excluding specified columns.
+    """
+    exclude_columns = exclude_columns or []  # Default to an empty list if None is provided
+    numeric_columns: list[str] = df.select_dtypes(include=[np.number]).columns.tolist()
+    return [col for col in numeric_columns if col not in exclude_columns]
+
 
 
 def visualize_distributions(

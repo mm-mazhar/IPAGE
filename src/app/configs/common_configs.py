@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # """
 # common_configs.py
-# Created on Oct 21, 2024
+# Created on Dec 15, 2024
 # @ Author: Mazhar
 # """
 
 import logging
+import os
 from pathlib import Path
 from typing import Any
 
-import os
 import yaml
 from colorama import Fore, Style, init
 from easydict import EasyDict
@@ -22,6 +22,7 @@ CONFIG_YML_PATH = "./src/app/configs/configs.yml"
 # # Use an absolute path for CONFIG_YML_PATH
 # CONFIG_YML_PATH = os.path.join(os.path.dirname(__file__))
 # print(f"CONFIG_YML_PATH: {CONFIG_YML_PATH}")
+
 
 # Custom formatter to include colors in logs
 class ColoredFormatter(logging.Formatter):

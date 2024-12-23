@@ -12,6 +12,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import streamlit as st
+from plotly.graph_objs._figure import Figure
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
@@ -54,7 +55,7 @@ def perform_kmeans_and_pca(
     numeric_data["PCA2"] = pca_data[:, 1]
 
     # Plotting PCA components with cluster labels using Plotly Express
-    fig = px.scatter(
+    fig: Figure = px.scatter(
         numeric_data,
         x="PCA1",
         y="PCA2",
@@ -123,7 +124,7 @@ def plot_cluster_histograms(
 
     Parameters:
     - data: pd.DataFrame - The input data with cluster labels.
-    - feature: str - The feature to plot.
+    - feature: str - The feature to plot. (numeric feature)
     - background_color: str - Background color for the plot.
     - text_color: str - Text color for the plot.
     """
@@ -131,7 +132,7 @@ def plot_cluster_histograms(
     # st.markdown("""---""")
 
     # Create the histogram using Plotly Express
-    fig = px.histogram(
+    fig: Figure = px.histogram(
         data,
         x=feature,
         color="Cluster",
@@ -165,59 +166,50 @@ def plot_cluster_histograms(
 
 
 def plot_cluster_comparisons(
-    data: pd.DataFrame, background_color: str = "white", text_color: str = "black"
+    data: pd.DataFrame,
+    categorical_feature: str,
+    background_color: str = "white",
+    text_color: str = "black",
 ) -> None:
     """
     Plot comparisons of clusters with both categorical features using Plotly Express.
 
     Parameters:
     - data: pd.DataFrame - The input data with cluster labels.
+    - categorical_feature: str - The categorical feature to plot.
     - background_color: str - Background color for the plot.
     - text_color: str - Text color for the plot.
     """
-    col1, col2 = st.columns([1, 8])
-    with col1:
-        # Add vertical space to center the content
-        for _ in range(12):
-            st.write("")  # Add empty strings to create space
 
-        # Select a single categorical feature for comparison
-        categorical_feature = st.selectbox(
-            "Select Categorical Feature",
-            options=data.select_dtypes(include=["object", "category"]).columns,
-            index=0,
-            key="plot_cluster_comparisons_categorical",
-        )
-    with col2:
-        # Plot categorical feature comparison
-        fig = px.histogram(
-            data,
-            x=categorical_feature,
-            color="Cluster",
-            barmode="group",
-            title=f"Bar Plot of {categorical_feature} by Cluster",
-            color_discrete_sequence=px.colors.qualitative.Set1,
-        )
-        fig.update_layout(
-            plot_bgcolor=background_color,
-            paper_bgcolor=background_color,
+    # Plot categorical feature comparison
+    fig: Figure = px.histogram(
+        data,
+        x=categorical_feature,
+        color="Cluster",
+        barmode="group",
+        title=f"Bar Plot | {categorical_feature} by Cluster",
+        color_discrete_sequence=px.colors.qualitative.Set1,
+    )
+    fig.update_layout(
+        plot_bgcolor=background_color,
+        paper_bgcolor=background_color,
+        font=dict(color=text_color),
+        title_font=dict(color=text_color),
+        xaxis=dict(
+            title=dict(text=categorical_feature, font=dict(color=text_color)),
+            tickfont=dict(color=text_color),
+        ),
+        yaxis=dict(
+            title=dict(text="Count", font=dict(color=text_color)),
+            tickfont=dict(color=text_color),
+        ),
+        legend=dict(
+            title="Legend",
             font=dict(color=text_color),
-            title_font=dict(color=text_color),
-            xaxis=dict(
-                title=dict(text=categorical_feature, font=dict(color=text_color)),
-                tickfont=dict(color=text_color),
-            ),
-            yaxis=dict(
-                title=dict(text="Count", font=dict(color=text_color)),
-                tickfont=dict(color=text_color),
-            ),
-            legend=dict(
-                title="Legend",
-                font=dict(color=text_color),
-                bgcolor=background_color,
-            ),
-        )
-        st.plotly_chart(fig)
+            bgcolor=background_color,
+        ),
+    )
+    st.plotly_chart(fig)
 
 
 def plot_cluster_boxplots(
@@ -231,18 +223,18 @@ def plot_cluster_boxplots(
 
     Parameters:
     - data: pd.DataFrame - The input data with cluster labels.
-    - feature: str - The feature to plot.
+    - feature: str - The feature to plot. (numeric feature)
     - background_color: str - Background color for the plot.
     - text_color: str - Text color for the plot.
     """
 
     # Create the box plot using Plotly Express
-    fig = px.box(
+    fig: Figure = px.box(
         data,
         x="Cluster",
         y=feature,
         color="Cluster",
-        title=f"Box Plot of {feature} by Cluster",
+        title=f"Box Plot | {feature} by Cluster",
         color_discrete_sequence=px.colors.qualitative.Set1,
     )
 
@@ -298,11 +290,11 @@ def plot_cluster_pairplot(
         return
 
     # Create the pair plot using Plotly Express
-    fig = px.scatter_matrix(
+    fig: Figure = px.scatter_matrix(
         data,
         dimensions=features,
         color="Cluster",
-        title="Pair Plot of Features by Cluster",
+        title=f"Pair Plot | {features} by Cluster",
         color_discrete_sequence=px.colors.qualitative.Set1,
     )
 
