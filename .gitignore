@@ -270,23 +270,34 @@ data/merged_2.csv
 data/merged_3.csv
 data/merged_v1.csv
 data/merged_v2.csv
+# data/merged_v3.csv
 data/merge_data.py
 
 # App Data Folder
 src/data/2410_iPAGE_SoilData_cleaned.csv
 src/data/2410_iPAGE_SoilData_cleaned.xlsx
 src/data/merged_v1.csv
+# src/data/merged_v3.csv
 
 # Notebooks Folder
 notebooks/task_3_model_development_and_training/by-Maz/test.py
+notebooks/task_3_model_development_and_training/by-Maz/boron_train_v1.py
+notebooks/task_3_model_development_and_training/by-Maz/lasso_Boron.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/zinc_train_v1.py
 notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
-# notebooks/task_3_model_development_and_training/by-Maz/lasso_Boron.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/train_multiple_targets_a.ipynb
+
+
 mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/0/meta.yaml
 notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
+notebooks/task_3_model_development_and_training/by-Maz/boron_train_v3.py
 notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
 catboost_info/*
+notebooks/task_3_model_development_and_training/by-Maz/catboost_info
+notebooks/task_3_model_development_and_training/by-Maz/best_model_summary_v1.csv
+notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_exp03.csv
 
 # App Folder
 src/app/utils/scatter_plot_1.py
