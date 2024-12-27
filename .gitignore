@@ -298,6 +298,7 @@ catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_info
 notebooks/task_3_model_development_and_training/by-Maz/best_model_summary_v1.csv
 notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_exp03.csv
+notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_best.csv
 
 # App Folder
 src/app/utils/scatter_plot_1.py
