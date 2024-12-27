@@ -1,4 +1,4 @@
 Target,Best Model,Test R² Score,Features,Model Path
-Boron,MultiOutputRegressor,0.7452827110135036,"longitude, latitude, Sand, Silt, Sulfur, Nitrogen, Phosphorus, Clay, pH, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Boron_GroupA_r2_0.7453_dateaset_v3.pkl
-Zinc,MultiOutputRegressor,0.5596523204381323,"Potassium, longitude, latitude, Silt, pH, Sand, Nitrogen, Sulfur, Phosphorus, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Zinc_GroupA_r2_0.5597_dateaset_v3.pkl
+Boron,MultiOutputRegressor,0.7406420130010931,"Sand, Silt, Sulfur, Nitrogen, Phosphorus, Clay, pH, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Boron_GroupA_r2_0.7406_dateaset_v3.pkl
+Zinc,MultiOutputRegressor,0.5473522972840122,"Potassium, Silt, pH, Sand, Nitrogen, Sulfur, Phosphorus, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Zinc_GroupA_r2_0.5474_dateaset_v3.pkl
 SOC,MultiOutputRegressor,0.850977977519491,"Nitrogen, Sulfur, Phosphorus, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_SVR_SOC_GroupB_r2_0.851_dateaset_v3.pkl
