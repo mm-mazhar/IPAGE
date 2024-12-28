@@ -1,4 +1,4 @@
-Target,Best Model,Test R² Score,Features,Model Path
-Boron,MultiOutputRegressor,0.7406420130010931,"Sand, Silt, Sulfur, Nitrogen, Phosphorus, Clay, pH, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Boron_GroupA_r2_0.7406_dateaset_v3.pkl
-Zinc,MultiOutputRegressor,0.5473522972840122,"Potassium, Silt, pH, Sand, Nitrogen, Sulfur, Phosphorus, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Zinc_GroupA_r2_0.5474_dateaset_v3.pkl
-SOC,MultiOutputRegressor,0.850977977519491,"Nitrogen, Sulfur, Phosphorus, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_SVR_SOC_GroupB_r2_0.851_dateaset_v3.pkl
+Target,Best Model,Validation R² Score,Test R² Score,Overfitting Status,Features,Model Path
+Boron,MultiOutputRegressor,0.7899145775219475,0.7406420130010931,Slight Overfitting,"Sand, Silt, Sulfur, Nitrogen, Phosphorus, Clay, pH, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Boron_GroupA_r2_0.7406_dataset_v3.pkl
+Zinc,MultiOutputRegressor,0.601787732142356,0.5473522972840122,High Overfitting,"Potassium, Silt, pH, Sand, Nitrogen, Sulfur, Phosphorus, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Zinc_GroupA_r2_0.5474_dataset_v3.pkl
+SOC,MultiOutputRegressor,0.8259297304546398,0.850977977519491,Slight Overfitting,"Nitrogen, Sulfur, Phosphorus, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_SVR_SOC_GroupB_r2_0.851_dataset_v3.pkl

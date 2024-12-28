@@ -295,7 +295,8 @@ notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
 notebooks/task_3_model_development_and_training/by-Maz/boron_train_v3.py
 notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
 catboost_info/*
-notebooks/task_3_model_development_and_training/by-Maz/catboost_info
+notebooks/task_3_model_development_and_training/by-Maz/catboost_info/*
+notebooks/task_3_model_development_and_training/by-Maz/catboost_infogi
 notebooks/task_3_model_development_and_training/by-Maz/best_model_summary_v1.csv
 notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_exp03.csv
 notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_best.csv
