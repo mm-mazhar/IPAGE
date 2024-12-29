@@ -7,11 +7,98 @@
 
 from typing import Any, Literal
 
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import boxcox
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import PowerTransformer
+
+
+def plot_geographical_features(
+    df, targets, lat_col="latitude", lon_col="longitude", figsize=(18, 6)
+):
+    """
+    Plot geographical distribution of targets on a map.
+
+    Parameters:
+    - df (pd.DataFrame): DataFrame containing data.
+    - features (list of str): List of feature column names to plot.
+    - lat_col (str): Column name for latitude.
+    - lon_col (str): Column name for longitude.
+    - figsize (tuple): Figure size.
+    """
+    # Number of features determines the number of subplots
+    num_targets = len(targets)
+
+    # Create subplots
+    fig, axes = plt.subplots(
+        1, num_targets, figsize=figsize, subplot_kw={"projection": ccrs.PlateCarree()}
+    )
+
+    # Ensure axes is iterable for a single subplot
+    if num_targets == 1:
+        axes = [axes]
+
+    # Loop through each feature and corresponding axis
+    for i, (target, ax) in enumerate(zip(targets, axes)):
+        # Add geographical features
+        ax.add_feature(cfeature.COASTLINE, linewidth=0.5)
+        ax.add_feature(cfeature.BORDERS, linestyle=":")
+        ax.add_feature(cfeature.LAND, edgecolor="black")
+        ax.add_feature(cfeature.LAKES, edgecolor="black")
+        ax.add_feature(cfeature.RIVERS, edgecolor="blue")
+        ax.add_feature(cfeature.STATES, edgecolor="red")
+
+        # Scatter plot for the feature
+        scatter = ax.scatter(
+            df[lon_col],
+            df[lat_col],
+            c=df[target],
+            cmap="viridis",
+            s=50,
+            alpha=0.7,
+            transform=ccrs.PlateCarree(),
+        )
+
+        # Add a title for each subplot
+        ax.set_title(f"{target} Distribution")
+
+        # Add a colorbar for each subplot
+        cbar = fig.colorbar(
+            scatter, ax=ax, orientation="vertical", shrink=0.7, label=target
+        )
+
+    # Add a main title for the figure
+    fig.suptitle("Geographical Distribution of Features", fontsize=16)
+
+    # Adjust spacing between subplots
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+
+    # Show the plots
+    plt.show()
+
+
+def get_overfitting_status(val_r2, test_r2):
+    """
+    Determines the overfitting status based on the difference between validation R² and test R².
+
+    Args:
+        val_r2 (float): Validation R² score.
+        test_r2 (float): Test R² score.
+
+    Returns:
+        tuple: (overfitting_status (str), overfitting_numeric (int))
+    """
+    diff = abs(val_r2 - test_r2)
+    if diff <= 0.02:
+        return "Not Overfitting", 0
+    elif 0.02 < diff <= 0.05:
+        return "Slight Overfitting", 1
+    else:
+        return "High Overfitting", 2
 
 
 def categorical_value_counts_to_df(df) -> pd.DataFrame:

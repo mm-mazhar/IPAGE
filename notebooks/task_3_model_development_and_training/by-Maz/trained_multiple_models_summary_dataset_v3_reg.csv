@@ -1,0 +1,4 @@
+Target,Best Model,Validation R² Score,Test R² Score,Overfitting Status,Features,Model Path
+Boron,MultiOutputRegressor,0.790721836001362,0.7404220777200778,High Overfitting,"Sand, Silt, Sulfur, Nitrogen, Phosphorus, Clay, pH, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Boron_GroupA_r2_0.7404_dataset_v3.pkl
+Zinc,MultiOutputRegressor,0.601787732142356,0.5473522972840122,High Overfitting,"Potassium, Silt, pH, Sand, Nitrogen, Sulfur, Phosphorus, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_Zinc_GroupA_r2_0.5474_dataset_v3.pkl
+SOC,MultiOutputRegressor,0.8259995661408238,0.845547441302629,Slight Overfitting,"Nitrogen, Sand, Silt, Sulfur, pH, Clay, Phosphorus, Potassium, Area, Soil group, Land class, Soil type",checkpoints\trained_multiple_models\Maz_CatBoost_SOC_GroupA_r2_0.8455_dataset_v3.pkl
