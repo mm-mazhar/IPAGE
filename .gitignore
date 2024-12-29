@@ -286,7 +286,10 @@ notebooks/task_3_model_development_and_training/by-Maz/lasso_Boron.ipynb
 notebooks/task_3_model_development_and_training/by-Maz/zinc_train_v1.py
 notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
 notebooks/task_3_model_development_and_training/by-Maz/train_multiple_targets_a.ipynb
-
+notebooks/task_3_model_development_and_training/by-Maz/TF-Project.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/TF-Regression.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/tensorflow_multiple_regression.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/tensorflow_model_utils.py
 
 mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/*
@@ -297,9 +300,7 @@ notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
 catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_infogi
-notebooks/task_3_model_development_and_training/by-Maz/best_model_summary_v1.csv
-notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_exp03.csv
-notebooks/task_3_model_development_and_training/by-Maz/trained_multiple_models_summary_dataset_v3_best.csv
+
 
 # App Folder
 src/app/utils/scatter_plot_1.py
