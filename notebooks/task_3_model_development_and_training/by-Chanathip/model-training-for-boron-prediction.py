@@ -32,14 +32,14 @@ model_name = args.model_name
 
 # %%
 
-df = pd.read_csv('../../../data/merged_v3.csv')
+df = pd.read_csv('../../../data/merged_v4.csv')
 
 
 # %%
 df = df.drop(['SOC', 'Zinc', 'longitude', 'latitude'], axis=1)
 
 ## drop outlier of Boron
-df = df[df['Boron'] <= 5]
+# df = df[df['Boron'] <= 5]
 
 print('total data:', len(df))
 
@@ -59,7 +59,7 @@ x_train, x_test, y_train, y_test = train_test_split(features, labels, test_size=
 models = {
     'ridge': Ridge(alpha = 10, max_iter=100, random_state=0), 
     'bagging': BaggingRegressor(n_estimators=500, random_state=0), 
-    'rf': RandomForestRegressor(n_estimators=500, min_samples_split=7, random_state=0), 
+    'rf': RandomForestRegressor(n_estimators=500, min_samples_leaf=7, min_samples_split = 2, random_state=0), 
     'xgb': XGBRegressor(n_estimators = 100, learning_rate = 0.1, random_state=0)
 }
 
@@ -69,7 +69,7 @@ model = models[model_name]
 
 print('fitting model', model_name)
 
-mlflow.set_experiment('Chanathip_merged-v3_{}_Boron_Best-model-from-grid-search_20241227'.format(model_name))
+mlflow.set_experiment('Chanathip_merged-v4_{}_Boron_Best-model-from-grid-search_20241230'.format(model_name))
 
 with mlflow.start_run():
 
@@ -93,7 +93,7 @@ with mlflow.start_run():
                 ('cat', cat_transformer, cat_cols)
             ],
             remainder= 'passthrough'
-        )
+    )
 
     col_transformer.fit(x_train)
 
