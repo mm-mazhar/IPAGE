@@ -72,7 +72,7 @@ def plot_geographical_features(
         )
 
     # Add a main title for the figure
-    fig.suptitle("Geographical Distribution of Features", fontsize=16)
+    fig.suptitle("Geographical Distribution", fontsize=16)
 
     # Adjust spacing between subplots
     plt.tight_layout(rect=[0, 0, 1, 0.95])
@@ -95,7 +95,7 @@ def get_overfitting_status(val_r2, test_r2):
     diff = abs(val_r2 - test_r2)
     if diff <= 0.02:
         return "Not Overfitting", 0
-    elif 0.02 < diff <= 0.05:
+    elif 0.02 < diff <= 0.06:
         return "Slight Overfitting", 1
     else:
         return "High Overfitting", 2
