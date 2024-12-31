@@ -282,21 +282,29 @@ src/data/merged_v1.csv
 # Notebooks Folder
 notebooks/task_3_model_development_and_training/by-Maz/test.py
 notebooks/task_3_model_development_and_training/by-Maz/boron_train_v1.py
+notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
+notebooks/task_3_model_development_and_training/by-Maz/boron_train_v3.py
 notebooks/task_3_model_development_and_training/by-Maz/lasso_Boron.ipynb
-notebooks/task_3_model_development_and_training/by-Maz/zinc_train_v1.py
+
 notebooks/task_3_model_development_and_training/by-Maz/Untitled.ipynb
 notebooks/task_3_model_development_and_training/by-Maz/train_multiple_targets_a.ipynb
-notebooks/task_3_model_development_and_training/by-Maz/TF-Project.ipynb
-notebooks/task_3_model_development_and_training/by-Maz/TF-Regression.ipynb
+
 notebooks/task_3_model_development_and_training/by-Maz/tensorflow_multiple_regression.ipynb
 notebooks/task_3_model_development_and_training/by-Maz/tensorflow_model_utils.py
+
+notebooks/task_3_model_development_and_training/by-Maz/zinc_train_v1.py
+notebooks/task_3_model_development_and_training/by-Maz/train_zinc.ipynb
+notebooks/task_3_model_development_and_training/by-Maz/trained_Zinc_models_summary_dataset_v3.csv
 
 mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/*
 notebooks/task_3_model_development_and_training/by-Maz/mlruns/0/meta.yaml
-notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
-notebooks/task_3_model_development_and_training/by-Maz/boron_train_v3.py
-notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
+
+# Checkpoints Folder
+# notebooks/task_3_model_development_and_training/by-Maz/checkpoints/*
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/trained_multiple_models
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/trained_Zinc_models
+
 catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_infogi
