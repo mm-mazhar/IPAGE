@@ -3,9 +3,9 @@
 from sqlalchemy import Column, Integer, String, DateTime, Float
 from sqlalchemy.orm import declarative_base
 
-base = declarative_base()
+Base = declarative_base()
 
-class SoilData(base):
+class SoilData(Base):
     __tablename__ = 'soil_data'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
