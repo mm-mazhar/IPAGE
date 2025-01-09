@@ -2,6 +2,8 @@
 
 from sqlalchemy import Column, Integer, String, DateTime, Float
 from sqlalchemy.orm import declarative_base
+from datetime import datetime, timezone
+
 
 Base = declarative_base()
 
@@ -9,7 +11,7 @@ class SoilData(Base):
     __tablename__ = 'soil_data'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    date = Column(DateTime)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
     longitude = Column(Float)
     latitude = Column(Float)
     area = Column(Float)
