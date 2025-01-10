@@ -34,7 +34,7 @@ def remove_duplicates(df: pd.DataFrame, exclude_cols=["date"]) -> None:
         inplace=True
     )
 
-def get_geospacial_details(row: pd.Series) -> list[list[str|float]]:
+def get_geospacial_details(row: pd.Series) -> list[list[str,float]]:
     # REFERENECE:
     # 1. https://github.com/OmdenaAI/IPAGE/blob/main/notebooks/task_1_data_collection_and_preprocessing/by-tasfiq/geospatial_processing.ipynb
     # 2. https://github.com/OmdenaAI/IPAGE/blob/main/notebooks/task_1_data_collection_and_preprocessing/by-Gideon/geospacial_preprocessing.ipynb

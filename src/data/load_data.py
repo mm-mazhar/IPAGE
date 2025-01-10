@@ -9,13 +9,13 @@ The absolute path should always point to the root folder '~/*/IPAGE' where the
 """
 
 from pathlib import Path
-
 import pandas as pd
+from typing import Union
 
 SUPPORTED_FORMATS = [".csv", ".xls", ".xlsx"]
 
 
-def verify_file(filename: str, data_dir: str | None = None):
+def verify_file(filename: str, data_dir: Union[str, None] = None):
     """
     Check for existing file with supported format.
 
@@ -65,7 +65,7 @@ def load_csv(filepath: str) -> pd.DataFrame:
     return pd.read_csv(filepath)
 
 
-def load_excel(filepath: str, sheet_name: int | str | list | None = 0) -> pd.DataFrame:
+def load_excel(filepath: str, sheet_name: Union[int, str, list, None] = 0) -> pd.DataFrame:
     """
     Load a dataset from an Excel file.
 
