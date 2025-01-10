@@ -1,10 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,File, UploadFile
 from pydantic import BaseModel
 from typing import Literal, Union
-import datetime
 from src.api.db import DB
 from src.api.models import SoilData
 from sqlalchemy.orm import class_mapper
+from fastapi.responses import FileResponse
+import os
 
 
 app = FastAPI()
@@ -86,3 +87,9 @@ def create_data(data: RawData):
 @app.post("/predict/")
 def predict(data: RawData):
     return {"status": "Success", "message": data}
+
+@app.post("/predict/upload/", response_class=FileResponse)
+def upload_prediction_data(file: UploadFile = File(...)):
+    filepath = os.path.join(os.getcwd(), "data", file.filename)
+    print(filepath)
+    return filepath
