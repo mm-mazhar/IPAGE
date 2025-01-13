@@ -1,11 +1,12 @@
 from src.data.load_data import load_data
+import numpy as np
 from src.data.preprocess_data import remove_duplicates, remove_outliers, get_geospacial_details
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.compose import ColumnTransformer
+from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.imputer import SimpleImputer
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor, BaggingRegressor
 from sklearn.linear_model import Ridge, Lasso, ElasticNet
@@ -28,7 +29,7 @@ MODEL_FILE_PATH.mkdir(parents=True, exist_ok=True)
 
 class DataPreprocessor:
     def __init__(
-            self, col_to_drop: Iterable,
+            self, col_to_drop: Iterable = COLS_TO_DROP,
             filename: str = f"merged_{DATASET_VERSION}.csv", filedir: str = "data"
         ):
         self.col_to_drop: Iterable = col_to_drop
@@ -41,49 +42,67 @@ class DataPreprocessor:
         return self.data
 
 
-class ModelData:
+class BaseModelData:
+    data = None
+    X_train = None
+    X_test = None
+    y_train = None
+    y_test = None
     # Code for Modeling pipeline, Model fiting goes here
-    def __init__(self, target_variables, random_state=RANDOM_STATE):
+    def __init__(self, target_variables):
         self.target_variables = target_variables
-        self.random_state = random_state
         self.best_model = None
         self.pipeline = None
 
-    def create_pipeline(self):
+    @classmethod
+    def split_data(cls, data: pd.DataFrame, target_variables):
+        cls.data = data
+        # Remove any column in `ALL_TARGET` that has not been selected
+        # in `self.target_variables` (i.e. target columns that are not been trained)
+        for col in cls.data.columns:
+            if col not in target_variables and col in ALL_TARGETS:
+                    cls.data.drop(col, axis=1, inplace=True)
+        X = cls.data.drop(ALL_TARGETS, axis=1)
+        y = cls.data[target_variables]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
+        cls.X_train = pd.DataFrame(X_train, columns=X.columns)
+        cls.X_test = pd.DataFrame(X_test, columns=X.columns)
+        cls.y_train = pd.DataFrame(y_train, columns=y.columns)
+        cls.y_test = pd.DataFrame(y_test, columns=y.columns)
 
-        # create list of numeric and categorical features
-        numeric_features = [col for col in self.data if col not in self.target_variables and self.data[col].dtype != 'object']
-        categorical_features = [col for col in self.data if col not in self.target_variables and self.data[col].dtype == 'object']
-
-        numeric_transformer = StandardScaler()
-        categorical_transformer = OneHotEncoder(handle_unknown="ignore")
-
-        missing_value_imputer = ColumnTransformer(
-            transformers=[
-                ("num", SimpleImputer(strategy="median"), numeric_features),
-                ("cat", SimpleImputer(strategy="constant", fill_value="missing"), categorical_features)
-            ]
-        )
+    def create_pipeline(self, modelClass):
+        numeric_transformer = Pipeline(steps=[
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler", StandardScaler())
+        ])
+        categorical_transformer = Pipeline(steps=[
+            ("imputer", SimpleImputer(strategy="constant", fill_value="missing")),
+            ("onehot", OneHotEncoder(handle_unknown="ignore"))
+        ])
 
         preprocessor = ColumnTransformer(
             transformers=[
-                ("num", numeric_transformer, numeric_features),
-                ("cat", categorical_transformer, categorical_features)
+                ("num", numeric_transformer, make_column_selector(dtype_include=np.number)),
+                ("cat", categorical_transformer, make_column_selector(dtype_exclude=np.number))
             ]
         )
 
-        # Create a simple base model
-        model = RandomForestRegressor(random_state=self.random_state)
+        model = modelClass(random_state=RANDOM_STATE)
 
         self.pipeline = Pipeline(steps=[
-            ("imputer", missing_value_imputer),
             ("preprocessor", preprocessor),
             ("model", model)
         ])
 
-    def train(self, X_train, y_train, params=None):
+    def train(self, modelClass, data, params=None):
+        
+        if not self.data:
+            self.split_data(data, ALL_TARGETS)
+            
         if not self.pipeline:
-            self.create_pipeline()
+            if not isinstance(self.X_train, pd.DataFrame) or not isinstance(self.X_test, pd.DataFrame):
+                raise ValueError("Input data to the pipeline must be pandas DataFrames.")
+            self.create_pipeline(modelClass)
 
         if params:
             grid_search = GridSearchCV(
@@ -93,22 +112,28 @@ class ModelData:
                 cv=3,
                 n_jobs=1
             )
-            grid_search.fit(X_train, y_train)
+            grid_search.fit(self.X_train, self.y_train)
 
             self.best_model = grid_search.best_estimator_
         else:
-            self.pipeline.fit(X_train, y_train)
+            self.pipeline.fit(self.X_train, self.y_train)
             self.best_model = self.pipeline
 
-    def evaluate(self, X_test, y_test):
-         predictions = self.best_model.predict(X_test)
+    def evaluate(self):
+         if not self.pipeline:
+             raise ValueError("Model has not been trained.")
+         
+         predictions = self.best_model.predict(self.X_test)
 
          metrics = {
-             "r2_score": r2_score(X_test, predictions),
-             "mean_squared_error": mean_squared_error(X_test, predictions),
-             "mean_absolute_error": mean_absolute_error(X_test, predictions)
+             "r2_score": r2_score(self.y_test, predictions),
+             "mean_squared_error": mean_squared_error(self.y_test, predictions),
+             "mean_absolute_error": mean_absolute_error(self.y_test, predictions)
          }
          return metrics
+    
+    def make_prediction(self):
+        self.predictions = self.best_model.predict(self.X_test)
     
     def save_model(self, filename):
         joblib.dump(self.best_model, MODEL_FILE_PATH / filename)
