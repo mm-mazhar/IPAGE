@@ -264,6 +264,9 @@ dmypy.json
 filetreecontext.config.json
 .cursorrules
 
+# Root Folder
+conda_env.yml
+
 # data
 2410_iPAGE_SoilData_cleaned.xlsx
 data/merged_2.csv
