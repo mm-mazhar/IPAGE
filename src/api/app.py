@@ -1,52 +1,17 @@
-from fastapi import FastAPI,File, UploadFile
-from pydantic import BaseModel
+from fastapi import FastAPI, File, UploadFile
 from typing import Literal, Union
 from src.api.db import DB
 from src.api.models import SoilData
+from src.api.schema import RawData, PredictionInput, PredictionResponse
 from sqlalchemy.orm import class_mapper
 from fastapi.responses import FileResponse
+from src.model.model import DataPreprocessor, BaseModelData
 import os
 
 
 app = FastAPI()
 db = DB()
 
-class RawData(BaseModel):
-
-    longitude: float
-    latitude: float
-    area: float
-    soil_group: Union[None, str]
-    land_class: Union[
-        None, 
-        Literal[
-            'isda', 'Medium low land', 'Medium high land',
-            'high ground', 'Medium low land', 'Shallow to medium high land',
-            'Deep medium high land']
-        ]
-    soil_type: Union[
-        None,
-        Literal[
-            'isda', 'sandy loam', 'loam',
-            'clay loam', 'unknown', 'Clay loam',
-            'loam clay', 'brick', 'in the sand'
-        ]]
-    pH: float
-    SOC: float
-    Nitrogen: float
-    Potassium: float
-    Phosphorus: float
-    Sulfur: float
-    Boron: float
-    Zinc: float
-    Sand: float
-    Silt: float
-    Clay: float
-
-class PredictionResponse(BaseModel):
-    SOC: float
-    Boron: float
-    Zinc: float
 
 def object_to_dict(obj):
     # Extract columns from the SQLAlchemy model
@@ -81,10 +46,24 @@ def create_data(data: RawData):
     db.end_session()
     return {"status": status, "duplicated": duplicated, "data": data}
 
+@app.post("/train/")
+def retrain_model():
+    data = DataPreprocessor().preprocess()
+    model = BaseModelData(["Zinc"])
+
+    model.train(data)
+    model.make_prediction()
+    result = model.evaluate()
+    return {"status": "Success", "metrics": result}
+
+@app.post("/train/upload", response_class=FileResponse)
+def train_model_with_uploaded_data(file: UploadFile = File(...)):
+    filepath = os.path.join(os.getcwd(), "data", file.filename)
+    print(filepath)
+    return filepath
 
 
-# @app.post("/predict/", response_model=RawData)
-@app.post("/predict/")
+@app.post("/predict/", response_model=PredictionResponse)
 def predict(data: RawData):
     return {"status": "Success", "message": data}
 
