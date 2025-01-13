@@ -5,7 +5,7 @@
 # @ Author: Mazhar
 # """
 
-from typing import Any, Literal
+from typing import Any
 
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
