@@ -312,6 +312,10 @@ catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_info/*
 notebooks/task_3_model_development_and_training/by-Maz/catboost_infogi
 
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/tf_Boron_model/* 
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/tf_SOC_model/* 
+notebooks/task_3_model_development_and_training/by-Maz/checkpoints/tf_Zinc_model/*
+
 
 # App Folder
 src/app/utils/scatter_plot_1.py
