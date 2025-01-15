@@ -283,6 +283,9 @@ src/data/merged_v1.csv
 # src/data/merged_v3.csv
 
 # Notebooks Folder
+
+notebooks/task_1_data_collection_and_preprocessing/by-tasfiq/Ipage_soil_data_EDA.ipynb
+
 notebooks/task_3_model_development_and_training/by-Maz/test.py
 notebooks/task_3_model_development_and_training/by-Maz/boron_train_v1.py
 notebooks/task_3_model_development_and_training/by-Maz/boron_train_v2.py
