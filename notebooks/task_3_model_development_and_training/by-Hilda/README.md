@@ -1,8 +1,4 @@
----
-
-### **README.md**
-
-#### **Folder Contents**
+## Folder Contents
 This folder contains the following files:
 - `random_forest_model.ipynb`: Jupyter Notebook implementing the Random Forest model for SOC prediction.
 - `data.csv`: The original dataset used for model training and evaluation.
@@ -12,14 +8,14 @@ This folder contains the following files:
 
 ---
 
-#### **Overview**
+## Overview
 This folder includes my work on predicting **Soil Organic Carbon (SOC)** values using a Random Forest model. The goal was to experiment with regression techniques to predict SOC based on soil properties and provide recommendations to improve soil quality.
 
 ---
 
-#### **Models Tested**
+## Models Tested
 
-##### **Model 1: Random Forest**
+### Model 1: Random Forest
 - **Libraries Used**: Scikit-learn
 - **Hyperparameters**:
   - `n_estimators`: 100
@@ -29,7 +25,7 @@ This folder includes my work on predicting **Soil Organic Carbon (SOC)** values 
 
 ---
 
-#### **Data and Preprocessing**
+## Data and Preprocessing
 - **Dataset**: The dataset contains various soil attributes, including Nitrogen, Phosphorus, Potassium, Sulfur, pH, and categorical features like Area, Land class, and Soil type.
 - **Preprocessing Steps**:
   1. **Train/Test Split**: 80% training, 20% testing.
@@ -41,7 +37,7 @@ This folder includes my work on predicting **Soil Organic Carbon (SOC)** values 
 
 ---
 
-#### **Results**
+## Results
 
 | **Model**            | **Data Used** | **Preprocessing**          | **MSE** | **MAE** | **R-Squared** |
 |-----------------------|---------------|----------------------------|---------|---------|---------------|
@@ -49,7 +45,7 @@ This folder includes my work on predicting **Soil Organic Carbon (SOC)** values 
 
 ---
 
-#### **Instructions to Reproduce**
+## Instructions to Reproduce
 1. **Install Required Libraries**:
    Ensure you have the necessary libraries installed:
    ```bash
@@ -71,9 +67,9 @@ This folder includes my work on predicting **Soil Organic Carbon (SOC)** values 
 
 ---
 
-#### **Recommendations Based on SOC Predictions**
-- If SOC < 2.0: Add organic matter (e.g., compost) to improve SOC levels.
-- If SOC is between 2.0 and 3.5: Maintain current practices; consider crop rotation.
-- If SOC > 3.5: SOC levels are sufficient; monitor periodically.
+## Recommendations Based on SOC Predictions
+- **If SOC < 2.0**: Add organic matter (e.g., compost) to improve SOC levels.
+- **If SOC is between 2.0 and 3.5**: Maintain current practices; consider crop rotation.
+- **If SOC > 3.5**: SOC levels are sufficient; monitor periodically.
 
----
+--- 
