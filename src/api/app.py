@@ -5,7 +5,7 @@ from src.api.models import SoilData
 from src.api.schema import RawData, PredictionInput, PredictionResponse
 from sqlalchemy.orm import class_mapper
 from fastapi.responses import FileResponse
-from src.model.model import DataPreprocessor, BaseModelData
+from src.model.model import DataPreprocessor, BaseModel
 import os
 
 
@@ -48,11 +48,10 @@ def create_data(data: RawData):
 
 @app.post("/train/")
 def retrain_model():
-    data = DataPreprocessor().preprocess()
-    model = BaseModelData(["Zinc"])
+    data = DataPreprocessor("merged_v3.csv", "data").preprocess()
+    model = BaseModel(["SOC"])
 
     model.train(data)
-    model.make_prediction()
     result = model.evaluate()
     return {"status": "Success", "metrics": result}
 
