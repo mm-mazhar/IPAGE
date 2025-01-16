@@ -1,4 +1,4 @@
-## Overview
+## Model Overview by Hilda Posada
 This folder includes my work on predicting **Soil Organic Carbon (SOC)** values using a Random Forest model. The goal was to experiment with regression techniques to predict SOC based on soil properties and provide recommendations to improve soil quality.
 
 ---
