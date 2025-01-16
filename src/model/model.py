@@ -13,65 +13,86 @@ from sklearn.linear_model import Ridge, Lasso, ElasticNet
 import joblib
 from pathlib import Path
 import pandas as pd
-from typing import Union, Iterable
-
-COLS_TO_DROP: list = ["longitude", "latitude", "Soil group", "Land class", "Soil type"]
-ALL_TARGETS: list = ["Boron", "Zinc", "SOC"]
-DATASET_VERSION: str = "v3" # using the version 3, v3 dataset
-RANDOM_STATE: int = 42
-TRAIN_SIZE: float = 0.7
-TEST_SIZE: float = 0.2
-VAL_SIZE: float = 0.1
-
-MODEL_FILE_PATH = Path().absolute() / "data" / "models" # current working directory(i.e root 'IPAGE') + data + models
-MODEL_FILE_PATH.mkdir(parents=True, exist_ok=True)
+from typing import List, Dict, Union, Type, Iterable
+from dataclasses import dataclass
+from src.model.config import RANDOM_STATE, TEST_SIZE, MODEL_FILE_PATH, ALL_TARGETS, COLS_TO_DROP
+from sklearn.base import BaseEstimator, TransformerMixin
 
 
+class OutlierTransformer(BaseEstimator, TransformerMixin):
+    """Custom transformer for handling outliers in numeric data."""
+    def __init__(self, method="iqr", threshold=1.5):
+        self.method = method
+        self.threshold = threshold
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        X = X.copy()
+        if self.method == "iqr":
+            for col in X.columns:
+                Q1 = X[col].quantile(0.25)
+                Q3 = X[col].quantile(0.75)
+                IQR = Q3 - Q1
+                lower_bound = Q1 - self.threshold * IQR
+                upper_bound = Q3 + self.threshold * IQR
+                X[col] = X[col].clip(lower_bound, upper_bound)
+        return X
+
+
+@dataclass
 class DataPreprocessor:
-    def __init__(
-            self, col_to_drop: Iterable = COLS_TO_DROP,
-            filename: str = f"merged_{DATASET_VERSION}.csv", filedir: str = "data"
-        ):
-        self.col_to_drop: Iterable = col_to_drop
-        self.data: pd.DataFrame = load_data(filename, filedir)
+    """Handles preprocessing of the dataset"""
+    filename: str
+    filedir: str
+    cols_to_drop: Union[List[str], None] = None
 
+    def __post_init__(self):
+        self.data = load_data(self.filename, self.filedir)
+        if not self.cols_to_drop:
+            self.cols_to_drop = COLS_TO_DROP
+    
     def preprocess(self):
-        self.data.drop(COLS_TO_DROP, axis=1, inplace=True)
-        for col in self.data.select_dtypes(exclude=["object"]):
-            self.data = remove_outliers(self.data, col)
+        """Preprocess the dataset"""
+        self.data.drop(self.cols_to_drop, axis=1, inplace=True)
         return self.data
 
 
-class BaseModelData:
-    data = None
-    X_train = None
-    X_test = None
-    y_train = None
-    y_test = None
-    # Code for Modeling pipeline, Model fiting goes here
-    def __init__(self, target_variables):
-        self.target_variables = target_variables
-        self.best_model = None
-        self.pipeline = None
+@dataclass
+class BaseModel:
+    """Handles the machine learning pipeline, training, and evaluation."""
+    target_variables: List[str]
+    model_class: Type = RandomForestRegressor
+    params: Dict = None
+    best_model: Union[Pipeline, None] = None
+    pipeline: Union[Pipeline, None] = None
 
-    @classmethod
-    def split_data(cls, data: pd.DataFrame, target_variables):
-        cls.data = data
-        # Remove any column in `ALL_TARGET` that has not been selected
+
+    def __post_init__(self):
+        self.X_train = pd.DataFrame()
+        self.X_test = pd.DataFrame()
+        self.y_train = pd.DataFrame()
+        self.y_test = pd.DataFrame()
+
+    def split_data(self, data: pd.DataFrame, target_variables):
+        """ Split the dataset into training and testing sets """
+        # Remove any column in `ALL_TARGETS` that has not been selected
         # in `self.target_variables` (i.e. target columns that are not been trained)
-        for col in cls.data.columns:
-            if col not in target_variables and col in ALL_TARGETS:
-                    cls.data.drop(col, axis=1, inplace=True)
-        X = cls.data.drop(ALL_TARGETS, axis=1)
-        y = cls.data[target_variables]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
-        cls.X_train = pd.DataFrame(X_train, columns=X.columns)
-        cls.X_test = pd.DataFrame(X_test, columns=X.columns)
-        cls.y_train = pd.DataFrame(y_train, columns=y.columns)
-        cls.y_test = pd.DataFrame(y_test, columns=y.columns)
+        drop_targets = [col for col in ALL_TARGETS if col not in target_variables]
+        data.drop(drop_targets, axis=1, inplace=True)
 
-    def create_pipeline(self, modelClass):
+        X = data.drop(target_variables, axis=1)
+        y = data[target_variables]
+
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
+            X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE
+        )
+
+    def create_pipeline(self):
+        """Create a machine learning pipeline"""
         numeric_transformer = Pipeline(steps=[
+            ("outlier", OutlierTransformer()),
             ("imputer", SimpleImputer(strategy="median")),
             ("scaler", StandardScaler())
         ])
@@ -82,27 +103,23 @@ class BaseModelData:
 
         preprocessor = ColumnTransformer(
             transformers=[
-                ("num", numeric_transformer, make_column_selector(dtype_include=np.number)),
-                ("cat", categorical_transformer, make_column_selector(dtype_exclude=np.number))
+                ("num", numeric_transformer, make_column_selector(dtype_include=["int", "float"])),
+                ("cat", categorical_transformer, make_column_selector(dtype_exclude=["int", "float"]))
             ]
         )
 
-        model = modelClass(random_state=RANDOM_STATE)
-
         self.pipeline = Pipeline(steps=[
             ("preprocessor", preprocessor),
-            ("model", model)
+            ("model", self.model_class(random_state=RANDOM_STATE))
         ])
 
-    def train(self, modelClass, data, params=None):
+    def train(self, data, modelClass=RandomForestRegressor, params=None):
         
-        if not self.data:
-            self.split_data(data, ALL_TARGETS)
+        if self.X_train.empty or self.X_test.empty or self.y_train.empty or self.y_test.empty:
+            self.split_data(data, self.target_variables)
             
         if not self.pipeline:
-            if not isinstance(self.X_train, pd.DataFrame) or not isinstance(self.X_test, pd.DataFrame):
-                raise ValueError("Input data to the pipeline must be pandas DataFrames.")
-            self.create_pipeline(modelClass)
+            self.create_pipeline()
 
         if params:
             grid_search = GridSearchCV(
@@ -119,21 +136,19 @@ class BaseModelData:
             self.pipeline.fit(self.X_train, self.y_train)
             self.best_model = self.pipeline
 
-    def evaluate(self):
-         if not self.pipeline:
+    def evaluate(self) -> Dict[str, float]:
+        """Evaluate the trained model"""
+        if not self.pipeline:
              raise ValueError("Model has not been trained.")
          
-         predictions = self.best_model.predict(self.X_test)
+        predictions = self.best_model.predict(self.X_test)
 
-         metrics = {
+        metrics = {
              "r2_score": r2_score(self.y_test, predictions),
              "mean_squared_error": mean_squared_error(self.y_test, predictions),
              "mean_absolute_error": mean_absolute_error(self.y_test, predictions)
          }
-         return metrics
-    
-    def make_prediction(self):
-        self.predictions = self.best_model.predict(self.X_test)
+        return metrics
     
     def save_model(self, filename):
         joblib.dump(self.best_model, MODEL_FILE_PATH / filename)
