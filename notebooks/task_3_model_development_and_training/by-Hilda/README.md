@@ -1,15 +1,13 @@
+## Overview
+This folder includes my work on predicting **Soil Organic Carbon (SOC)** values using a Random Forest model. The goal was to experiment with regression techniques to predict SOC based on soil properties and provide recommendations to improve soil quality.
+
+---
 ## Folder Contents
-This folder contains the following files:
 - `random_forest_model.ipynb`: Jupyter Notebook implementing the Random Forest model for SOC prediction.
 - `data.csv`: The original dataset used for model training and evaluation.
 - `soc_model.pkl`: Trained Random Forest model saved using `joblib`.
 - `scaler.pkl`: StandardScaler object used to scale the features.
 - `README.md`: Documentation of the work, including model details, preprocessing steps, and results.
-
----
-
-## Overview
-This folder includes my work on predicting **Soil Organic Carbon (SOC)** values using a Random Forest model. The goal was to experiment with regression techniques to predict SOC based on soil properties and provide recommendations to improve soil quality.
 
 ---
 
