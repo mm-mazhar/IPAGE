@@ -17,6 +17,13 @@ from typing import List, Dict, Union, Type, Iterable
 from dataclasses import dataclass
 from src.model.config import RANDOM_STATE, TEST_SIZE, MODEL_FILE_PATH, ALL_TARGETS, COLS_TO_DROP
 from sklearn.base import BaseEstimator, TransformerMixin
+from src.logs.logger import setLogger
+from src.logs.config import DATA_LOG_FILE, MODEL_LOG_FILE
+import sys
+
+# Set up loggers
+data_logger = setLogger(__name__, DATA_LOG_FILE, display_console=False)
+model_logger = setLogger(__name__, MODEL_LOG_FILE, display_console=False)
 
 
 class OutlierTransformer(BaseEstimator, TransformerMixin):
@@ -56,6 +63,9 @@ class DataPreprocessor:
     def preprocess(self):
         """Preprocess the dataset"""
         self.data.drop(self.cols_to_drop, axis=1, inplace=True)
+        data_logger.info(
+            f"Columns {", ".join(self.cols_to_drop)} have been dropped from the dataset {self.filename}"
+        )
         return self.data
 
 
@@ -88,6 +98,7 @@ class BaseModel:
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE
         )
+        model_logger.info("Data split into training and testing sets")
 
     def create_pipeline(self):
         """Create a machine learning pipeline"""
@@ -112,6 +123,7 @@ class BaseModel:
             ("preprocessor", preprocessor),
             ("model", self.model_class(random_state=RANDOM_STATE))
         ])
+        model_logger.info(f"Pipeline created with {self.model_class.__name__}")
 
     def train(self, data, modelClass=RandomForestRegressor, params=None):
         
@@ -119,9 +131,12 @@ class BaseModel:
             self.split_data(data, self.target_variables)
             
         if not self.pipeline:
+            model_logger.info("Creating pipeline")
             self.create_pipeline()
 
         if params:
+            model_logger.info("Hyperparameter tuning")
+            model_logger.info(f"\nParameters: {params}")
             grid_search = GridSearchCV(
                 self.pipeline,
                 param_grid=params,
@@ -132,6 +147,8 @@ class BaseModel:
             grid_search.fit(self.X_train, self.y_train)
 
             self.best_model = grid_search.best_estimator_
+            model_logger.info("Best model selected")
+            model_logger.info(f"\nBest model: {self.best_model}")
         else:
             self.pipeline.fit(self.X_train, self.y_train)
             self.best_model = self.pipeline
@@ -139,8 +156,9 @@ class BaseModel:
     def evaluate(self) -> Dict[str, float]:
         """Evaluate the trained model"""
         if not self.pipeline:
+             model_logger.error("Model has not been trained.")
              raise ValueError("Model has not been trained.")
-         
+
         predictions = self.best_model.predict(self.X_test)
 
         metrics = {
@@ -148,7 +166,14 @@ class BaseModel:
              "mean_squared_error": mean_squared_error(self.y_test, predictions),
              "mean_absolute_error": mean_absolute_error(self.y_test, predictions)
          }
+        model_logger.info("Model evaluation completed")
+        model_logger.info(f"\nMetrics: {metrics}")
         return metrics
     
     def save_model(self, filename):
+        """Save the best model"""
+        data_logger.info(f"Saving model to {MODEL_FILE_PATH / filename}")
+        model_logger.info(f"Saving model to {MODEL_FILE_PATH / filename}")
         joblib.dump(self.best_model, MODEL_FILE_PATH / filename)
+        model_logger.info("Model saved successfully")
+        data_logger.info("Model saved successfully")
