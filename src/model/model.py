@@ -118,10 +118,10 @@ class BaseModel:
                 ("cat", categorical_transformer, make_column_selector(dtype_exclude=["int", "float"]))
             ]
         )
-        if hasattr(modelClass,'random_state'):
-            model = modelClass(random_state=RANDOM_STATE)
+        if RANDOM_STATE:
+            model = self.model_class(random_state=RANDOM_STATE)
         else:
-            model = modelClass()
+            model = self.model_class()
 
         self.pipeline = Pipeline(steps=[
             ("preprocessor", preprocessor),
@@ -163,21 +163,25 @@ class BaseModel:
              model_logger.error("Model has not been trained.")
              raise ValueError("Model has not been trained.")
          
-         predictions_test = self.best_model.predict(self.X_test)
-         predictions_train = self.best_model.predict(self.X_train)
+        predictions_test = self.best_model.predict(self.X_test)
+        predictions_train = self.best_model.predict(self.X_train)
 
-         metrics = {
-             "r2_score_train": np.round(r2_score(self.y_train, predictions_train),3),
-             "mean_squared_error_train": np.round(mean_squared_error(self.y_train, predictions_train),3),
-             "mean_absolute_error_train": np.round(mean_absolute_error(self.y_train, predictions_train),3),
-             "r2_score_test": np.round(r2_score(self.y_test, predictions_test),3),
-             "mean_squared_error_test": np.round(mean_squared_error(self.y_test, predictions_test),3),
-             "mean_absolute_error_test": np.round(mean_absolute_error(self.y_test, predictions_test),3)
-         }
-        model_logger.info("Model evaluation completed")
-        model_logger.info(f"\nMetrics: {metrics}")
+        metrics = [
+            {
+                "subject": "Test",
+                "r2_score": r2_score(self.y_test, predictions_test),
+                "mean_squared_error": mean_squared_error(self.y_test, predictions_test),
+                "mean_absolute_error": mean_absolute_error(self.y_test, predictions_test)
+            },
+            {
+                "subject": "Train",
+                "r2_score": r2_score(self.y_train, predictions_train),
+                "mean_squared_error": mean_squared_error(self.y_train, predictions_train),
+                "mean_absolute_error": mean_absolute_error(self.y_train, predictions_train)
+            }
+        ]
         return metrics
-    
+
     def save_model(self, filename):
         """Save the best model"""
         data_logger.info(f"Saving model to {MODEL_FILE_PATH / filename}")
