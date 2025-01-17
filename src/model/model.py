@@ -61,8 +61,8 @@ class BaseModelData:
         # in `self.target_variables` (i.e. target columns that are not been trained)
         for col in cls.data.columns:
             if col not in target_variables and col in ALL_TARGETS:
-                    cls.data.drop(col, axis=1, inplace=True)
-        X = cls.data.drop(ALL_TARGETS, axis=1)
+                cls.data.drop(col, axis=1, inplace=True)
+        X = cls.data.drop(target_variables, axis=1)
         y = cls.data[target_variables]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
         cls.X_train = pd.DataFrame(X_train, columns=X.columns)
@@ -86,8 +86,10 @@ class BaseModelData:
                 ("cat", categorical_transformer, make_column_selector(dtype_exclude=np.number))
             ]
         )
-
-        model = modelClass(random_state=RANDOM_STATE)
+        if hasattr(modelClass,'random_state'):
+            model = modelClass(random_state=RANDOM_STATE)
+        else:
+            model = modelClass()
 
         self.pipeline = Pipeline(steps=[
             ("preprocessor", preprocessor),
@@ -95,9 +97,9 @@ class BaseModelData:
         ])
 
     def train(self, modelClass, data, params=None):
-        
+
         if not self.data:
-            self.split_data(data, ALL_TARGETS)
+            self.split_data(data, self.target_variables)
             
         if not self.pipeline:
             if not isinstance(self.X_train, pd.DataFrame) or not isinstance(self.X_test, pd.DataFrame):
@@ -115,6 +117,7 @@ class BaseModelData:
             grid_search.fit(self.X_train, self.y_train)
 
             self.best_model = grid_search.best_estimator_
+            print(self.best_model)
         else:
             self.pipeline.fit(self.X_train, self.y_train)
             self.best_model = self.pipeline
@@ -123,12 +126,16 @@ class BaseModelData:
          if not self.pipeline:
              raise ValueError("Model has not been trained.")
          
-         predictions = self.best_model.predict(self.X_test)
+         predictions_test = self.best_model.predict(self.X_test)
+         predictions_train = self.best_model.predict(self.X_train)
 
          metrics = {
-             "r2_score": r2_score(self.y_test, predictions),
-             "mean_squared_error": mean_squared_error(self.y_test, predictions),
-             "mean_absolute_error": mean_absolute_error(self.y_test, predictions)
+             "r2_score_train": np.round(r2_score(self.y_train, predictions_train),3),
+             "mean_squared_error_train": np.round(mean_squared_error(self.y_train, predictions_train),3),
+             "mean_absolute_error_train": np.round(mean_absolute_error(self.y_train, predictions_train),3),
+             "r2_score_test": np.round(r2_score(self.y_test, predictions_test),3),
+             "mean_squared_error_test": np.round(mean_squared_error(self.y_test, predictions_test),3),
+             "mean_absolute_error_test": np.round(mean_absolute_error(self.y_test, predictions_test),3)
          }
          return metrics
     

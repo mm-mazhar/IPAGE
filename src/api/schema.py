@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Union, Literal
+from enum import Enum
 
 class RawData(BaseModel):
 
@@ -35,20 +36,23 @@ class RawData(BaseModel):
 
 
 class PredictionInput(BaseModel):
-    Area: str
-    pH: float
-    SOC: float
-    Nitrogen: float
-    Phosporus: float
-    Sulfur: float
-    Boron: float
-    Zinc: float
-    Sand: float
-    Silt: float
-    Clay: float
+    Area: str = 'Mithpukur'
+    pH: float = 5.3
+    Nitrogen: float = 0.08
+    Phosphorus: float = 12
+    Potassium: float = 0.17
+    Sulfur: float = 26.4
+    Sand: float = 33
+    Silt: float = 33
+    Clay: float = 33
 
 
 class PredictionResponse(BaseModel):
-    SOC: float
-    Boron: float
-    Zinc: float
+    SOC: float = None
+    Boron: float = None
+    Zinc: float = None
+
+class TargetSelect(str, Enum):
+    SOC = "SOC"
+    Boron = "Boron"
+    Zinc = "Zinc"
