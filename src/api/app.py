@@ -5,9 +5,9 @@ from src.api.models import SoilData
 from src.api.schema import RawData, PredictionInput, PredictionResponse,TargetSelect
 from sqlalchemy.orm import class_mapper
 from fastapi.responses import FileResponse
-from src.model.model import DataPreprocessor, BaseModelData, MODEL_FILE_PATH
+from src.model.model import DataPreprocessor, BaseModel, MODEL_FILE_PATH
 from sklearn.linear_model import Ridge
-from catboost import CatBoostRegressor
+# from catboost import CatBoostRegressor
 import os
 import joblib
 import pandas as pd
@@ -52,11 +52,11 @@ def create_data(data: RawData):
 
 @app.post("/train/")
 def retrain_model(target:TargetSelect):
-    data = DataPreprocessor().preprocess()
-    model = BaseModelData([target])
+    data = DataPreprocessor("merged_v3.csv", "data").preprocess()
+    model = BaseModel([target])
     regressor = Ridge
-    model.train(regressor,data)
-    model.make_prediction()
+    model.train(data, regressor)
+    # model.make_prediction()
     result = model.evaluate()
     model.save_model(f'{target}_{type(regressor()).__name__}')
     return {"status": "Success", "metrics": result}
@@ -73,16 +73,29 @@ def predict(data:PredictionInput,targets:List[TargetSelect] = Query(...)):
     df = pd.DataFrame(data.dict(),index=[0])
     pred_dict = {}
     for target in targets:
-        model_path = str(MODEL_FILE_PATH)+f'\{target.name}_Ridge'
+        model_path = MODEL_FILE_PATH.joinpath(f'TargetSelect.{target.name}_Ridge')
         model = joblib.load(model_path)
-        pred_dict[target.name] = np.round(model.predict(df)[0][0],3)
+        # print("Test")
+        # print(model.predict(df))
+        pred_dict[target.name] = np.round(model.predict(df)[0],3)
     prediction = PredictionResponse(**pred_dict)
     return {"prediction": prediction}
 
 @app.post("/inference/batch/", response_class=FileResponse)
-def upload_prediction_data(file: UploadFile = File(...)):
-    print(file)
+async def upload_prediction_data(file: UploadFile = File(...)):
+    # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
+    print(f"Filepath: {type(filepath)=}")
     print(filepath)
-    df = pd.read_csv(str(filepath))
-    return df.head()
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
+    # Write the uploaded file to the defined filepath
+    with open(filepath, "wb") as buffer:
+        buffer.write(await file.read())
+    
+    # Read the saved file into a DataFrame
+    df = pd.read_csv(filepath)
+    print(df.head())
+    return filepath
