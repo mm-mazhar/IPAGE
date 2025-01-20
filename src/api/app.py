@@ -66,10 +66,33 @@ def train_model(target:TargetSelect):
     return {"status": "Success", "metrics": result}
 
 @app.post("/retrain/upload", response_class=FileResponse)
-def train_model_with_uploaded_data(file: UploadFile = File(...)):
+async def train_model_with_uploaded_data(file: UploadFile = File(...)):
+    '''
+    Train a model with new data. The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus,
+    Sulfur, Sand, Silt, and Clay
+    '''
+    # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
+    # Write the uploaded file to the defined filepath
+    with open(filepath, "wb") as buffer:
+        buffer.write(await file.read())
     
-    return filepath
+    # Retraining pipeline
+    data = DataPreprocessor(file.filename, "data").preprocess()
+    regression_model = Ridge
+    targets = ['SOC','Boron','Zinc']
+    model = BaseModel(targets,regression_model)
+    model.train(data)
+    result = model.evaluate()
+    for target in targets:
+        model_name = f'retrain_{target}_{type(regression_model()).__name__}'
+        print(model_name)
+        model.save_model(model_name)
+    return {"status": "Success", "metrics": result}
 
 
 @app.post("/inference/point/")
@@ -86,11 +109,9 @@ def predict(data:PredictionInput,targets:List[TargetSelect] = Query(...)):
     return {"prediction": prediction}
 
 @app.post("/inference/batch/", response_class=FileResponse)
-async def upload_prediction_data(file: UploadFile = File(...)):
+async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: UploadFile = File(...)):
     # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
-    print(f"Filepath: {type(filepath)=}")
-    print(filepath)
 
     # Ensure the directory exists
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -98,8 +119,12 @@ async def upload_prediction_data(file: UploadFile = File(...)):
     # Write the uploaded file to the defined filepath
     with open(filepath, "wb") as buffer:
         buffer.write(await file.read())
-    
     # Read the saved file into a DataFrame
     df = pd.read_csv(filepath)
-    print(df.head())
-    return filepath
+    pred_df = pd.DataFrame(columns=[target.name for target in targets])
+    for target in targets:
+        model_path = MODEL_FILE_PATH.joinpath(f'{target.name}_Ridge')
+        model = joblib.load(model_path)
+        pred_df[target.name] = model.predict(df)[:,0]
+    print(pred_df)
+    return pred_df.to_dict()

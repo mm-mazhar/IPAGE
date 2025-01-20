@@ -58,13 +58,13 @@ class DataPreprocessor:
     def __post_init__(self):
         self.data = load_data(self.filename, self.filedir)
         if not self.cols_to_drop:
-            self.cols_to_drop = COLS_TO_DROP
+            self.cols_to_drop = [col for col in COLS_TO_DROP if col in self.data.columns]
     
     def preprocess(self):
         """Preprocess the dataset"""
         self.data.drop(self.cols_to_drop, axis=1, inplace=True)
         data_logger.info(
-            f"Columns {", ".join(self.cols_to_drop)} have been dropped from the dataset {self.filename}"
+            f'Columns {", ".join(self.cols_to_drop)} have been dropped from the dataset {self.filename}'
         )
         return self.data
 
@@ -169,15 +169,15 @@ class BaseModel:
         metrics = [
             {
                 "subject": "Test",
-                "r2_score": r2_score(self.y_test, predictions_test),
-                "mean_squared_error": mean_squared_error(self.y_test, predictions_test),
-                "mean_absolute_error": mean_absolute_error(self.y_test, predictions_test)
+                "r2_score": np.round(r2_score(self.y_test, predictions_test),3),
+                "mean_squared_error": np.round(mean_squared_error(self.y_test, predictions_test),3),
+                "mean_absolute_error": np.round(mean_absolute_error(self.y_test, predictions_test),3)
             },
             {
                 "subject": "Train",
-                "r2_score": r2_score(self.y_train, predictions_train),
-                "mean_squared_error": mean_squared_error(self.y_train, predictions_train),
-                "mean_absolute_error": mean_absolute_error(self.y_train, predictions_train)
+                "r2_score": np.round(r2_score(self.y_train, predictions_train),3),
+                "mean_squared_error": np.round(mean_squared_error(self.y_train, predictions_train),3),
+                "mean_absolute_error": np.round(mean_absolute_error(self.y_train, predictions_train),3)
             }
         ]
         return metrics
