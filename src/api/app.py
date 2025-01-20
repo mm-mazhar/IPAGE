@@ -65,7 +65,7 @@ def train_model(target:TargetSelect):
     model.save_model(model_name)
     return {"status": "Success", "metrics": result}
 
-@app.post("/retrain/upload", response_class=FileResponse)
+@app.post("/retrain/upload")
 async def train_model_with_uploaded_data(file: UploadFile = File(...)):
     '''
     Train a model with new data. The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus,
@@ -73,6 +73,26 @@ async def train_model_with_uploaded_data(file: UploadFile = File(...)):
     '''
     # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
+    # Write the uploaded file to the defined filepath
+    with open(filepath, "wb") as buffer:
+        buffer.write(await file.read())
+    
+    # Retraining pipeline
+    data = DataPreprocessor(file.filename, "data").preprocess()
+    regression_model = Ridge
+    targets = ['SOC','Boron','Zinc']
+    model = BaseModel(targets,regression_model)
+    model.train(data)
+    result = model.evaluate()
+    for target in targets:
+        model_name = f'retrain_{target}_{type(regression_model()).__name__}'
+        print(model_name)
+        model.save_model(model_name)
+    return {"status": "Success", "metrics": result}
 
     # Ensure the directory exists
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -110,6 +130,7 @@ def predict(data:PredictionInput,targets:List[TargetSelect] = Query(...)):
 
 @app.post("/inference/batch/", response_class=FileResponse)
 async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: UploadFile = File(...)):
+async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: UploadFile = File(...)):
     # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
 
@@ -120,11 +141,22 @@ async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: U
     with open(filepath, "wb") as buffer:
         buffer.write(await file.read())
     # Read the saved file into a DataFrame
-    df = pd.read_csv(filepath)
+    features = pd.read_csv(filepath)
     pred_df = pd.DataFrame(columns=[target.name for target in targets])
     for target in targets:
         model_path = MODEL_FILE_PATH.joinpath(f'{target.name}_Ridge')
-        model = joblib.load(model_path)
-        pred_df[target.name] = model.predict(df)[:,0]
+
+        try:
+            model = BaseModel.load_model(model_path)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Model not found at {model_path}")
+        except Exception as e:
+            raise e
+        
+        pred_df[target.name] = model.predict(features)[:,0]
+
     print(pred_df)
-    return pred_df.to_dict()
+    prediction_path = MODEL_FILE_PATH.parent.joinpath('predictions.csv')
+    print(prediction_path)
+    pred_df.to_csv(prediction_path,index=False)
+    return prediction_path
