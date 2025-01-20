@@ -51,17 +51,21 @@ def create_data(data: RawData):
     return {"status": status, "duplicated": duplicated, "data": data}
 
 @app.post("/train/")
-def retrain_model(target:TargetSelect):
+def train_model(target:TargetSelect):
+    '''
+    Training the model on combined isda and ipage data
+    '''
     data = DataPreprocessor("merged_v3.csv", "data").preprocess()
-    model = BaseModel([target])
-    regressor = Ridge
-    model.train(data, regressor)
-    # model.make_prediction()
+    regression_model = Ridge
+    model = BaseModel([target],regression_model)
+    model.train(data)
     result = model.evaluate()
-    model.save_model(f'{target}_{type(regressor()).__name__}')
+    model_name = f'{target}_{type(regression_model()).__name__}'
+    print(model_name)
+    model.save_model(model_name)
     return {"status": "Success", "metrics": result}
 
-@app.post("/train on new data/upload", response_class=FileResponse)
+@app.post("/retrain/upload", response_class=FileResponse)
 def train_model_with_uploaded_data(file: UploadFile = File(...)):
     filepath = os.path.join(os.getcwd(), "data", file.filename)
     
@@ -73,7 +77,7 @@ def predict(data:PredictionInput,targets:List[TargetSelect] = Query(...)):
     df = pd.DataFrame(data.dict(),index=[0])
     pred_dict = {}
     for target in targets:
-        model_path = MODEL_FILE_PATH.joinpath(f'TargetSelect.{target.name}_Ridge')
+        model_path = MODEL_FILE_PATH.joinpath(f'{target.name}_Ridge')
         model = joblib.load(model_path)
         # print("Test")
         # print(model.predict(df))
