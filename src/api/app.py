@@ -122,14 +122,12 @@ def predict(data:PredictionInput,targets:List[TargetSelect] = Query(...)):
     for target in targets:
         model_path = MODEL_FILE_PATH.joinpath(f'{target.name}_Ridge')
         model = joblib.load(model_path)
-        # print("Test")
-        # print(model.predict(df))
         pred_dict[target.name] = np.round(model.predict(df)[0],3)
+        
     prediction = PredictionResponse(**pred_dict)
     return {"prediction": prediction}
 
 @app.post("/inference/batch/", response_class=FileResponse)
-async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: UploadFile = File(...)):
 async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: UploadFile = File(...)):
     # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
@@ -145,18 +143,11 @@ async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: U
     pred_df = pd.DataFrame(columns=[target.name for target in targets])
     for target in targets:
         model_path = MODEL_FILE_PATH.joinpath(f'{target.name}_Ridge')
-
-        try:
-            model = BaseModel.load_model(model_path)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Model not found at {model_path}")
-        except Exception as e:
-            raise e
-        
+        model = BaseModel.load_model(model_path)
+    
         pred_df[target.name] = model.predict(features)[:,0]
 
-    print(pred_df)
     prediction_path = MODEL_FILE_PATH.parent.joinpath('predictions.csv')
-    print(prediction_path)
     pred_df.to_csv(prediction_path,index=False)
+    
     return prediction_path
