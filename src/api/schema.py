@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Union, Literal
 from enum import Enum
 
+
 class RawData(BaseModel):
 
     longitude: float
@@ -9,19 +10,31 @@ class RawData(BaseModel):
     area: float
     soil_group: Union[None, str]
     land_class: Union[
-        None, 
+        None,
         Literal[
-            'isda', 'Medium low land', 'Medium high land',
-            'high ground', 'Medium low land', 'Shallow to medium high land',
-            'Deep medium high land']
-        ]
+            "isda",
+            "Medium low land",
+            "Medium high land",
+            "high ground",
+            "Medium low land",
+            "Shallow to medium high land",
+            "Deep medium high land",
+        ],
+    ]
     soil_type: Union[
         None,
         Literal[
-            'isda', 'sandy loam', 'loam',
-            'clay loam', 'unknown', 'Clay loam',
-            'loam clay', 'brick', 'in the sand'
-        ]]
+            "isda",
+            "sandy loam",
+            "loam",
+            "clay loam",
+            "unknown",
+            "Clay loam",
+            "loam clay",
+            "brick",
+            "in the sand",
+        ],
+    ]
     pH: float
     SOC: float
     Nitrogen: float
@@ -36,7 +49,7 @@ class RawData(BaseModel):
 
 
 class PredictionInput(BaseModel):
-    Area: str = 'Mithpukur'
+    Area: str = "Mithpukur"
     pH: float = 5.3
     Nitrogen: float = 0.08
     Phosphorus: float = 12
@@ -52,7 +65,14 @@ class PredictionResponse(BaseModel):
     Boron: float = None
     Zinc: float = None
 
+
 class TargetSelect(str, Enum):
     SOC = "SOC"
     Boron = "Boron"
     Zinc = "Zinc"
+
+
+class Desc(BaseModel):
+    name: str
+    api_version: str
+    package_version: str
