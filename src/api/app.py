@@ -69,7 +69,7 @@ def get_data(limit: int = None):
 def create_data(data: RawData):
     duplicated = False
     status = "Failed"
-    data = db.create_soil_data(data.dict())
+    data = db.create_soil_data(data.model_dump())
 
     if isinstance(data, SoilData):
         status = "Success"
