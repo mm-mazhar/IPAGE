@@ -1,4 +1,9 @@
-from fastapi import FastAPI, File, UploadFile,Query
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from fastapi import FastAPI, File, UploadFile, Query
+from fastapi.responses import HTMLResponse
 from typing import Literal, Union,List
 from src.api.db import DB
 from src.api.models import SoilData
@@ -8,13 +13,40 @@ from fastapi.responses import FileResponse
 from src.model.model import DataPreprocessor, BaseModel, MODEL_FILE_PATH
 from sklearn.linear_model import Ridge
 # from catboost import CatBoostRegressor
-import os
 import joblib
 import pandas as pd
 import numpy as np
+from loguru import logger
 
 
-app = FastAPI()
+# from app.config import settings, setup_app_logging
+from .configs import (
+    API_PROJECT_NAME,
+    API_VER_STR,
+    __version__,
+    settings,
+    # setup_app_logging,
+)
+
+# from api.db import models
+# from api.db.database import engine
+
+# setup logging as early as possible
+# setup_app_logging(config=settings)
+
+# Prefix for all API endpoints
+preFix: str = API_VER_STR
+api_project_name: str = API_PROJECT_NAME
+
+# app = FastAPI()
+app = FastAPI(
+    title=f"{api_project_name}",
+    openapi_url=f"{preFix}/openapi.json",
+    swagger_ui_parameters={"syntaxHighlight.theme": "obsidian"},
+    servers=settings.SERVERS,
+)
+
+
 db = DB()
 
 
@@ -25,7 +57,22 @@ def object_to_dict(obj):
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to IPAGE API"}
+    """Basic HTML response."""
+    body: str = (
+        "<html>"
+        "<body style='display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #7d8492;'>"
+        "<div style='text-align: center; background-color: white; padding: 20px; border-radius: 20px;'>"
+        f"<h1 style='font-weight: bold; font-family: Arial;'>{api_project_name}</h1>"
+        f"<h3 style='font-weight: bold; font-family: Arial;'>Version: {__version__}</h3>"
+        "<div>"
+        f"<h4>Check the docs: <a href='/docs'>here</a><h4>"
+        "</div>"
+        "</div>"
+        "</body>"
+        "</html>"
+    )
+
+    return HTMLResponse(content=body)
 
 @app.get("/data")
 def get_data(limit: int = None):
@@ -128,3 +175,17 @@ async def upload_prediction_data(targets:List[TargetSelect] = Query(...),file: U
         pred_df[target.name] = model.predict(df)[:,0]
     print(pred_df)
     return pred_df.to_dict()
+
+
+if __name__ == "__main__":
+    # Use this for debugging purposes only
+    logger.warning("Running in development mode. Do not run like this in production.")
+    import uvicorn
+
+    uvicorn.run(
+        "src.api.app:app",
+        host="localhost",
+        port=settings.FASTAPI_PORT,
+        log_level="debug",
+        reload=True,
+    )
