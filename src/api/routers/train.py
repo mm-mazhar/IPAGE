@@ -11,7 +11,7 @@ preFix_user = "/train"
 train_router = APIRouter(prefix=preFix_user, tags=["Model Training"])
 
 
-@train_router.post("/train/")
+@train_router.post("/model-train")
 def train_model(target: TargetSelect):
     """
     Training the model on combined isda and ipage data
@@ -27,7 +27,7 @@ def train_model(target: TargetSelect):
     return {"status": "Success", "metrics": result}
 
 
-@train_router.post("/retrain/upload", response_class=FileResponse)
+@train_router.post("/modeL-retrain/upload", response_class=FileResponse)
 async def train_model_with_uploaded_data(file: UploadFile = File(...)):
     """
     Train a model with new data. The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus,

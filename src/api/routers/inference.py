@@ -14,7 +14,7 @@ preFix_user = "/inference"
 inference_router = APIRouter(prefix=preFix_user, tags=["Inference"])
 
 
-@inference_router.post("/inference/point/")
+@inference_router.post("/point")
 def predict(data: PredictionInput, targets: List[TargetSelect] = Query(...)):
     df = pd.DataFrame(data.dict(), index=[0])
     pred_dict = {}
@@ -28,7 +28,7 @@ def predict(data: PredictionInput, targets: List[TargetSelect] = Query(...)):
     return {"prediction": prediction}
 
 
-@inference_router.post("/inference/batch/", response_class=FileResponse)
+@inference_router.post("/batch", response_class=FileResponse)
 async def upload_prediction_data(
     targets: List[TargetSelect] = Query(...), file: UploadFile = File(...)
 ):
