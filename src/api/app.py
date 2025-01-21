@@ -1,10 +1,10 @@
-from fastapi import FastAPI, File, UploadFile,Query
+from fastapi import FastAPI, File, UploadFile, Query, status, Response, HTTPException
 from typing import Literal, Union,List
 from src.api.db import DB
 from src.api.models import SoilData
 from src.api.schema import RawData, PredictionInput, PredictionResponse,TargetSelect
 from sqlalchemy.orm import class_mapper
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from src.model.model import DataPreprocessor, BaseModel, MODEL_FILE_PATH
 from sklearn.linear_model import Ridge
 # from catboost import CatBoostRegressor
@@ -25,18 +25,47 @@ def object_to_dict(obj):
 
 @app.get("/")
 def read_root():
+    """Root endpoint"""
     return {"message": "Welcome to IPAGE API"}
 
 @app.get("/data")
 def get_data(limit: int = None):
-    if limit:
-        data = db.retrieve_data(limit=limit)
-    else: 
-        data = db.retrieve_data()
+    """
+    Retrieve data from the database
+
+    EXAMPLE:
+        GET /data
+        GET /data?limit=10
+    
+    Args:
+        limit (int): The number of records to retrieve from the database
+
+    Response:
+        JSONResponse: 
+            A JSON response containing the retrieved data or an error message
+        HTTPException: 
+            An exception raised when an error occurs
+    """
+    try:
+        if limit:
+            data = db.retrieve_data(limit=limit)
+        else: 
+            data = db.retrieve_data()
+    except Exception as e:
+        return HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+    db.end_session()
+    if not data:
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"status": "Failed", "data": "No data found"}
+        )
+
     result = [object_to_dict(obj) for obj in data]
     return {"status": "Success", "data": result}
 
-@app.post("/data")
+@app.post("/data", status_code=status.HTTP_201_CREATED)
 def create_data(data: RawData):
     duplicated = False
     status = "Failed"
