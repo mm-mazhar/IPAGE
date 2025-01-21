@@ -333,3 +333,8 @@ flake.nix
 flake.lock
 default.nix
 .aider*
+
+src/api/app_maz.py
+ipage.db
+src/api/.env
+src/api/app - Copy.py
