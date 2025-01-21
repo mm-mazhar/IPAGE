@@ -44,12 +44,12 @@ class Settings(BaseSettings):
 
     SERVERS: list[dict[str, str]] = [
         {
-            "url": "https://more-socially-fly.ngrok-free.app",
-            "description": "NGROK server with HTTPS",
+            "url": "https://ipage.onrender.com",
+            "description": "Render server with HTTPS",
         },
         # {
-        #     "url": "https://ipage-api.onrender.com",
-        #     "description": "Render server with HTTPS",
+        #     "url": "https://more-socially-fly.ngrok-free.app",
+        #     "description": "NGROK server with HTTPS",
         # },
         # {
         #     "url": "http://localhost:8080",

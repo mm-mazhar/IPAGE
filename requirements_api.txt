@@ -190,7 +190,7 @@ python-json-logger==2.0.7
 python-multipart==0.0.20
 pytz==2024.2
 # pywin32==308
-pywinpty==2.0.14
+# pywinpty==2.0.14
 pyyaml==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
@@ -233,7 +233,7 @@ tinycss2==1.4.0
 toml==0.10.2
 tomlkit==0.13.2
 tornado==6.4.1
-# tpot==0.12.2
+tpot==0.12.2
 tqdm==4.67.0
 traitlets==5.14.3
 typer==0.15.1
