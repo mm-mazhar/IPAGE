@@ -118,10 +118,6 @@ class BaseModel:
                 ("cat", categorical_transformer, make_column_selector(dtype_exclude=["int", "float"]))
             ]
         )
-        if RANDOM_STATE:
-            model = self.model_class(random_state=RANDOM_STATE)
-        else:
-            model = self.model_class()
 
         self.pipeline = Pipeline(steps=[
             ("preprocessor", preprocessor),
@@ -189,3 +185,17 @@ class BaseModel:
         joblib.dump(self.best_model, MODEL_FILE_PATH / filename)
         model_logger.info("Model saved successfully")
         data_logger.info("Model saved successfully")
+
+    @staticmethod
+    def load_model(filename):
+        """Load a saved model"""
+        try:
+            model = joblib.load(MODEL_FILE_PATH / filename)
+            model_logger.info(f"Model loaded from {MODEL_FILE_PATH / filename}")
+            return model
+        except FileNotFoundError:
+            model_logger.error(f"Model not found at {MODEL_FILE_PATH / filename}")
+            raise FileNotFoundError(f"Model not found at {MODEL_FILE_PATH / filename}")
+        except Exception as e:
+            model_logger.error(f"An error occurred: {e}")
+            raise e
