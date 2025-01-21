@@ -137,3 +137,4 @@ folium==0.19.2
 streamlit-folium==0.24.0
 catboost==1.2.7
 lightgbm==4.5.0
+uvicorn==0.34.0
