@@ -28,8 +28,11 @@ from app_pages import (
     plot_cluster_visualizations,
     plot_violin_strip_scatter,
     plots_bar_dist_pie,
-    prediction_page
+    prediction_page,
 )
+
+# Import Prediction Page functions
+from app_pages.prediction_page import display_prediction_page
 from configs.common_configs import get_config, get_logger
 from easydict import EasyDict
 from pandas.io.formats.style import Styler
@@ -50,8 +53,6 @@ from utils.utils import (
     title_h3,
 )
 
-# Import Prediction Page functions
-from app_pages.prediction_page import display_prediction_page
 # from tpot import TPOTRegressor
 
 # Suppress only UserWarning
@@ -287,91 +288,6 @@ def main() -> None:
     #########################
     elif page == cfg.STAPP["PAGES"]["PREDICTION"]:
         display_prediction_page(cfg)
-
-    #########################
-    # PAGE | K-Means and PCA
-    #########################
-    # Separator
-    # st.markdown("""---""")
-    elif page == cfg.STAPP["PAGES"]["K_MEANS_PCA"]:
-        # Config Sidebar of K-Means and PCA
-        numeric_feature_kmeans_pca, categorical_feature_kmeans_pca = (
-            config_kmeans_pca_sidebar(
-                data=data,
-                exclude_cols=exclude_cols,
-                get_numeric_columns=get_numeric_columns,  # Pass function references
-                get_categorical_columns=get_categorical_columns,
-            )
-        )
-
-        background_color: str = cfg.STAPP["STYLES"]["BACKGROUND"]
-        text_color: str = cfg.STAPP["STYLES"]["TEXT_COLOR"]
-        sub_title_color: str = cfg.STAPP["STYLES"]["TITLE_COLOR"]
-
-        # print(f"Backgound Color: {background_color}")
-        # print(f"Text Color: {text_color}")
-
-        # Display K-Means and PCA Info (Expanders)
-        display_kmeans_pca_info()
-
-        #########################################
-        # PAGE | K-Means and PCA | ROW 1 | Plots
-        #########################################
-        clustered_data: None = kmeans_pca_and_elbow_curve(
-            data=data,
-            n_clusters=3,
-            background_color=background_color,
-            text_color=text_color,
-        )
-
-        ###############################################################
-        # PAGE | K-Means and PCA | ROW 2 | Further Analysis on Clusters
-        ###############################################################
-        st.markdown("---")
-        title_h3("Box Plots | Clusters", color=sub_title_color)
-        plot_cluster_visualizations(
-            clustered_data=clustered_data,
-            numeric_feature=numeric_feature_kmeans_pca,
-            background_color=background_color,
-            text_color=text_color,
-            sub_title_color=sub_title_color,
-        )
-
-        ###############################################################
-        # PAGE | K-Means and PCA | ROW 3 | Further Analysis on Clusters
-        ###############################################################
-        st.markdown("---")
-        title_h3(
-            "Comparisons of clusters with categorical features",
-            color=sub_title_color,
-        )
-        # Called from utils/kmeans_and_pca.py
-        plot_cluster_comparisons(
-            clustered_data,
-            categorical_feature_kmeans_pca,
-            background_color=background_color,
-            text_color=text_color,
-        )
-        ###############################################################
-        # PAGE | K-Means and PCA | ROW 4 | Further Analysis on Clusters
-        ###############################################################
-        st.markdown("---")
-        # Calculate statistics | Called from utils/kmeans_and_pca.py
-        stats: pd.DataFrame = cluster_statistics(clustered_data)
-        # Display statistics in Streamlit
-        title_h3("Descriptive Statistics for Each Cluster", color=sub_title_color)
-        # st.subheader("Descriptive Statistics for Each Cluster")
-        st.dataframe(stats)  # Use st.table(stats) for a static table
-
-    #########################
-    # PAGE | RANDOM FOREST
-    #########################
-    elif page == cfg.STAPP["PAGES"]["RANDOM_FOREST"]:
-        # Centered title
-        display_centered_title(
-            cfg.STAPP["PAGES"]["RANDOM_FOREST"],
-            color=cfg.STAPP["STYLES"]["TITLE_COLOR"],
-        )
 
     #########################
     # PAGE | ABOUT
