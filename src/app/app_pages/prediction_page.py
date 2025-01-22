@@ -1,4 +1,9 @@
-# app_pages/prediction_page.py
+# -*- coding: utf-8 -*-
+# """
+# prediction_page.py
+# Created on Dec 17, 2024
+# @ Author: Mazhar/Taylor Will
+# """
 
 from typing import Any
 
@@ -26,7 +31,9 @@ def single_prediction(cfg: Any) -> None:
     with st.form("single_prediction_form"):
 
         st.markdown("### Select Target to Predict:")
-        targets = st.selectbox("Select Target", ["SOC", "Boron", "Zinc"])
+        targets = st.selectbox(
+            "Select Target", ["SOC", "Boron", "Zinc"], key="single_inference"
+        )
 
         st.markdown("### Enter the features for prediction:")
 
@@ -132,6 +139,11 @@ def batch_prediction(cfg: Any) -> None:
     """
     st.header("📂 Batch Prediction")
 
+    st.markdown("### Select Target to Predict:")
+    targets = st.selectbox(
+        "Select Target", ["SOC", "Boron", "Zinc"], key="batch_inference"
+    )
+
     st.markdown("### Upload a CSV file for batch prediction:")
 
     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
@@ -145,10 +157,17 @@ def batch_prediction(cfg: Any) -> None:
 
             # Define required features
             required_features = [
-                "feature1",
-                "feature2",
-                "feature3",
+                "Area",
+                "pH",
+                "Nitrogen",
+                "Phosphorus",
+                "Potassium",
+                "Sulfur",
+                "Sand",
+                "Silt",
+                "Clay",
             ]  # Replace with actual features
+
             missing_features = [
                 feat for feat in required_features if feat not in batch_data.columns
             ]
@@ -165,11 +184,14 @@ def batch_prediction(cfg: Any) -> None:
                     if hasattr(cfg, "API_KEY"):
                         headers["Authorization"] = f"Bearer {cfg.API_KEY}"
 
+                    # Make the URL
+                    url = f"{cfg.API.URL}{cfg.API.VER_STRING}{cfg.API.BATCH_INFERENCE_ENDPOINT}?targets={targets}"
+
                     response = requests.post(
-                        f"{cfg.API_URL}/api/v1/inference/batch",
+                        url,
                         json=batch_data[required_features].to_dict(orient="records"),
                         headers=headers,
-                        timeout=30,  # Optional: set a longer timeout for batch requests
+                        timeout=cfg.API.TIME_OUT,  # Optional: set a longer timeout for batch requests
                     )
                     response.raise_for_status()
 
