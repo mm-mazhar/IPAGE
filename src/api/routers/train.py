@@ -1,6 +1,6 @@
 import os
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, HTTPException, UploadFile, status
 from fastapi.responses import FileResponse
 from sklearn.linear_model import Ridge
 
@@ -45,7 +45,10 @@ async def train_model_with_uploaded_data(file: UploadFile = File(...)):
         with open(filepath, "wb") as buffer:
             buffer.write(await file.read())
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"File upload failed: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"File upload failed: {str(e)}",
+        )
 
     # Retraining pipeline
     data = DataPreprocessor(file.filename, "data").preprocess()
