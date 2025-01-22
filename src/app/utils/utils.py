@@ -29,11 +29,20 @@ def display_centered_title(title: str, color: str = "black") -> None:
         unsafe_allow_html=True,
     )
 
+
 # Display centered title H3
 def title_h3(title: str, color: str = "black") -> None:
     """Display a centered title in Streamlit with an optional color."""
     st.markdown(
         f"<h3 style='text-align: center; color: {color};'>{title}</h3>",
+        unsafe_allow_html=True,
+    )
+
+
+def title_h4_left(title: str, color: str = "black") -> None:
+    """Display a centered title in Streamlit with an optional color."""
+    st.markdown(
+        f"<h4 style='text-align: left; color: {color};'>{title}</h4>",
         unsafe_allow_html=True,
     )
 
@@ -52,10 +61,12 @@ def get_categorical_columns(df: pd.DataFrame) -> list[str]:
     return df.select_dtypes(include=["object", "category"]).columns.tolist()
 
 
-def get_numeric_columns(df: pd.DataFrame, exclude_columns: list[str] = None) -> list[str]:
+def get_numeric_columns(
+    df: pd.DataFrame, exclude_columns: list[str] = None
+) -> list[str]:
     """
     Return a list of numeric column names from the DataFrame, excluding specific columns.
-    
+
     Args:
         df (pd.DataFrame): Input DataFrame.
         exclude_columns (list[str]): List of column names to exclude from the result.
@@ -63,10 +74,11 @@ def get_numeric_columns(df: pd.DataFrame, exclude_columns: list[str] = None) -> 
     Returns:
         list[str]: List of numeric column names excluding specified columns.
     """
-    exclude_columns = exclude_columns or []  # Default to an empty list if None is provided
+    exclude_columns = (
+        exclude_columns or []
+    )  # Default to an empty list if None is provided
     numeric_columns: list[str] = df.select_dtypes(include=[np.number]).columns.tolist()
     return [col for col in numeric_columns if col not in exclude_columns]
-
 
 
 def visualize_distributions(
