@@ -16,7 +16,8 @@ STAPP:
     # CORR: "Correlation Matrix"
     # FEATURE_ANALYSIS: "Feature Analysis"
     K_MEANS_PCA: "K-Means and PCA"
-    RANDOM_FOREST: "RANDOM FOREST"
+    RANDOM_FOREST: "Random Forest"
+    PREDICTION: "Prediction"  # <-- Added Prediction Page
     ABOUT: "About"
   SWEETVIZ:
     WIDTH: 1350
@@ -82,3 +83,9 @@ LOGGING:
   LOG_LEVEL: "DEBUG"
   # LOG_LEVEL: "INFO"
   LOG_FORMAT: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# API Configuration
+API:
+  URL: "https://ipage.onrender.com"
+  # KEY: "your_api_key_here"  # Uncomment and set if authentication is required
+
