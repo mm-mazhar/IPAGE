@@ -334,6 +334,11 @@ flake.lock
 default.nix
 .aider*
 
-src/api/app_maz.py
+# API
 src/api/.env
 src/api/test_conn.py
+# data/models/*
+data/models/retrain_Boron_Ridge
+data/models/retrain_SOC_Ridge
+data/models/retrain_Zinc_Ridge
+data/models/TargetSelect.SOC_Ridge
