@@ -28,6 +28,7 @@ from app_pages import (
     plot_cluster_visualizations,
     plot_violin_strip_scatter,
     plots_bar_dist_pie,
+    prediction_page
 )
 from configs.common_configs import get_config, get_logger
 from easydict import EasyDict
@@ -49,6 +50,8 @@ from utils.utils import (
     title_h3,
 )
 
+# Import Prediction Page functions
+from app_pages.prediction_page import display_prediction_page
 # from tpot import TPOTRegressor
 
 # Suppress only UserWarning
@@ -278,6 +281,12 @@ def main() -> None:
             cfg=cfg,
             highlight_ideal_values=highlight_ideal_values,
         )
+
+    #########################
+    # PAGE | PREDICTION
+    #########################
+    elif page == cfg.STAPP["PAGES"]["PREDICTION"]:
+        display_prediction_page(cfg)
 
     #########################
     # PAGE | K-Means and PCA
