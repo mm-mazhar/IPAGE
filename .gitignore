@@ -341,3 +341,4 @@ data/models/retrain_Boron_Ridge
 data/models/retrain_SOC_Ridge
 data/models/retrain_Zinc_Ridge
 data/models/TargetSelect.SOC_Ridge
+.devcontainer/*
