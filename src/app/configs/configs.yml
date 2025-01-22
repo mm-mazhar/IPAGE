@@ -90,5 +90,6 @@ API:
   URL: "https://ipage.onrender.com"
   VER_STRING: "/api/v1"
   SINGLE_INFERENCE_ENDPOINT: "/inference/point"
+  BATCH_INFERENCE_ENDPOINT: "/inference/batch"
   # KEY: "your_api_key_here"  # Uncomment and set if authentication is required
 
