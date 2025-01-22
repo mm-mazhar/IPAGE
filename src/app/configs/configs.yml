@@ -1,5 +1,5 @@
 PATHS:
-  DATASET: "./src/data/merged_v2.csv"
+  DATASET: "./src/data/merged_v3.csv"
   REPORT: "./src/visualizations/SWEETVIZ_REPORT.html"
   MODEL_DIR: "./app/src/models/checkpoints"
   SAVED_MODEL: "9_79.08538.pth"
@@ -15,8 +15,8 @@ STAPP:
     DASHBOARD: "Dashboard"
     # CORR: "Correlation Matrix"
     # FEATURE_ANALYSIS: "Feature Analysis"
-    K_MEANS_PCA: "K-Means and PCA"
-    RANDOM_FOREST: "Random Forest"
+    # K_MEANS_PCA: "K-Means and PCA"
+    # RANDOM_FOREST: "Random Forest"
     PREDICTION: "Prediction"  # <-- Added Prediction Page
     ABOUT: "About"
   SWEETVIZ:
@@ -86,6 +86,9 @@ LOGGING:
 
 # API Configuration
 API:
+  TIME_OUT: 120
   URL: "https://ipage.onrender.com"
+  VER_STRING: "/api/v1"
+  SINGLE_INFERENCE_ENDPOINT: "/inference/point"
   # KEY: "your_api_key_here"  # Uncomment and set if authentication is required
 
