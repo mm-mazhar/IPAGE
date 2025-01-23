@@ -18,8 +18,8 @@ import pandas as pd
 import seaborn as sns
 import streamlit as st
 import sweetviz as sv
+from app_pages import config_dashboard_sidebar  # prediction_page,
 from app_pages import (
-    config_dashboard_sidebar,
     config_kmeans_pca_sidebar,
     display_kmeans_pca_info,
     display_stat_cards,
@@ -28,10 +28,8 @@ from app_pages import (
     plot_cluster_visualizations,
     plot_violin_strip_scatter,
     plots_bar_dist_pie,
-    prediction_page,
 )
-
-# Import Prediction Page functions
+from app_pages.about import display_about_text
 from app_pages.prediction_page import display_prediction_page
 from configs.common_configs import get_config, get_logger
 from easydict import EasyDict
@@ -297,6 +295,8 @@ def main() -> None:
         display_centered_title(
             cfg.STAPP["PAGES"]["ABOUT"], color=cfg.STAPP["STYLES"]["TITLE_COLOR"]
         )
+        # Display K-Means and PCA Info (Expanders)
+        display_about_text()
 
 
 if __name__ == "__main__":
