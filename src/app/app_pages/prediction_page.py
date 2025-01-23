@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # """
 # prediction_page.py
-# Created on Dec 17, 2024
+# Created on Jan 22, 2025
 # @ Author: Mazhar/Taylor Will
 # """
 
+import os
+import tempfile
 from typing import Any
 
 import pandas as pd
@@ -105,6 +107,7 @@ def single_prediction(cfg: Any) -> None:
 
             # Include the targets parameter in the URL
             url = f"{cfg.API.URL}{cfg.API.VER_STRING}{cfg.API.SINGLE_INFERENCE_ENDPOINT}?targets={targets}"
+            st.write("API Endpoint:", url)
 
             response = requests.post(
                 url,
@@ -148,12 +151,53 @@ def batch_prediction(cfg: Any) -> None:
 
     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
+    if uploaded_file is None:
+        st.write("No file uploaded yet.")
+
     if uploaded_file is not None:
         try:
+            try:
+                # Define the folder where you want to save the file
+                upload_dir = cfg.PATHS.STAPP_UPLOADS_DIR  # Specify your folder name
+                os.makedirs(
+                    upload_dir, exist_ok=True
+                )  # Create directory if it does not exist
+
+                # Create the path of the file to save
+                filepath = os.path.join(upload_dir, uploaded_file.name)
+
+                # Read the file in bytes
+                file_bytes = uploaded_file.read()
+
+                # Write bytes to file
+                try:
+                    with open(filepath, "wb") as buffer:
+                        buffer.write(file_bytes)
+                    st.success(
+                        f"File '{uploaded_file.name}' saved successfully to {filepath}"
+                    )
+                    # st.success(f"File Name: {os.path.basename(filepath)}")
+                except Exception as e:
+                    st.error(f"An error occurred while saving the file: {e}")
+                    return
+            except Exception as e:
+                st.error(f"An error occurred while Uploading File: {e}")
+
             # Read the uploaded CSV
-            batch_data = pd.read_csv(uploaded_file)
-            st.markdown("#### Preview of Uploaded Data:")
-            st.dataframe(batch_data.head())
+            try:
+                with open(
+                    filepath, "rb"
+                ) as f:  # Using with to ensure correct file handle closing
+                    batch_data = pd.read_csv(f)
+                    st.markdown("#### Preview of Uploaded Data:")
+                    st.dataframe(batch_data.head())
+                    st.info(f"Length of Uploaded Data: {len(batch_data)}")
+            except FileNotFoundError:
+                st.error(f"File could not be found: {filepath}")
+                return
+            except Exception as e:
+                st.error(f"An error occured while reading CSV: {e}")
+                return
 
             # Define required features
             required_features = [
@@ -175,48 +219,92 @@ def batch_prediction(cfg: Any) -> None:
                 st.error(
                     f"The following required features are missing from the uploaded file: {', '.join(missing_features)}"
                 )
+                os.remove(filepath)  # Cleanup temp file
                 return
 
             if st.button("Predict on Batch"):
-                st.markdown("### Sending data to the model...")
+                title_h4_left(
+                    "Sending data to the model...",
+                    color=cfg.STAPP["STYLES"]["SUB_TITLE_COLOR"],
+                )
                 try:
-                    headers = {}
-                    if hasattr(cfg, "API_KEY"):
-                        headers["Authorization"] = f"Bearer {cfg.API_KEY}"
+                    headers = (
+                        {"Authorization": f"Bearer {cfg.API_KEY}"}
+                        if hasattr(cfg, "API_KEY")
+                        else {}
+                    )
+                    # headers["Content-Type"] = "multipart/form-data"
 
                     # Make the URL
                     url = f"{cfg.API.URL}{cfg.API.VER_STRING}{cfg.API.BATCH_INFERENCE_ENDPOINT}?targets={targets}"
+                    st.write("API Endpoint: ", url)
 
-                    response = requests.post(
-                        url,
-                        json=batch_data[required_features].to_dict(orient="records"),
-                        headers=headers,
-                        timeout=cfg.API.TIME_OUT,  # Optional: set a longer timeout for batch requests
-                    )
-                    response.raise_for_status()
-
-                    predictions = response.json().get("predictions", None)
-                    if predictions and isinstance(predictions, list):
-                        if len(predictions) != len(batch_data):
-                            st.warning(
-                                "Number of predictions does not match number of input records."
+                    # Convert the uploaded file to a file-like object for requests
+                    # files = {"file": (uploaded_file.name, uploaded_file, "text/csv")}
+                    files = {
+                        "file": (
+                            "file",
+                            # os.path.basename(filepath),
+                            open(filepath, "rb"),
+                            "text/csv",
+                        )
+                    }
+                    with open(filepath, "rb") as file_obj:
+                        files = {
+                            "file": (
+                                "file",
+                                file_obj,  # pass on the file handle
+                                "text/csv",
                             )
-                        batch_data["Prediction"] = predictions
-                        st.success("Batch prediction completed successfully!")
-                        st.dataframe(batch_data)
+                        }
+                        response = requests.post(
+                            url,
+                            headers=headers,
+                            files=files,  # Send the file as multipart/form-data
+                            timeout=cfg.API.TIME_OUT,
+                        )
+                        response.raise_for_status()
 
-                        # Optionally, allow users to download the results
-                        csv = batch_data.to_csv(index=False).encode("utf-8")
-                        st.download_button(
-                            label="📥 Download Predictions as CSV",
-                            data=csv,
-                            file_name="batch_predictions.csv",
-                            mime="text/csv",
+                        # st.write(f"response.text: {response.text}")
+                        # st.write(f"Response Type: {type(response.json())}")
+                        # st.write(f"Response Length: {len(response.json()[targets])}")
+                        # st.write(f"Response: {response.json()}")
+
+                        predictions = pd.DataFrame(response.json())
+                        # Rename the column to match the target
+                        predictions.rename(
+                            columns={f"{targets}": f"Pred_{targets}"}, inplace=True
                         )
-                    else:
-                        st.error(
-                            "Predictions not found or invalid format in the response."
-                        )
+                        # st.dataframe(predictions.head())
+
+                        # Convert DataFrame Column to List
+                        predictions = predictions[f"Pred_{targets}"].tolist()
+
+                        # st.info(f"Length of Predictions: {len(predictions)}")
+                        # st.write(f"Predictions Type: {type(predictions)}")
+                        # st.write(f"Predictions: {predictions}")
+
+                        if predictions and isinstance(predictions, list):
+                            if len(predictions) != len(batch_data):
+                                st.warning(
+                                    "Number of predictions does not match number of input records."
+                                )
+                            batch_data[f"Pred_{targets}"] = predictions
+                            st.success("Batch prediction completed successfully!")
+                            st.dataframe(batch_data)
+
+                            # Optionally, allow users to download the results
+                            csv = batch_data.to_csv(index=False).encode("utf-8")
+                            st.download_button(
+                                label="📥 Download Predictions as CSV",
+                                data=csv,
+                                file_name="batch_predictions.csv",
+                                mime="text/csv",
+                            )
+                        else:
+                            st.error(
+                                "Predictions not found or invalid format in the response."
+                            )
                 except requests.exceptions.Timeout:
                     st.error("The request timed out. Please try again later.")
                 except requests.exceptions.HTTPError as http_err:
@@ -225,12 +313,20 @@ def batch_prediction(cfg: Any) -> None:
                     st.error(f"An error occurred: {err}")
                 except ValueError:
                     st.error("Invalid response format received from the API.")
+                except Exception as e:
+                    st.error(f"An error occurred while making the request {e}")
         except pd.errors.EmptyDataError:
             st.error("The uploaded CSV file is empty.")
         except pd.errors.ParserError:
             st.error("Error parsing the uploaded CSV file.")
         except Exception as e:
-            st.error(f"An unexpected error occurred: {e}")
+            st.error(f"An unexpected error occurred while running the code: {e}")
+        finally:
+            try:
+                if filepath and os.path.exists(filepath):
+                    os.remove(filepath)
+            except Exception as e:
+                st.error(f"Failed to remove the file {filepath} error: {e}")
 
 
 def display_prediction_page(cfg: Any) -> None:
