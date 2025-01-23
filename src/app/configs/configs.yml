@@ -3,6 +3,7 @@ PATHS:
   REPORT: "./src/visualizations/SWEETVIZ_REPORT.html"
   MODEL_DIR: "./app/src/models/checkpoints"
   SAVED_MODEL: "9_79.08538.pth"
+  STAPP_UPLOADS_DIR: "./src/app/uploads"
 
 STAPP:
   CONFIGS:
