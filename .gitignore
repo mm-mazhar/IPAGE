@@ -322,6 +322,7 @@ notebooks/task_3_model_development_and_training/by-Maz/checkpoints/tf_Zinc_model
 # App Folder
 src/app/utils/scatter_plot_1.py
 src/app/app_maz.py
+src/app/uploads
 
 # google service credential
 dvc-drive-440606-5c30764e4152.json
