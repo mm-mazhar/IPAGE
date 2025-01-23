@@ -46,5 +46,9 @@ def display_about_text() -> None:
     *   **Delivery and Future Planning:** Deliver the Proof of Concept (PoC) and complete documentation of the project. Begin planning for scaling the solution to other regions, adapting the models to accommodate different soil types and agricultural practices.
 
     Thus, this project aims to deliver a sophisticated AI-driven solution that revolutionizes soil nutrient prediction for smallholder farmers. By providing a more efficient, accurate, and scalable system, this initiative promises substantial benefits in improving agricultural productivity, reducing environmental impact from fertilizer misuse, and enhancing economic outcomes for farmers. This strategic approach ultimately contributes to more informed agricultural practices and improved food security in targeted regions.
+    
+    
+    Email: mazqoty.01@gmail.com
+    
     """
     )
