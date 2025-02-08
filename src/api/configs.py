@@ -51,10 +51,10 @@ class Settings(BaseSettings):
         #     "url": "https://more-socially-fly.ngrok-free.app",
         #     "description": "NGROK server with HTTPS",
         # },
-        # {
-        #     "url": "http://localhost:8080",
-        #     "description": "Local server with HTTPS",
-        # },
+        {
+            "url": "http://localhost:8080",
+            "description": "Local server with HTTPS",
+        },
     ]
 
     class Config:

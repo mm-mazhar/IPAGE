@@ -32,6 +32,10 @@ def predict(data: PredictionInput, targets: List[TargetSelect] = Query(...)):
 async def upload_prediction_data(
     targets: List[TargetSelect] = Query(...), file: UploadFile = File(...)
 ):
+    """
+    The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus,
+    Sulfur, Sand, Silt, and Clay
+    """
     # Define the file path where the uploaded file will be saved
     filepath = os.path.join(os.getcwd(), "data", file.filename)
 

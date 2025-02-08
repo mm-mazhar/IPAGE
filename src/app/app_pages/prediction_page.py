@@ -148,6 +148,9 @@ def batch_prediction(cfg: Any) -> None:
     )
 
     st.markdown("### Upload a CSV file for batch prediction:")
+    st.info(
+        "The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus, Sulfur, Sand, Silt, and Clay"
+    )
 
     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
