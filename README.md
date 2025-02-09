@@ -406,15 +406,27 @@ For first time setup please follow the instruction below
     * cd into ./src/api and run the API:
 
     ```bash
-    - poetry run uvicorn src.api.app:app --reload --port 8002
+    - Windows (Command Prompt - cmd)
+        - poetry run uvicorn src.api.main:app --reload --port 8080
+    - Windows (PowerShell)
+        - poetry run uvicorn src.api.main:app --reload --port 8080
+    - Linux / macOS (Bash, Zsh)
+        - poetry run uvicorn src.api.main:app --reload --port 8080
     ```
 
     *   This will start the FastAPI server.  The `--reload` flag enables automatic reloading upon code changes.
+
+    * Select the local server
+      <table style="width:100%" align="center">
+        <tr>
+          <td><img src="https://i.imgur.com/zJ6B1Uk.png" width="200px" height=100px/></td>
+        </tr>
+      </table>
 6.  **Access the API Documentation:**
 
-    *   Open your web browser and navigate to [http://localhost:8000/docs](http://localhost:8000/docs) 
+    *   Open your web browser and navigate to [http://localhost:8003/docs](http://localhost:8003/docs) 
     or 
-    [http://127.0.0.1:8002/docs](http://127.0.0.1:8002/docs) 
+    [http://127.0.0.1:8003/docs](http://127.0.0.1:8003/docs) 
     
         (or the appropriate address based on your `FASTAPI_PORT` configuration).
     
