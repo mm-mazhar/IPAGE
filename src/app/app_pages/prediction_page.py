@@ -116,6 +116,7 @@ def single_prediction(cfg: Any) -> None:
                         for target in targets
                     ]
                 )
+                st.success("Prediction completed successfully!")
                 st.success(prediction_text)
             else:
                 st.error("Prediction not found in the response.")
