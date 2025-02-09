@@ -35,7 +35,7 @@ STAPP:
     # COL_BACKGROUND_COLOR: "#006400"
     COL_BACKGROUND_COLOR: "lightgreen"
     FOLIUM:
-      WIDTH: "1200"
+      WIDTH: "1400"
       HEIGHT: "300"
       ZOOM_START: 4
       LOCATION: [7.49508, 9.0820]
