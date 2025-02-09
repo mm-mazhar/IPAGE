@@ -277,6 +277,7 @@ data/merged_v2.csv
 data/merge_data.py
 data/predictions.csv
 data/test_version_merged_v3.csv
+data/test_version_merged_v4.csv
 
 # App Data Folder
 src/data/2410_iPAGE_SoilData_cleaned.csv
