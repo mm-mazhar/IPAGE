@@ -194,12 +194,22 @@ def main() -> None:
                 selected_numeric_feature=selected_numeric_feature,
                 selected_categorical_feature=selected_categorical_feature,
             )
+
+            # ✅ Center the map using a div container
+            st.markdown(
+                "<div style='display: flex; justify-content: center;'>",
+                unsafe_allow_html=True,
+            )
+
             st_folium(
                 folium_map,
                 width=cfg.STAPP["STYLES"]["FOLIUM"]["WIDTH"],
                 height=cfg.STAPP["STYLES"]["FOLIUM"]["HEIGHT"],
                 zoom=cfg.STAPP["STYLES"]["FOLIUM"]["ZOOM_START"],
             )
+
+            st.markdown("</div>", unsafe_allow_html=True)  # ✅ Close the div
+
         else:
             st.warning("No data to display on the map.")
 
@@ -301,3 +311,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+# poetry run streamlit run ./src/app/app.py
