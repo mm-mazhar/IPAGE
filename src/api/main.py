@@ -1,6 +1,10 @@
 import os
 import sys
 
+from dotenv import load_dotenv
+
+print(os.getenv("FASTAPI_PORT"))
+
 sys.path.append(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 )
@@ -95,3 +99,6 @@ if __name__ == "__main__":
         log_level="debug",
         reload=True,
     )
+
+
+# poetry run uvicorn src.api.main:app --reload --port 8080
