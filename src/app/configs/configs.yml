@@ -57,7 +57,21 @@ STAPP:
   EXCLUDE_COLS:
     COL_1: "longitude"
     COL_2: "latitude"
-
+  TARGETS:
+    SOC: "SOC"
+    Boron: "Boron"
+    Zinc: "Zinc"
+  REQUIRED_COLUMNS:
+    - Area
+    - pH
+    - Nitrogen
+    - Potassium
+    - Phosphorus
+    - Sulfur
+    - Sand
+    - Silt
+    - Clay
+  
 MODEL:
   BATCH_SIZE: 32
   IMG_FEATURE_EXTRACTOR:
@@ -93,4 +107,6 @@ API:
   SINGLE_INFERENCE_ENDPOINT: "/inference/point"
   BATCH_INFERENCE_ENDPOINT: "/inference/batch"
   # KEY: "your_api_key_here"  # Uncomment and set if authentication is required
+
+
 
