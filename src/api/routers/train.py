@@ -30,7 +30,7 @@ def train_model(target: TargetSelect):
 @train_router.post("/modeL-retrain/upload")
 async def train_model_with_uploaded_data(file: UploadFile = File(...)):
     """
-    Train a model with new data. The csv file must contain the columns: Area, pH, Nitrogen, Phosphorus,
+    Train a model with new data. The csv file must contain the columns: Area, pH, Nitrogen, Potassium, Phosphorus,
     Sulfur, Sand, Silt, and Clay
     """
     # Define the file path where the uploaded file will be saved
