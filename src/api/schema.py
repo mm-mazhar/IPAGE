@@ -1,6 +1,7 @@
-from pydantic import BaseModel
-from typing import Union, Literal
 from enum import Enum
+from typing import Literal, Union
+
+from pydantic import BaseModel
 
 
 class RawData(BaseModel):
